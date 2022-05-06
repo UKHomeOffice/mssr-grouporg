@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Provide a link to the modern slavery statement on your organisation's website</h1>
+     <!--text field start-->
+     {% from "govuk/components/input/macro.njk" import govukInput %}
+     {{ govukInput({
+       label: {
+         text: "URL must begin with ‘https://’ or ‘http://’"
+       },
+       classes: "govuk-input--width-50",
+       id: "width-20",
+       name: "width-20"
+     }) }}
+     <!-- text field ends-->
+
+
+     <!-- Details start-->
+
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+<p> <span class="govuk-body govuk-!-font-weight-bold">Provide an email address</span>
+  <br/>If you do not have a website, provide an email address that can be used to request a copy of the statement. It will be published on GOV.UK as part of your statement summary on the registry.<br/>
+  <input class="govuk-input govuk-!-width-three-quarters" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint"></p>
+
+<p> <span class="govuk-body govuk-!-font-weight-bold">On request, provide a copy within 30 days</span>
+   <br/>If you have to publish a modern slavery statement by law and you don’t have a website, you must provide a copy of the statement in writing to anyone who requests one within 30 days.</p>  
+       
+<p> <span class="govuk-body govuk-!-font-weight-bold">Organisations in a group</span>
+    <br/>If your organisation is part of a group, we would encourage you to publish your statement on the website of your parent organisation, and add that URL to our online service.</p>  
+{% endset %}
+
+{{ govukDetails({
+summaryText: "or provide an email address if you do not have a website",
+html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/6_S1_2-2_MSSR"
+  }) }}
+  <a class="govuk-link" href="/6_S1_2-2_MSSR">Skip this question</a>
+</div>
+<!--CTA end-->
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

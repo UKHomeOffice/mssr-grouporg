@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+FY question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">What is your financial year dates for the statement 2022?</h1>
+      <span class="govuk-caption-l govuk-!-margin-bottom-5">For the slavery statement 2022, your financial year-end falls between July 1st 2021 and June 30th 2022</span>
+      <br/>
+      <form class="form" action="/#" method="post">
+        <!--Date 1  start
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{{ govukDateInput({
+  id: "fy-startdate",
+  namePrefix: "fy-startdate",
+  fieldset: {
+    legend: {
+      text: "Financial year start date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  }
+}) }}
+Date 1  ends-->
+<br/>
+
+
+
+<!-- new FY Start date start -->
+{{ govukDateInput({
+  id: "financial-start-date",
+  namePrefix: "[FStartDate]",
+  fieldset: {
+    legend: {
+      text: "Financial year start date (Variables)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["FStartDate"][0]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["FStartDate"][1]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["FStartDate"][2]
+      }
+    ]
+}) }}
+<!-- new FY Start date end -->
+
+
+<!--Date 2  start
+{{ govukDateInput({
+  id: "fy-enddate",
+  namePrefix: "fy-enddate",
+  fieldset: {
+    legend: {
+      text: "Financial year end date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  }  
+}) }}
+Date 2  ends-->   
+
+
+
+<!-- new FY End date start -->
+{{ govukDateInput({
+  id: "financial-end-date",
+  namePrefix: "[FEndDate]",
+  fieldset: {
+    legend: {
+      text: "Financial year end date (Variables)",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["FEndDate"][0]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["FEndDate"][1]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["FEndDate"][2]
+      }
+    ]
+}) }}
+<!-- new FY End date end -->
+
+
+
+<!--CTA start-->
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue",
+    href: "/6_S1_2-3_MSSR"
+  }) }}
+  <a class="govuk-link" href="/6_S1_2-3_MSSR">Skip this question</a>
+</div>
+<!--CTA end-->
+
+
+ <!-- <button class="govuk-button" data-module="govuk-button">Continue</button> -->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
