@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+FY question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!-- Error summary start -->
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [ 
+          {
+            text: "Invalid month",
+            href: "#financial-end-date"
+          }
+        ]
+      }) }}
+  <!-- Error summary end -->
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">What is your financial year dates for the statement 2022?</h1>
+      <span class="govuk-caption-l govuk-!-margin-bottom-5">For the slavery statement 2022, your financial year-end falls between July 1st 2021 and June 30th 2022</span>
+      <br/>
+      <form class="form" action="/4_before_you_start" method="post">
+
+<!-- new FY Start date start -->
+{{ govukDateInput({
+  id: "financial-start-date",
+  namePrefix: "[FStartDate]",
+  fieldset: {
+    legend: {
+      text: "Financial year start date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: 21
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: 03
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: 2021
+      }
+    ]
+}) }}
+<!-- new FY Start date end -->
+
+<!-- new FY End date start -->
+{{ govukDateInput({
+  id: "financial-end-date",
+  namePrefix: "[FEndDate]",
+  fieldset: {
+    legend: {
+      text: "Financial year end date",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  errorMessage: {
+    text: "Month should be in the range of 1 - 12."
+  },
+  items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: 20
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2 govuk-input--error",
+        value: 15
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: 2022
+      }
+    ]
+}) }}
+<!-- new FY End date end -->
+
+
+
+<button class="govuk-button" data-module="govuk-button">Continue</button> 
+
+<!-- Button 
+{{ govukButton({
+  text: "Continue",
+  href: "/4_before_you_start"
+}) }}
+ Button Ends-->
+
+
+    
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
