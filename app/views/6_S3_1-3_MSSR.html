@@ -26,38 +26,42 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Are you sure you want to delete your PDF statement?</h1>
-      <p class="govuk-body">You are going to delete the file NameOfTheFileComesHere.PDF, which was uploaded on 30th April 2022.</p>
+      <p class="govuk-body">You are going to delete the file <span class="govuk-!-font-weight-bold">NameOfTheFileComesHere.PDF</span>, which was uploaded on 30th April 2022.</p>
 <p class="govuk-caption-m">The file deletion cannot be undone.</p>
-      <form class="form" action="/6_S1_2-4_MSSR" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {{ govukRadios({
-          idPrefix: "where-do-you-live",
-          name: "where-do-you-live",
-          fieldset: {
-            legend: {
-              text: " ",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
           },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+     <!-- CTAs start-->
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
         }) }}
-
-        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
-
-      </form>
-
+      
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>
+<!-- CTAs end-->
     </div>
   </div>
 

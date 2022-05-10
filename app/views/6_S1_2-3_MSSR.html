@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,37 +21,58 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">What is the name of the director (or equivalent) who signed off your statement?</h1>
+    <!-- Textfields start-->
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+    
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+      
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+      
+      {{ govukInput({
+        label: {
+          text: "Job title"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+ <!-- Textfields end-->
 
-      <h1 class="govuk-heading-l">Would you like to upload PDF version of your statement 2022?</h1>
+<!-- Date section start-->
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-      <form class="form" action="/#" method="post">
+      {{ govukDateInput({
+        id: "passport-issued",
+        namePrefix: "passport-issued",
+        fieldset: {
+          legend: {
+            text: "What date was your statement approved by the board or equivalent management body?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        }
+      }) }}
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+<!-- Date section end-->
 
-        {{ govukRadios({
-          idPrefix: "where-do-you-live",
-          name: "where-do-you-live",
-          fieldset: {
-            legend: {
-              text: " ",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
+
 
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -59,14 +80,11 @@
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Save and continue",
-    href: "/6_S1_2-3-1_MSSR"
+    href: "/6_S1_2-complete"
   }) }}
-  <a class="govuk-link" href="/6_S1_2-4_MSSR">Skip this question</a>
+  <a class="govuk-link" href="#">Skip this question</a>
 </div>
 <!--CTA end-->
-
-
- <!-- <button class="govuk-button" data-module="govuk-button">Continue</button> -->
 
 
       </form>

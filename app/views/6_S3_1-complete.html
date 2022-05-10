@@ -4,6 +4,7 @@
 Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+
 {% block beforeContent %}
 <!-- phase banner starts-->
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -37,31 +38,37 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/6_S1_1-1_MSSR" aria-describedby="eligibility-status">Organisations covered by the statement</a>
+                <a href="#" aria-describedby="eligibility-status">Organisations covered by the statement</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">COMPLETED</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="eligibility-status">NOT STARTED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/6_S1_2-1_MSSR" aria-describedby="read-declaration-status">Statement URL, dates, documents and sign-off</a>
+                <a href="#" aria-describedby="read-declaration-status">Statement URL, dates and sign-off</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">NOT STARTED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/7_Compliance-Crt4-E2A" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
+                <a href="#" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
               </span>
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">IN PROGRESS</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">NOT STARTED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="#" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">NOT STARTED</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/6_S1_5-1_MSSR" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">NOT STARTED</strong>
             </li>
           </ul>
-          
         </li>
+
 
         <li>
           <h2 class="app-task-list__section">
@@ -86,6 +93,11 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
             </li>
             <li class="app-task-list__item">
+              <span class="app-task-list__task-name"><a href="#" aria-describedby="list-convictions-status">Modern slavery risks</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
+            </li>
+            <li class="app-task-list__item">
               <span class="app-task-list__task-name"><a href="#" aria-describedby="list-convictions-status">Finding indicators of modern slavery</a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
@@ -95,24 +107,25 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
             </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Upload documents (optional)
+          </h2>
+          <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="list-convictions-status">Upload documents related to your statement</a>
+                <a href="/6_S1_2-3-1_MSSR" aria-describedby="list-convictions-status">Upload PDF version of your statement</a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">NOT STARTED</strong>
+              <strong class="govuk-tag app-task-list__tag" id="submit-pay-status">COMPLETED</strong>
             </li>
           </ul>
         </li>
       </ol>
-  
-
-
-  {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-  {{ govukWarningText({
-    text: "
-    There are few tasks which are in progress. Please complete those tasks to submit your statement.",
-    iconFallbackText: "Warning"
-  }) }}
+    </div>
+  </div>
 
   <!-- CTA starts-->
   {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -121,7 +134,5 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
     classes: "govuk-button--secondary"
   }) }}
   <!-- CTA ends-->
-</div>
-</div>
 
 {% endblock %}

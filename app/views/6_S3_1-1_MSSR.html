@@ -24,18 +24,25 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Upload PDF version of your statement 2022</h1>
-      <p class="govuk-body">some information goes here... </p>
-      <p class="govuk-caption-m">You can upload only a single document. Only PDF files are acceptable.</p>
-      <p></p>
-       <!-- Details panel ED START -->
-{{ govukDetails({
-summaryText: "What is PDF version?",
-text: "some text comes here explaining about PDF"
+      <p class="govuk-body">You can upload a PDF file of your full modern slavery statement here, it will be available publicly on the statement summary page once your statement is published.</p>
+      
+      <!-- Details panel ED START -->
+       {% set detailsHtml %}
+       <ul>
+        <li>You can upload only one file in PDF version</li>
+        <li>The file size limit should be under 20MB</li>
+        <li>The file shouldn’t be empty</li>
+        <li>The file should  NOT be password protected</li>
+        <li>The file should  NOT be printer locked</li>
+      </ul>
+     {% endset %}
+       {{ govukDetails({
+summaryText: "File limitations",
+html: detailsHtml
 }) }}
 <!-- Details panel ED END -->
 
-<!--File upload start
-{% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+<!--File upload start -->
 {{ govukFileUpload({
   id: "file-upload-1",
   name: "file-upload-1",
@@ -43,29 +50,17 @@ text: "some text comes here explaining about PDF"
     text: "Upload a file"
   }
 }) }}
-file upload end-->
+<!-- file upload end -->
 
-<!-- Checkbox start-->
-{{ govukCheckboxes({
-  idPrefix: "GDPR",
-  name: "GDPR",
-  items: [
-    {
-      value: "declaration-CB",
-      text: "I understand about the GDPR...."
-    }
-  ]
-}) }}
-<!-- Checkbox end-->
 
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Upload document",
-    href: "/6_S1_2-3-2_MSSR"
+    href: "/6_S3_1-2_MSSR"
   }) }}
-  <a class="govuk-link" href="/6_S1_2-4_MSSR">Skip this</a>
+  <a class="govuk-link" href="/6_S1_5-complete">Skip this</a>
 </div>
 <!--CTA end-->
 
