@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+FY question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ <!-- notification banner start-->     
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Document has been uploaded successfully
+  </h3>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+ <!-- notification banner end--> 
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-5">PDF version of your statement 2020</h1>
+      
+<!--File details section start -->
+<h1 class="govuk-heading-m">NameOfTheFileComesHere.pdf</h1>
+<p class="govuk-body">File uploaded:  30 April, 2022 at 12:30pm <br/> PDF | 320 KB</p>
+<p class="govuk-body"><a href="/6_S3_1-3_MSSR" class="govuk-link">Delete</a></p>
+<!-- file details end -->
+
+<!--CTA start-->
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue",
+    href: "/6_S3_1-complete"
+  }) }}
+</div>
+<!--CTA end-->
+
+      <!--  <button class="govuk-button" data-module="govuk-button">Continue</button> -->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
