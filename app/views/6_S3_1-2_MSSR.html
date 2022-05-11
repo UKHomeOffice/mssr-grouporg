@@ -22,7 +22,7 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
- <!-- notification banner start-->     
+ <!-- notification banner start   
 {% set html %}
   <h3 class="govuk-notification-banner__heading">
     Document has been uploaded successfully
@@ -33,15 +33,28 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
   html: html,
   type: 'success'
 }) }}
- <!-- notification banner end--> 
+notification banner end--> 
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-5">PDF version of your statement 2020</h1>
       
+
+<div class="govuk-grid-column-one-quarter"><img src="/app/assets/images/v11.gif" alt="Thumbnail to represent a document"></div>
+<div class="govuk-grid-column-two-thirds">
 <!--File details section start -->
-<h1 class="govuk-heading-m">NameOfTheFileComesHere.pdf</h1>
+<h1 class="govuk-heading-m govuk-!-margin-bottom-1">NameOfTheFileComesHere.pdf</h1>
 <p class="govuk-body">File uploaded:  30 April, 2022 at 12:30pm <br/> PDF | 320 KB</p>
-<p class="govuk-body"><a href="/6_S3_1-3_MSSR" class="govuk-link">Delete</a></p>
+<p class="govuk-body"><a href="/6_S3_1-3_MSSR" class="govuk-link">Delete file</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="/6_S3_1-3_MSSR" class="govuk-link">View file (opens in new window)</a> </p>
 <!-- file details end -->
+</div>
+
+<!-- Inset text start-->
+{{ govukInsetText({
+  text: "To upload a new file, please delete the existing file first."
+}) }}
+<!-- Inset text end-->
+
+
+
 
 <!--CTA start-->
 <div class="govuk-button-group">
