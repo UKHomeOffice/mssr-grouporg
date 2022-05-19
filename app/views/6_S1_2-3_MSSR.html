@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+FY question – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -21,71 +21,120 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% endblock %}
 
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">What is the name of the director (or equivalent) who signed off your statement?</h1>
-    <!-- Textfields start-->
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-    
-      {{ govukInput({
-        label: {
-          text: "First name"
-        },
-        classes: "govuk-input--width-20",
-        id: "width-20",
-        name: "width-20"
-      }) }}
-      
-      {{ govukInput({
-        label: {
-          text: "Last name"
-        },
-        classes: "govuk-input--width-20",
-        id: "width-20",
-        name: "width-20"
-      }) }}
-      
-      {{ govukInput({
-        label: {
-          text: "Job title"
-        },
-        classes: "govuk-input--width-20",
-        id: "width-20",
-        name: "width-20"
-      }) }}
- <!-- Textfields end-->
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">What is your financial year dates for the statement 2022?</h1>
+      <span class="govuk-caption-l govuk-!-margin-bottom-5">For the slavery statement 2022, your financial year-end falls between July 1st 2021 and June 30th 2022</span>
+      <br/>
+      <form class="form" action="/#" method="post">
+        <!--Date 1  start
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{{ govukDateInput({
+  id: "fy-startdate",
+  namePrefix: "fy-startdate",
+  fieldset: {
+    legend: {
+      text: "Financial year start date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  }
+}) }}
+Date 1  ends-->
+<br/>
 
-<!-- Date section start-->
-      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-      {{ govukDateInput({
-        id: "passport-issued",
-        namePrefix: "passport-issued",
-        fieldset: {
-          legend: {
-            text: "What date was your statement approved by the board or equivalent management body?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        }
-      }) }}
 
-<!-- Date section end-->
+<!-- new FY Start date start -->
+{{ govukDateInput({
+  id: "financial-start-date",
+  namePrefix: "[FStartDate]",
+  fieldset: {
+    legend: {
+      text: "Financial year start date",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["FStartDate"][0]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["FStartDate"][1]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["FStartDate"][2]
+      }
+    ]
+}) }}
+<!-- new FY Start date end -->
+
+
+<!--Date 2  start
+{{ govukDateInput({
+  id: "fy-enddate",
+  namePrefix: "fy-enddate",
+  fieldset: {
+    legend: {
+      text: "Financial year end date",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  }  
+}) }}
+Date 2  ends-->   
+
+<!-- new FY End date start -->
+{{ govukDateInput({
+  id: "financial-end-date",
+  namePrefix: "[FEndDate]",
+  fieldset: {
+    legend: {
+      text: "Financial year end date",
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["FEndDate"][0]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["FEndDate"][1]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["FEndDate"][2]
+      }
+    ]
+}) }}
+<!-- new FY End date end -->
 
 
 
 <!--CTA start-->
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Save and continue",
-    href: "/6_S1_2-complete"
+    href: "/6_S1_2-4_MSSR"
   }) }}
-  <a class="govuk-link" href="#">Skip this question</a>
+  <a class="govuk-link" href="/6_S1_2-3_MSSR">Skip this question</a>
 </div>
 <!--CTA end-->
 
+
+ <!-- <button class="govuk-button" data-module="govuk-button">Continue</button> -->
 
       </form>
 

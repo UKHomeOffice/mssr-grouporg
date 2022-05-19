@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+FY question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+   <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Please go back to Organsiation page and select a different statement year</h1> 
+      {{ govukButton({
+        text: "Back to Organisation page",
+        href: "/2_org_page"
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

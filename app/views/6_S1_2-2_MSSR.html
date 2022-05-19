@@ -19,124 +19,53 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 <!--Back ends -->
 {% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">What is your financial year dates for the statement 2022?</h1>
-      <span class="govuk-caption-l govuk-!-margin-bottom-5">For the slavery statement 2022, your financial year-end falls between July 1st 2021 and June 30th 2022</span>
-      <br/>
-      <form class="form" action="/#" method="post">
-        <!--Date 1  start
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-{{ govukDateInput({
-  id: "fy-startdate",
-  namePrefix: "fy-startdate",
-  fieldset: {
-    legend: {
-      text: "Financial year start date",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Upload PDF version of your statement 2022</h1>
+      <p class="govuk-body">You can upload a PDF file of your full modern slavery statement here, it will be available publicly on the statement summary page once your statement is published.</p>
+      
+      <!-- Details panel ED START -->
+       {% set detailsHtml %}
+       <ul>
+        <li>You can upload only one file in PDF version</li>
+        <li>The file size limit should be under 20MB</li>
+        <li>The file shouldn’t be empty</li>
+        <li>The file should  NOT be password protected</li>
+        <li>The file should  NOT be printer locked</li>
+      </ul>
+     {% endset %}
+       {{ govukDetails({
+summaryText: "File limitations",
+html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+<!--File upload start -->
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file"
   }
 }) }}
-Date 1  ends-->
-<br/>
-
-
-
-<!-- new FY Start date start -->
-{{ govukDateInput({
-  id: "financial-start-date",
-  namePrefix: "[FStartDate]",
-  fieldset: {
-    legend: {
-      text: "Financial year start date",
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-      {
-        name: "day",
-        classes: "govuk-input--width-2",
-        value: data["FStartDate"][0]
-      },
-      {
-        name: "month",
-        classes: "govuk-input--width-2",
-        value: data["FStartDate"][1]
-      },
-      {
-        name: "year",
-        classes: "govuk-input--width-4",
-        value: data["FStartDate"][2]
-      }
-    ]
-}) }}
-<!-- new FY Start date end -->
-
-
-<!--Date 2  start
-{{ govukDateInput({
-  id: "fy-enddate",
-  namePrefix: "fy-enddate",
-  fieldset: {
-    legend: {
-      text: "Financial year end date",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  }  
-}) }}
-Date 2  ends-->   
-
-
-
-<!-- new FY End date start -->
-{{ govukDateInput({
-  id: "financial-end-date",
-  namePrefix: "[FEndDate]",
-  fieldset: {
-    legend: {
-      text: "Financial year end date",
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-      {
-        name: "day",
-        classes: "govuk-input--width-2",
-        value: data["FEndDate"][0]
-      },
-      {
-        name: "month",
-        classes: "govuk-input--width-2",
-        value: data["FEndDate"][1]
-      },
-      {
-        name: "year",
-        classes: "govuk-input--width-4",
-        value: data["FEndDate"][2]
-      }
-    ]
-}) }}
-<!-- new FY End date end -->
-
+<!-- file upload end -->
 
 
 <!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Save and continue",
-    href: "/6_S1_2-3_MSSR"
+    text: "Upload document",
+    href: "/6_S1_2-2-1_MSSR"
   }) }}
-  <a class="govuk-link" href="/6_S1_2-3_MSSR">Skip this question</a>
+  <a class="govuk-link" href="/6_S1_2-3_MSSR">Skip this</a>
 </div>
 <!--CTA end-->
 
 
- <!-- <button class="govuk-button" data-module="govuk-button">Continue</button> -->
+      <!--  <button class="govuk-button" data-module="govuk-button">Continue</button> -->
 
       </form>
 
