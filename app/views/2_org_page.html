@@ -18,15 +18,14 @@
 }) }}
 <!--phase banner ends-->
 
-
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 <!--Back ends -->
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Organisation name</h1>
+    <div class="govuk-grid-column-two-thirds  govuk-!-margin-bottom-7">
+      <h1 class="govuk-heading-xl">Your organisation name</h1>
 <!-- Details panel ED START -->
 {% set detailsHtml %}
   <p class="govuk-body">
@@ -50,16 +49,14 @@
 
 <h2 class="govuk-heading-m">Manage your modern slavery statements</h2>
 <!-- Warning text START -->
-{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-
       {{ govukWarningText({
         text: "The registry categorises statements by the calendar year they were due to be published rather than the financial year they cover.",
         iconFallbackText: "Warning"
       }) }}
 <!-- Warning text END -->
+<p class="govuk-body">You can calculate the calendar year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year end.</p>
 
-
-<!-- Details panel ED START -->
+<!-- Details panel ED START 
 {% set detailsHtml %}
   <p class="govuk-body">You can calculate the calendar year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year end.</p>
   <ul class="govuk-list govuk-list--bullet">
@@ -73,9 +70,10 @@
   summaryText: "Add your statement to the correct calendar year",
   html: detailsHtml
 }) }}
-<!-- Details panel ED END -->
-
+ Details panel ED END -->
     </div>
+
+
  <div class="govuk-grid-column-full">
 <!-- Table START -->
 <!-- Links to be added -->
