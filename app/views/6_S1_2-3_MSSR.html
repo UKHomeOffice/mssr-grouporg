@@ -28,23 +28,6 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
       <span class="govuk-caption-l govuk-!-margin-bottom-5">For the modern slavery statement 2022, your financial year-end falls between July 1st 2021 and June 30th 2022</span>
       <br/>
       <form class="form" action="/#" method="post">
-        <!--Date 1  start
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-{{ govukDateInput({
-  id: "fy-startdate",
-  namePrefix: "fy-startdate",
-  fieldset: {
-    legend: {
-      text: "Financial year start date",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  }
-}) }}
-Date 1  ends-->
-<br/>
-
-
 
 <!-- new FY Start date start -->
 {{ govukDateInput({
@@ -87,9 +70,9 @@ Date 1  ends-->
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
-  }  
+  }
 }) }}
-Date 2  ends-->   
+Date 2  ends-->
 
 <!-- new FY End date start -->
 {{ govukDateInput({
