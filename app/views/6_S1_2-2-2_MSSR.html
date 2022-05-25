@@ -5,64 +5,45 @@
 {% endblock %}
 
 {% block beforeContent %}
-<!-- phase banner starts-->
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-<!--phase banner ends-->
-
-<!-- Back starts-->
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-<!--Back ends -->
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-l">Are you sure you want to delete your PDF statement?</h1>
-      <p class="govuk-body">You are going to delete the file <span class="govuk-!-font-weight-bold">NameOfTheFileComesHere.PDF</span>, which was uploaded on 30th April 2022.</p>
-<p class="govuk-caption-m">The file deletion cannot be undone.</p>
-
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "changed-name",
-        name: "changed-name",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
+      <form class="form" action="/delete-answer" method="post">
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "delete-document",
+          name: "delete-document",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to delete your PDF statement?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-     <!-- CTAs start-->
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Continue",
-          href: "\6_S1_2-2_MSSR"
+          hint: {
+            html: '<p class="govuk-body">You are going to delete the file <strong>NameOfTheFileComesHere.PDF</strong>, which was uploaded on 30th April 2022.</p><p>The file deletion cannot be undone.</p>'
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("delete-document", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("delete-document", "no")
+            }
+          ]
         }) }}
-      
-        <a class="govuk-link" href="#">Cancel</a>
-      </div>
-<!-- CTAs end-->
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
     </div>
   </div>
 
