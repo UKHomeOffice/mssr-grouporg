@@ -39,6 +39,9 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
       classes: "govuk-fieldset__legend--m"
     }
   },
+  hint: {
+    text: "For example, 27 3 2007"
+  },
   items: [
       {
         name: "day",
@@ -73,6 +76,7 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
   }
 }) }}
 Date 2  ends-->
+<p>&nbsp;</p>
 
 <!-- new FY End date start -->
 {{ govukDateInput({
@@ -83,6 +87,9 @@ Date 2  ends-->
       text: "Financial year end date",
       classes: "govuk-fieldset__legend--m"
     }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
   },
   items: [
       {

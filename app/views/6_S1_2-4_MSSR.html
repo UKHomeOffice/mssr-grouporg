@@ -26,7 +26,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       <h1 class="govuk-heading-l">What is the name of the director (or equivalent) who signed off your statement?</h1>
     <!-- Textfields start-->
       {% from "govuk/components/input/macro.njk" import govukInput %}
-    
+
       {{ govukInput({
         label: {
           text: "First name"
@@ -35,7 +35,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
         id: "width-20",
         name: "width-20"
       }) }}
-      
+
       {{ govukInput({
         label: {
           text: "Last name"
@@ -44,7 +44,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
         id: "width-20",
         name: "width-20"
       }) }}
-      
+
       {{ govukInput({
         label: {
           text: "Job title"
@@ -56,8 +56,6 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
  <!-- Textfields end-->
 
 <!-- Date section start-->
-      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
       {{ govukDateInput({
         id: "passport-issued",
         namePrefix: "passport-issued",
@@ -67,6 +65,9 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          html: 'The approved date should fall after your Financial year end date DD.MM.YYY <br/> <br/> For example, 27 3 2007'
         }
       }) }}
 
