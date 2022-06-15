@@ -15,7 +15,7 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
       <!-- Error summary start -->
       {{ govukErrorSummary({
         titleText: "There is a problem",
-        errorList: [ 
+        errorList: [
           {
             text: "Invalid financial year end date. It matches with the 2021 statement, which is already available in your account.",
             href: "#financial-end-date"
@@ -25,7 +25,7 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
   <!-- Error summary end -->
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">What is your financial year dates for the statement 2022?</h1>
-      <span class="govuk-caption-l govuk-!-margin-bottom-5">For the modern slavery statement 2022, your financial year-end falls between July 1st 2021 and June 30th 2022</span>
+      <span class="govuk-caption-l govuk-!-margin-bottom-5">For the modern slavery statement 2022, your financial year-end falls between 1 July 2021 and 30 June 2022</span>
       <br/>
       <form class="form" action="/4_before_you_start" method="post">
 
@@ -71,7 +71,7 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
     }
   },
   errorMessage: {
-    text: "For statement 2022, your financial year-end should fall between July 1st 2021 and June 30th 2022."
+    text: "For statement 2022, your financial year-end should fall between 1 July 2021 and 30 June 2022."
   },
   items: [
       {
@@ -94,9 +94,9 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
 <!-- new FY End date end -->
 
 <!--Button start
-<button class="govuk-button" data-module="govuk-button">Continue</button> 
+<button class="govuk-button" data-module="govuk-button">Continue</button>
 Button ends-->
- 
+
 {{ govukButton({
   text: "Continue",
   href: "#"
