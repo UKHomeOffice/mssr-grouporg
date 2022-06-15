@@ -64,13 +64,41 @@ Before you start – {{ serviceName }} – GOV.UK Prototype Kit
 <!--panel ends-->
 </div>
 
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="documents">
+  <h2 class="govuk-heading-l">PDF version of the statement</h2>
+  <p class="govuk-body">We asked the organisation whether they wanted to upload a PDF file containing a full version of their modern slavery statement.</p>
+  <h4 class="govuk-heading-s">Organisation’s response</h4>
+  <p class="govuk-body">The organisation uploaded a PDF version of their modern slavery statement, which you can download and view.</p>
+  {{ govukDetails({
+    summaryText: "What are PDF files?",
+    text: "PDF stands for the Portable Document Format, used to display documents in an electronic form independent of the software, hardware or operating system they are viewed on."
+    }) }}
+  {{ govukWarningText({
+    html: 'The file has been uploaded directly by Basilurtea Export Pvt (Ltd) and has not been reviewed, assessed or moderated by the Home Office for suitability and accessibility. You are also advised to scan the files for viruses or other threats, prior to its use. <br/> If you need an accessible version of this PDF file, please contact Basilurtea Export Pvt (Ltd) for further assistance.',
+    iconFallbackText: "Warning"
+  }) }}
+
+  <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-7"><img src="/public/images/doc-thumbnail.png" alt="Thumbnail to represent a document"></div>
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-7">
+  <!--File details section start -->
+  <h3 class="govuk-heading-m govuk-!-margin-bottom-1">NameOfTheFileComesHere.pdf</h3>
+  <p class="govuk-body-s">File uploaded:  30 April, 2022 at 12:30pm <br/> PDF | 320 KB</p>
+  <p class="govuk-body"><a href="#" class="govuk-link">Download file</a></p>
+  <!-- file details end -->
+  </div>
+  </div>
+
+
+
+
 <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
 <h2 class="govuk-heading-l">About this statement summary</h2>
 <p class="govuk-body">All answers relate to the financial year covered by the statement. The organisation is responsible for all the information it provided. Some of our questions are optional, so organisations may not have answered all of them. The statement summary does not replace the full modern slavery statement – below we provide a link to the full statement on the organisation’s website.</p>
 <h2 class="govuk-heading-m">Contents</h2>
 <ul class="govuk-list govuk-!-margin-bottom-4">
   <li> -  <a class="govuk-link" href="#statement-period">Statement period and sign-off details</a></li>
-  <li> -  <a class="govuk-link" href="#documents">PDF version of the statement</a></li>
+  <!--<li> -  <a class="govuk-link" href="#documents">PDF version of the statement</a></li> -->
   <li> -  <a class="govuk-link" href="#areas-covered">Recommended areas covered by the statement</a></li>
   <li> -  <a class="govuk-link" href="#sectors">The organisation’s sectors and turnover</a></li>
   <li> -  <a class="govuk-link" href="#years">Number of years producing statements</a></li>
@@ -93,30 +121,6 @@ S. de.S.S. Jayawickrama (Director Operations)
 16 January 2022</p>
 </div>
 
-<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="documents">
-  <h2 class="govuk-heading-l">File downloads (optional)</h2>
-  <p class="govuk-body">We asked the organisation whether they wanted to upload a PDF file containing a full version of their modern slavery statement.</p>
-  <h4 class="govuk-heading-s">Organisation’s response</h4>
-  <p class="govuk-body">The organisation uploaded a PDF version of their modern slavery statement, which you can download and view.</p>
-  {{ govukDetails({
-    summaryText: "What are PDF files?",
-    text: "PDF stands for the Portable Document Format, used to display documents in an electronic form independent of the software, hardware or operating system they are viewed on."
-    }) }}
-  {{ govukWarningText({
-    html: 'The file has been uploaded directly by Basilurtea Export Pvt (Ltd) and has not been reviewed, assessed or moderated by the Home Office for suitability and accessibility. You are also advised to scan the files for viruses or other threats, prior to its use. <br/> If you need an accessible version of this PDF file, please contact Basilurtea Export Pvt (Ltd) for further assistance.',
-    iconFallbackText: "Warning"
-  }) }}
-
-  <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-7"><img src="/public/images/doc-thumbnail.png" alt="Thumbnail to represent a document"></div>
-  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-7">
-  <!--File details section start -->
-  <h3 class="govuk-heading-m govuk-!-margin-bottom-1">NameOfTheFileComesHere.pdf</h3>
-  <p class="govuk-body-s">File uploaded:  30 April, 2022 at 12:30pm <br/> PDF | 320 KB</p>
-  <p class="govuk-body"><a href="#" class="govuk-link">Download file</a></p>
-  <!-- file details end -->
-  </div>
-
-  </div>
 
 
 <div class="govuk-grid-column-two-thirds" id="areas-covered">
