@@ -12,7 +12,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/FY1-answer" method="post">
+      <form class="form" action="/3_FY-1" method="post">
         {{ govukRadios({
           classes: "govuk-radios--inline",
           idPrefix: "fy-year",
@@ -38,7 +38,8 @@
               text: "No",
               checked: checked("fy-year", "no")
             }
-          ]
+          ],
+          errorMessage: error
         }) }}
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

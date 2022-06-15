@@ -12,7 +12,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/delete-answer" method="post">
+      <form class="form" action="/6_S1_2-2-2_MSSR" method="post">
         {{ govukRadios({
           classes: "govuk-radios--inline",
           idPrefix: "delete-document",
@@ -38,7 +38,8 @@
               text: "No",
               checked: checked("delete-document", "no")
             }
-          ]
+          ],
+          errorMessage: error
         }) }}
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
