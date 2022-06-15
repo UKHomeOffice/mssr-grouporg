@@ -39,22 +39,13 @@ Zero file size – {{ serviceName }} – GOV.UK Prototype Kit
       <p class="govuk-body">You can upload a PDF file of your full modern slavery statement here, it will be available publicly on the statement summary page once your statement is published.</p>
       <p class="govuk-body">The information in the PDF document should be similar to the information on the URL if you have added one.</p>
 
-
-      <!-- Details panel ED START -->
-       {% set detailsHtml %}
-       <ul>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
         <li>You can upload only one file in PDF version</li>
         <li>The file size limit should be under 20MB</li>
         <li>The file should not be empty</li>
         <li>The file should not be password protected</li>
         <li>The file should not be printer locked</li>
       </ul>
-     {% endset %}
-       {{ govukDetails({
-summaryText: "File limitations",
-html: detailsHtml
-}) }}
-<!-- Details panel ED END -->
 
 <!--File upload start -->
 {{ govukFileUpload({
