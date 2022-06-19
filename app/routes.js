@@ -47,7 +47,27 @@ router.post('/6_S1_2-2-2_MSSR', function (req, res)
      }
    })
 
+router.post('/6_S1_1-2_MSSR', function (req, res)
+{
+  const selectedOption = req.body['scoping']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("6_S1_1-2_MSSR", { error })}
 
+  // Make a variable and give it the value from 'fy-year'
+  var scopingconfirm = req.session.data['scoping']
+
+  // Check whether the variable matches a condition
+  if (scopingconfirm == "yes"){
+    // Send user to next page
+    res.redirect('/6_S1_1-2A-1_MSSR')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/6_S1_1-2-1_MSSR')
+  }
+})
 
 
 

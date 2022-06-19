@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check your answers before sending</h1>
+
+<!-- Table 1 starts-->
+
+{{ govukTable({
+  caption: "Organisation details",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+
+  rows: [
+    [
+      {
+        text: "Organisation Reference"
+      },
+      {
+        text: "NQHMYC2C"
+      }
+    ],
+    [
+      {
+        text: "Organisation Name"
+      },
+      {
+        text: "Netflix Limited"
+      }
+    ],
+    [
+      {
+        text: "Registered Address"
+      },
+      {
+        html: '34 Turner Street<br/>
+        London<br/>
+        England<br/>
+        E1 2AS'
+      }
+    ]
+  ]
+}) }}
+<!-- Table 1 ends-->
+
+<!-- ****** change link should be added here in Table 2 *******-->
+<!-- Table 2 starts-->
+{{ govukTable({
+  caption: "Declaration",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  rows: [
+    [
+      {
+        text: "Reason your organisation is not required to publish a modern slavery statement on your website"
+      },
+      {
+        html: '<ul><li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation</li>
+          <li>It does not have a business presence in the UK</li>
+          <li>It does not provide goods or services</li>
+          <li>Its turnover or budget is less than £36 million per year</li>
+        </ul>'
+      }
+    ]
+  ]
+}) }}
+<!-- Table 2 ends-->
+
+
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Confirm and send",
+    href: "/6_S1_1-2-3_MSSR.html"
+  }
+  ) }}
+  <!-- <a class="govuk-link" href="#">Skip this question</a> -->
+</div>
+<!--CTA end-->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
