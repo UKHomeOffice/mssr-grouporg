@@ -26,7 +26,35 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
     <div class="govuk-grid-column-two-thirds">
 <!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
  <!--Check boxes start-->
-  {{ govukCheckboxes({
+
+
+ {% set textHtml %}
+ {{ govukInput({
+  label: {
+    text: "What is your organisations's annual turnover or budget?"
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-!-width-one-half",
+  id: "annual-turnover",
+  name: "annual-turnover"
+}) }}
+ {% endset -%}
+
+ {% set textAreaHtml %}
+ {{ govukCharacterCount({
+  id: "label-as-page-heading",
+  name: "label-as-page-heading",
+  maxlength: 200,
+  label: {
+    text: "Please specify"
+  }
+}) }}
+ {% endset -%}
+
+
+ {{ govukCheckboxes({
     idPrefix: "waste",
     name: "waste",
     fieldset: {
@@ -40,7 +68,10 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
     items: [
       {
         value: "turnover",
-        text: "Its turnover or budget is less than £36 million per year"
+        text: "Its turnover or budget is less than £36 million per year",
+        conditional: {
+        html: textHtml
+        }
       },
       {
         value: "goods",
@@ -56,12 +87,12 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       },
       {
         value: "other",
-        text: "Other"
+        text: "Other",
+        conditional: {html: textAreaHtml}
       }
     ]
   }) }}
 <!--Check boxes ends-->
-
 
 <!-- Inset text starts-->
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}

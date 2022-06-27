@@ -27,7 +27,6 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check your answers before sending</h1>
 
 <!-- Table 1 starts-->
-
 {{ govukTable({
   caption: "Organisation details",
   captionClasses: "govuk-table__caption--m",
@@ -47,7 +46,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
         text: "Organisation Name"
       },
       {
-        text: "Netflix Limited"
+        text: "Name of the organisation"
       }
     ],
     [
@@ -65,28 +64,38 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 }) }}
 <!-- Table 1 ends-->
 
-<!-- ****** change link should be added here in Table 2 *******-->
-<!-- Table 2 starts-->
-{{ govukTable({
-  caption: "Declaration",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-5">Declaration</h1>
+
+<!--summary list start-->
+{% set detailsHtml %}
+  <ul class="govuk-list govuk-list--bullet">
+    <li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation.</li>
+    <li>Its turnover or budget is less than £36 million per year.</li>  </ul>
+{% endset %}
+
+{{ govukSummaryList({
   rows: [
-    [
-      {
+    {
+      key: {
         text: "Reason your organisation is not required to publish a modern slavery statement on your website"
       },
-      {
-        html: '<ul><li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation</li>
-          <li>It does not have a business presence in the UK</li>
-          <li>It does not provide goods or services</li>
-          <li>Its turnover or budget is less than £36 million per year</li>
-        </ul>'
+      value: {
+        html: detailsHtml
+      },
+      actions: {
+        items: [
+          {
+            href: "/6_S1_1-2-1A_MSSR",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
       }
-    ]
+    }
   ]
 }) }}
-<!-- Table 2 ends-->
+<!-- summary table ends-->
 
 
 
@@ -95,7 +104,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Confirm and send",
+    text: "Confirm",
     href: "/6_S1_1-2-3_MSSR.html"
   }
   ) }}

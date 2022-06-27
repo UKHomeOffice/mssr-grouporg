@@ -24,12 +24,22 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<!-- panel starts -->
-{{ govukPanel({
-  titleText: "Declaration complete",
-  html: "You have declared your organisation is not required to publish a modern slavery statement on your website"
+
+<!-- new panel starts-->
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Declaration complete
+  </h3>
+  <p class="govuk-body">You have declared your organisation is not required to publish a modern slavery statement on your website.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
 }) }}
-<!-- panel ends -->
+<!-- new panel ends-->
 
 <p class="govuk-body">We've sent a confirmation email to you and any other user associated with this organisation on our system. We will contact you if we need more information.</p>
 

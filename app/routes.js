@@ -39,13 +39,40 @@ router.post('/6_S1_2-2-2_MSSR', function (req, res)
      // Check whether the variable matches a condition
      if (deletedoc == "yes"){
        // Send user to next page
-       res.redirect('/6_S1_2-2_MSSR')
+       res.redirect('/6_S1_2-2A_MSSR')
      }
      else {
        // Send user to ineligible page
        res.redirect('/6_S1_2-2-1_MSSR')
      }
    })
+
+
+   router.post('return-user/6r_S1_2-2-2_MSSR', function (req, res)
+   {
+     const selectedOption = req.body['delete-document2']
+      let error = {}
+      if (!selectedOption) {
+        error = { text: "Select an option" }
+       return res.render("/return-user/6r_S1_2-2-2_MSSR", { error })}
+
+      // Make a variable and give it the value from 'fy-year'
+      var deletedoc2 = req.session.data['delete-document2']
+
+      // Check whether the variable matches a condition
+      if (deletedoc2 == "yes"){
+        // Send user to next page
+        res.redirect('/return-user/6r_S1_2-2_MSSR')
+      }
+      else {
+        // Send user to ineligible page
+        res.redirect('/return-user/6r_S1_2-2-1_MSSR')
+      }
+    })
+
+
+
+
 
 router.post('/6_S1_1-2_MSSR', function (req, res)
 {
@@ -69,6 +96,28 @@ router.post('/6_S1_1-2_MSSR', function (req, res)
   }
 })
 
+
+router.post('/6_S1_1-2-1_MSSR', function (req, res)
+{
+  const selectedOption = req.body['scopingNo']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("6_S1_1-2-1_MSSR", { error })}
+
+  // Make a variable and give it the value from 'fy-year'
+  var scopingNOconfirm = req.session.data['scopingNo']
+
+  // Check whether the variable matches a condition
+  if (scopingNoconfirm == "yes"){
+    // Send user to next page
+    res.redirect('/6_S1_1-2A-1_MSSR')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/6_S1_1-2-1_MSSR')
+  }
+})
 
 
 module.exports = router

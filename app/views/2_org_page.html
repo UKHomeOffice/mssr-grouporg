@@ -74,10 +74,33 @@
 
 <div class="govuk-grid-column-full">
 <!-- Table START -->
+{% set myThing0 %}
+    {{ govukButton({
+        text: "Start",
+        href: "#"
+    }) }}
+{% endset %}
+
 {% set myThing %}
     {{ govukButton({
         text: "Start",
         href: "/3_FY-1"
+    }) }}
+{% endset %}
+
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Edit & Republish",
+        href: "/return-user/6r_MSSR",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{% set mySecondary2 %}
+    {{ govukButton({
+        text: "Edit & Republish",
+        href: "/return-user-no/6r_MSSR",
+        classes: "govuk-button--secondary"
     }) }}
 {% endset %}
 
@@ -127,10 +150,10 @@
       text: "1 Jul 2020 - 30 Jun 2021"
     },
     {
-      text: "Not started"
+      text: "Submitted"
     },
     {
-     html:myThing
+     html:mySecondary
     }
   ],
     [
@@ -141,10 +164,10 @@
         text: "1 Jul 2019 - 30 Jun 2020"
       },
       {
-        text: "Not started"
+        text: "Submitted voluntarily"
       },
       {
-        html:myThing
+        html:mySecondary2
        }
     ]
   ]

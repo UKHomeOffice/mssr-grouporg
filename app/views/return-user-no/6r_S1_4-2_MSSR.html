@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">What was your turnover during the financial year the statement relates to?</h1>
+
+      <form class="form" action="#" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-live",
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "If your statement is for a group, include the total turnover for all the organisations in the group.
+              If you’re a public body, base your answer on your organisation’s budget.",
+              isPageHeading: false,
+              classes: "govuk-body-l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Under £36 million"
+            },
+            {
+              value: "no",
+              text: "£36 million to £60 million",
+              checked: true
+            },
+            {
+              value: "yes",
+              text: "£60 million to £100 million"
+            },
+            {
+              value: "no",
+              text: "£100 million to £500 million"
+            },
+            {
+              value: "no",
+              text: "Over £500 million"
+            }
+          ]
+        }) }}
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Save and continue",
+    href: "/return-user/6r_MSSR-complete"
+  }
+  ) }}
+  <a class="govuk-link" href="/return-user/6r_MSSR">Skip this question</a>
+</div>
+<!--CTA end-->
+
+
+
+        <!-- <button class="govuk-button" data-module="govuk-button">Continue</button> -->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

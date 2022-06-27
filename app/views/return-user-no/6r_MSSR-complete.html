@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+Add your 2020 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,7 +26,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Add your 2022 modern slavery statement to the registry</h1>
+      <h1 class="govuk-heading-xl">Add your 2020 modern slavery statement to the registry</h1>
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Submission incomplete for Organisation name</h2>
       <p class="govuk-body govuk-!-margin-bottom-7">You have completed 5 of 11 sections.</p>
 
@@ -38,31 +38,31 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/6_S1_1-1_MSSR" aria-describedby="eligibility-status">Organisations covered by the statement</a>
+                <a href="/return-user-no/6r_S1_1-1_MSSR" aria-describedby="eligibility-status">Organisations covered by the statement</a>
               </span>
               <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/6_S1_2-1_MSSR" aria-describedby="read-declaration-status">Statement URL & PDF, dates and sign-off</a>
-              </span>
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="read-declaration-status">IN PROGRESS</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="/6_S1_3-1_MSSR" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
+                <a href="/return-user-no/6r_S1_2-1_MSSR" aria-describedby="read-declaration-status">Statement URL, PDF, dates and sign-off</a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/6_S1_4-1_MSSR" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
+                <a href="/return-user-no/6r_S1_3-1_MSSR" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/6_S1_5-1_MSSR" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
+                <a href="/return-user-no/6r_S1_4-1_MSSR" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/return-user-no/6r_S1_5-1_MSSR" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
             </li>
@@ -92,6 +92,11 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
             </li>
             <li class="app-task-list__item">
+              <span class="app-task-list__task-name"><a href="#" aria-describedby="list-convictions-status">Modern slavery risks</a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
+            </li>
+            <li class="app-task-list__item">
               <span class="app-task-list__task-name"><a href="#" aria-describedby="list-convictions-status">Finding indicators of modern slavery</a>
               </span>
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">NOT STARTED</strong>
@@ -107,25 +112,18 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 
 
       <h2 class="app-task-list__section">Submit your answers</h2>
-
-      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-      {{ govukWarningText({
-        text: "
-        There are few tasks which are in progress. Please complete those tasks to submit your statement.",
-        iconFallbackText: "Warning"
-      }) }}
     <!-- Details panel ED START -->
 {% set declarationHtml %}
 <p class="govuk-body">I confirm that:</p>
 <ul class="govuk-list govuk-list--bullet">
   <li>the information I have supplied is true, to the best of my knowledge, and based on the statement that was approved by the board (or equivalent) and signed-off by the relevant director (or equivalent)</li>
-  <li>I am authorised to supply this information on behalf of the organisation(s) the modern slavery statement is for</li>  
+  <li>I am authorised to supply this information on behalf of the organisation(s) the modern slavery statement is for</li>
   <li>if the statement is for a group, all organisations in the group know that this statement is being submitted to the service on their behalf</li></ul>
 
   <p class="govuk-body">I understand that:</p>
   <ul class="govuk-list govuk-list--bullet">
     <li>the answers I submit will be published on GOV.UK</li>
-    <li>my submission may be removed from the service if it is found to contain inappropriate content</li>  
+    <li>my submission may be removed from the service if it is found to contain inappropriate content</li>
    </ul>
 {% endset %}
 
@@ -142,8 +140,7 @@ html: declarationHtml
         items: [
           {
             value: "declaration-CB",
-            text: "I understand and agree with the above declaration",
-            disabled: true
+            text: "I understand and agree with the above declaration"
           }
         ]
       }) }}
@@ -154,14 +151,13 @@ html: declarationHtml
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Submit for publication",
-    href:'#',
-    disabled: true
+    href:'/return-user/6r_MSSR-confirmation'
   }) }}
 
   {{ govukButton({
     text: "Save as draft",
     classes: "govuk-button--secondary",
-    href:'#'
+    href:'/return-user/2rA_org_page'
   }) }}
 </div>
 <!-- CTA end-->
