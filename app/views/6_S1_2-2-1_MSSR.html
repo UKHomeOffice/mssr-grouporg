@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-FY question – {{ serviceName }} – GOV.UK Prototype Kit
+PDF file uploaded – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,7 +23,22 @@ FY question – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<h1 class="govuk-heading-l govuk-!-margin-bottom-9">PDF version of your statement 2022 uploaded</h1>
+<!-- Notification banner starts-->
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    PDF version of your 2022 statement has been uploaded
+  </h3>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+<!-- Notification banner ends-->
+
+<!-- green box : PDF version of your 2022 statement has been uploaded-->
+<h1 class="govuk-heading-l govuk-!-margin-bottom-9">Upload PDF version of your 2022 statement (optional)</h1>
 
 
 <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-7"><img src="/public/images/doc-thumbnail.png" alt="Thumbnail to represent a document"></div>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add your 2022 Modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -267,6 +267,12 @@ Add your 2022 Modern slavery statement to the registry – {{ serviceName }} –
 </div>
 <!-- Radio 6 end -->
 
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+{{ govukWarningText({
+  html: "Please leave the reason for all of the questions you have selected the option NO. Your task status will remain as -iIn progress- and you coudln't submit the statement until you submit the reasons.",
+  iconFallbackText: "Warning"
+}) }}
+
 
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -274,7 +280,7 @@ Add your 2022 Modern slavery statement to the registry – {{ serviceName }} –
   {{ govukButton(
     {
     text: "Save and continue",
-    href: "/7_Compliance-Crt4-E2A"
+    href: '#'
   }
   ) }}
   <a class="govuk-link" href="#">Skip this question</a>

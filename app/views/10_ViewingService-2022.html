@@ -1,0 +1,857 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Basilurtea Export Pvt (Ltd) – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+      <h1 class="govuk-heading-l">Basilurtea Export Pvt (Ltd) modern slavery statement summary (2022)</h1>
+
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+  <p class="govuk-body">
+  143/6 weediya bandara mawatha kelani mulla angoda,<br/>
+  Gampaha,<br/>
+  Sri Lanka,<br/>
+  10620.
+  </p>
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "Organisation address",
+  html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+<p class="govuk-body-l">We asked the organisation a series of questions about its modern slavery statement. Its answers are published on this page as a statement summary.</p>
+
+<!-- Details panel ED START -->
+{% set detailsHtml2 %}
+<p class="govuk-body">UK law requires certain organisations to publish an annual modern slavery statement on their website, setting out the steps they are taking to address modern slavery risks in their operations and supply chains. Read more in the <a href="https://www.gov.uk/guidance/publish-an-annual-modern-slavery-statement?_ga=2.258552456.36311252.1653262218-455995716.1646659482" class="govuk-link">government guidance on publishing modern slavery statements</a>.</p>
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "What is a modern slavery statement?",
+  html: detailsHtml2
+}) }}
+<!-- Details panel ED END -->
+
+
+<!-- panel-->
+<div class="govuk-panel mssr-panel--blue ">
+  <h2 class="mssr-panelText">Link to full statement</h2>
+  <p class="mssr-panelText">Go to full modern slavery statement on organisation’s website</p>
+</div>
+<!--panel ends-->
+</div>
+
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="documents">
+  <h2 class="govuk-heading-l">PDF version of the statement (optional)</h2>
+  <p class="govuk-body">PDF file upload was first introduced for the 2023 statement year. You can also upload them for previous years, but this is optional.</p>
+  </div>
+
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+<h2 class="govuk-heading-l">About this statement summary</h2>
+<p class="govuk-body">All answers relate to the financial year covered by the statement. The organisation is responsible for all the information it provided. Some of our questions are optional, so organisations may not have answered all of them. The statement summary does not replace the full modern slavery statement – below we provide a link to the full statement on the organisation’s website.</p>
+<h2 class="govuk-heading-m">Contents</h2>
+<ul class="govuk-list govuk-!-margin-bottom-4">
+  <li> -  <a class="govuk-link" href="#statement-period">Statement period and sign-off details</a></li>
+  <!--<li> -  <a class="govuk-link" href="#documents">PDF version of the statement</a></li> -->
+  <li> -  <a class="govuk-link" href="#areas-covered">Recommended areas covered by the statement</a></li>
+  <li> -  <a class="govuk-link" href="#sectors">The organisation’s sectors and turnover</a></li>
+  <li> -  <a class="govuk-link" href="#years">Number of years producing statements</a></li>
+  <li> -  <a class="govuk-link" href="#policies">Policies</a></li>
+  <li> -  <a class="govuk-link" href="#training">Training</a></li>
+  <li> -  <a class="govuk-link" href="#monitoring">Monitoring working conditions</a></li>
+  <li> -  <a class="govuk-link" href="#risks">Modern slavery risks</a></li>
+  <li> -  <a class="govuk-link" href="#indicators">Finding indicators of modern slavery</a></li>
+  <li> -  <a class="govuk-link" href="#progress">Demonstrating progress</a></li>
+</ul>
+</div>
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="statement-period">
+<h2 class="govuk-heading-l">Statement period and sign-off details</h2>
+<p class="govuk-body">The statement covers the following period:<br/>
+31 March 2020 to 31 March 2021</p>
+<p class="govuk-body">The statement was signed off by:<br/>
+S. de.S.S. Jayawickrama (Director Operations)
+<p class="govuk-body">It was approved by the board (or equivalent management body) on:<br/>
+16 January 2022</p>
+</div>
+
+
+
+<div class="govuk-grid-column-two-thirds" id="areas-covered">
+<h2 class="govuk-heading-l">Recommended areas covered by the statement</h2>
+<p class="govuk-body">Government guidance encourages organisations to cover a range of areas in their modern slavery statements, setting out the steps they’re taking to address modern slavery risks in their operations and supply chains.<a href="https://www.gov.uk/government/publications/transparency-in-supply-chains-a-practical-guide?_ga=2.153868858.36311252.1653262218-455995716.1646659482">Read about the recommended areas in the statutory guidance</a>. </p>
+<p class="govuk-body">We asked the organisation to tell us which areas its statement covers.</p>
+</div>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+        <!-- Table START -->
+        {% set tagComplete %}
+        {{ govukTag({
+          text: "covered",
+          classes: "govuk-tag--blue"
+        }) }}
+      {% endset %}
+
+        {{ govukTable({
+          captionClasses: "govuk-body",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "Areas recommended by government guidance",
+              classes: 'app-custom-class'
+            },
+            {
+              text: "Organisation’s response",
+              classes: 'app-custom-class'
+            }
+          ],
+
+          rows: [
+            [
+              {
+                text: "The organisation’s structure, business and supply chains"
+              },
+              {
+                html: tagComplete
+              }
+            ],
+            [
+            {
+              text: "Policies"
+            },
+            {
+              html: tagComplete
+            }
+          ],
+          [
+            {
+              text: "Risk assessment"
+            },
+            {
+              html: tagComplete
+            }
+          ],
+          [
+            {
+              text: "Due diligence (steps to address risk)"
+            },
+            {
+              html: tagComplete
+            }
+          ], [
+          {
+            text: "Training about modern slavery"
+          },
+          {
+            html: tagComplete
+          }
+        ],
+            [
+              {
+                text: "Goals and key performance indicators (KPIs) to measure the effectiveness of the organisation's actions and progress over time"
+              },
+              {
+                html: tagComplete
+              }
+            ]
+          ]
+        }) }}
+        <!-- Table END -->
+            </div>
+
+
+
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-2" id="sectors">
+<h2 class="govuk-heading-l">The organisation’s sectors and turnover</h2>
+<h3 class="govuk-heading-m">Sectors</h3>
+<p class="govuk-body">The organisation operates in the following sectors:</p>
+<p class="govuk-body">Food and beverages, agriculture and fishing</p>
+</div>
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+<h3 class="govuk-heading-m">Turnover</h3>
+<p class="govuk-body">Its turnover in the financial accounting year of this statement was:</p>
+<p class="govuk-body">Under £36 million</p>
+{{ govukInsetText({
+text: "If the organisation is a public body, this amount is based on the organisation’s budget for the year of the statement."
+}) }}
+
+{{ govukDetails({
+  summaryText: "What does 'turnover' refer to in group statements?",
+  text: "If this is a group statement, this includes the total turnover for all the organisations covered by the statement."
+}) }}
+</div>
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="years">
+<h3 class="govuk-heading-l">Number of years producing statements</h3>
+<p class="govuk-body">The organisation has been producing modern slavery statements for the following number of years:</p>
+<p class="govuk-body">This is the first time</p>
+{{ govukDetails({
+summaryText: "How does this work for group statements?",
+text: "If the statement is for a group of organisations, this answer applies to the organisation with the longest history of producing statements."
+}) }}
+</div>
+
+<div class="govuk-grid-column-two-thirds" id="policies">
+<h2 class="govuk-heading-l">Policies (optional)</h2>
+<p class="govuk-body">We asked the organisation whether its policies include the following provisions in relation to its domestic and international supply chains, as well as its own operations.</p>
+
+</div>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+      <!-- Table START -->
+      {% set tagComplete %}
+      {{ govukTag({
+        text: "covered",
+        classes: "govuk-tag--blue"
+      }) }}
+      {% endset %}
+
+      {{ govukTable({
+        captionClasses: "govuk-body",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Policy provisions we asked about",
+            classes: 'app-custom-class'
+          },
+          {
+            text: "Organisation’s response",
+            classes: 'app-custom-class'
+          }
+      ],
+
+        rows: [
+          [
+            {
+              text: "Freedom of workers to terminate employment"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">NOT INCLUDED</strong>'
+            }
+          ],
+          [
+          {
+            text: "Freedom of movement"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">NOT INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Freedom of association"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Prohibits any threat of violence, harassment and intimidation"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Prohibits the use of worker-paid recruitment fees"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">NOT INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Prohibits compulsory overtime"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Prohibits child labour"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Prohibits discrimination"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+          }
+        ],
+        [
+          {
+            text: "Prohibits confiscation of workers' original identification documents"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+          }
+        ], [
+        {
+          text: "Provides access to remedy, compensation and justice for victims of modern slavery"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">INCLUDED</strong>'
+        }
+      ],
+          [
+            {
+              text: "Other"
+            },
+            {
+              html: '-'
+            }
+          ]
+        ]
+      }) }}
+      <!-- Table END -->
+      </div>
+
+
+
+<div class="govuk-grid-column-two-thirds" id="training">
+<h2 class="govuk-heading-l">Training (optional)</h2>
+<p class="govuk-body">We asked the organisation whether it provided training on modern slavery, and who it was for.</p>
+{{ govukDetails({
+  summaryText: "What counts as training?",
+  text: "We explained that by training we meant anything designed to increase knowledge and skills around identifying, addressing or preventing modern slavery risks. This could range from formal training courses to broader awareness-raising activities such as workshops or webinars."
+}) }}
+</div>
+
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+    <!-- Table START -->
+    {{ govukTable({
+      captionClasses: "govuk-body",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "We asked who the training was for",
+          classes: 'app-custom-class'
+        },
+        {
+          text: "Organisation’s response",
+          classes: 'app-custom-class'
+        }
+      ],
+
+      rows: [
+        [
+          {
+            text: "Your whole organisation"
+          },
+          {
+            html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+          }
+        ],
+        [
+        {
+          text: "Your front line staff"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+        }
+      ],
+      [
+        {
+          text: "Human resources"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+        }
+      ],
+      [
+        {
+          text: "Executive-level staff"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+        }
+      ],
+      [
+        {
+          text: "Procurement staff"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+        }
+      ],
+      [
+        {
+          text: "Your suppliers"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+        }
+      ],
+      [
+        {
+          text: "The wider community"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+        }
+      ],
+        [
+          {
+            text: "Other"
+          },
+          {
+            html: '-'
+          }
+        ]
+      ]
+    }) }}
+    <!-- Table END -->
+        </div>
+
+
+
+
+
+<div class="govuk-grid-column-two-thirds" id="monitoring">
+<h2 class="govuk-heading-l">Monitoring working conditions (optional)</h2>
+<h3 class="govuk-heading-m">Engaging with others</h3>
+<p class="govuk-body">We asked the organisation to tell us who it engaged with to help monitor working conditions across its operations and supply chains.</p>
+</div>
+
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+        <!-- Table START -->
+        {{ govukTable({
+          captionClasses: "govuk-body",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "We asked who the organisation engaged with",
+              classes: 'app-custom-class'
+            },
+            {
+              text: "Organisation’s response",
+              classes: 'app-custom-class'
+            }
+          ],
+
+          rows: [
+            [
+              {
+                text: "Your suppliers"
+              },
+              {
+                html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+              }
+            ],
+            [
+            {
+              text: "Trade unions or worker representative groups"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+            }
+          ],
+          [
+            {
+              text: "Civil society organisations"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+            }
+          ],
+          [
+            {
+              text: "Professional auditors"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Workers within your organisation"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Workers within your supply chain"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Central or local government"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Law enforcement, such as police, GLAA and other local labour market inspectorates"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Businesses in your industry or sector"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ]
+          ]
+        }) }}
+        <!-- Table END -->
+            </div>
+
+
+
+<div class="govuk-grid-column-two-thirds">
+<h3 class="govuk-heading-m">Social audits</h3>
+<p class="govuk-body">We asked the organisation to tell us about any social audits it used to look for signs of modern slavery.</p>
+{{ govukDetails({
+summaryText: "What are social audits?",
+text: "A social audit is a review of an organisation’s working practices from the point of view of social responsibility, and should include an evaluation of working conditions in the organisation’s operations and supply chains. By their nature, audits of supplier workplaces represent a snapshot in time."
+}) }}
+</div>
+
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+        <!-- Table START -->
+        {{ govukTable({
+          captionClasses: "govuk-body",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "We asked who the organisation engaged with",
+              classes: 'app-custom-class'
+            },
+            {
+              text: "Organisation’s response",
+              classes: 'app-custom-class'
+            }
+          ],
+
+          rows: [
+            [
+              {
+                text: "Your suppliers"
+              },
+              {
+                html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+              }
+            ],
+            [
+            {
+              text: "Trade unions or worker representative groups"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+            }
+          ],
+          [
+            {
+              text: "Civil society organisations"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+            }
+          ],
+          [
+            {
+              text: "Professional auditors"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Workers within your organisation"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Workers within your supply chain"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Central or local government"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Law enforcement, such as police, GLAA and other local labour market inspectorates"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ],
+          [
+            {
+              text: "Businesses in your industry or sector"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+            }
+          ]
+          ]
+        }) }}
+        <!-- Table END -->
+            </div>
+
+
+<div class="govuk-grid-column-two-thirds">
+<h3 class="govuk-heading-m">Grievance mechanisms</h3>
+<p class="govuk-body">We asked the organisation how workers in its operations or supply chains could raise concerns or make complaints.</p>
+</div>
+
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-8">
+        <!-- Table START -->
+        {{ govukTable({
+          captionClasses: "govuk-body",
+          firstCellIsHeader: true,
+          head: [
+            {
+              text: "We asked if workers could raise concerns this way",
+              classes: 'app-custom-class'
+            },
+            {
+              text: "Organisation’s response",
+              classes: 'app-custom-class'
+            }
+          ],
+
+          rows: [
+            [
+              {
+                text: "Using anonymous whistleblowing services, such as a helpline or mobile phone app"
+              },
+              {
+                html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+              }
+            ],
+            [
+            {
+              text: "Through trade unions or other worker representative groups"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">NO</strong>'
+            }
+          ]
+          ]
+        }) }}
+        <!-- Table END -->
+            </div>
+
+<div class="govuk-grid-column-two-thirds  govuk-!-margin-bottom-8">
+<h3 class="govuk-heading-m">Other ways of monitoring working conditions</h3>
+<p class="govuk-body">We asked the organisation whether it had any other ways of monitoring working conditions across its operations and supply chains:</p>
+<p class="govuk-body">by Planned audits</p>
+</div>
+
+<div class="govuk-grid-column-two-thirds  govuk-!-margin-bottom-8"  id="risks">
+<h2 class="govuk-heading-l">Modern slavery risks (optional)</h2>
+{{ govukWarningText({
+  text: "Identifying modern slavery risks is a vital step towards eradicating it. The government encourages organisations to be as open and transparent as possible, to improve understanding, collaboration and best practice around tackling this worldwide problem.",
+  iconFallbackText: "Warning"
+}) }}
+<p class="govuk-body">We asked the organisation to describe up to 3 priority risks it focused on during the period of the statement, including details of the affected workers, the activity involved, and the location.</p>
+<h4 class="govuk-heading-s">Organisation's response</h4>
+<p class="govuk-tag--blue">The organisation told us it did not identify any modern slavery risks in its operations or supply chains during the period of the statement.</p>
+</div>
+
+<div class="govuk-grid-column-two-thirds" id="indicators">
+<h2 class="govuk-heading-l">Indicators of forced labour (optional)</h2>
+<p class="govuk-body">We asked the organisation whether its statement refers to finding any International Labour Organization (ILO) indicators of forced labour.</p>
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+<p>The International Labour Organization (ILO) has produced a list of the most common signs of forced labour. They’re based on the definition of forced labour as ‘all work or service which is extracted from any person under the menace of any penalty and for which the said person has not offered himself voluntarily.’ More details and guidance are available on the ILO website, and in their publication <a href="https://www.ilo.org/wcmsp5/groups/public/---ed_norm/---declaration/documents/publication/wcms_203832.pdf" class="govuk-link">ILO indicators of forced labour</a></p>
+{% endset %}
+{{ govukDetails({
+  summaryText: "What are ILO indicators of forced labour?",
+  html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+</div>
+
+
+<div class="govuk-grid-column-full govuk-!-margin-bottom-4">
+  <!-- Table START -->
+  {{ govukTable({
+    captionClasses: "govuk-body",
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "ILO indicators we asked about",
+        classes: 'app-custom-class'
+      },
+      {
+        text: "Organisation’s response",
+        classes: 'app-custom-class'
+      }
+    ],
+
+    rows: [
+      [
+        {
+          text: "Abuse of vulnerability"
+        },
+        {
+          html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+        }
+      ],
+      [
+      {
+        text: "Deception"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Restriction of movement"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Isolation"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Physical and sexual violence"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Intimidation and threats"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Retention of identity documents"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Withholding of wages"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+      {
+        text: "Debt bondage"
+      },
+      {
+        html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+      }
+    ],
+    [
+    {
+      text: "Abusive working and living conditions"
+    },
+    {
+      html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+    }
+  ], [
+  {
+    text: "Excessive overtime"
+  },
+  {
+    html: '<strong class="govuk-tag govuk-tag--blue">YES</strong>'
+  }
+],[
+{
+  text: "Other"
+},
+{
+  html: '-'
+}
+] ]
+  }) }}
+  <!-- Table END -->
+      </div>
+
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+  <h3 class="govuk-heading-m">Actions taken in response to finding ILO indicators</h3>
+  <p class="govuk-body">We asked the organisation to tell us whether its statement refers to any actions it took after finding indicators of forced labour</p>
+  <h4 class="govuk-heading-s">Organisation’s response</h4>
+  <p class="govuk-tag--blue">The organisation told us its statement does not refer to actions it took after finding indicators of forced labour.</p>
+</div>
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="progress">
+  <h3 class="govuk-heading-l">Demonstrating progress (optional)</h3>
+  <p class="govuk-body">We asked the organisation how its statement demonstrates progress over time in addressing modern slavery risks. They provided the following answer:</p>
+  <p class="govuk-body">Yes KPI</p>
+
+</div>
+</div>
+  </div>
+
+{% endblock %}

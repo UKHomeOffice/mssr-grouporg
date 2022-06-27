@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add your 2022 Modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -43,6 +43,59 @@ Add your 2022 Modern slavery statement to the registry – {{ serviceName }} –
           }
         ]
       }) }}
+
+
+<h1 class="govuk-heading-m">Approver details (Optional)</h1>
+
+      <!-- Textfields start-->
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Job title"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+ <!-- Textfields end-->
+
+<!-- Date section start-->
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Approval date (Optional)",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Based on the supplied financial details, your approval date should be after 21/04/2022"
+  }
+}) }}
+<!-- Date section end-->
+
+
 
 <!--CTA start-->
 <div class="govuk-button-group">
