@@ -67,13 +67,17 @@ Basilurtea Export Pvt (Ltd) – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="documents">
   <h2 class="govuk-heading-l">PDF version of the statement (optional)</h2>
-  <p class="govuk-body">PDF file upload was first introduced for the 2023 statement year. You can also upload them for previous years, but this is optional.</p>
-  </div>
-
-
-<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
-<h2 class="govuk-heading-l">About this statement summary</h2>
-<p class="govuk-body">All answers relate to the financial year covered by the statement. The organisation is responsible for all the information it provided. Some of our questions are optional, so organisations may not have answered all of them. The statement summary does not replace the full modern slavery statement – below we provide a link to the full statement on the organisation’s website.</p>
+<!--{{ govukWarningText({
+    html: 'There is no PDF version of this statement.',
+    iconFallbackText: "Warning"
+  }) }}-->
+<div class="govuk-!-padding-bottom-3">
+  {{govukTag({
+    text: "There is no PDF version of this statement.",
+    classes: "govuk-tag--grey"
+  })}}
+</div>
+  <p class="govuk-body">PDF file upload was first introduced for the 2023 registry year.</p>
 <h2 class="govuk-heading-m">Contents</h2>
 <ul class="govuk-list govuk-!-margin-bottom-4">
   <li> -  <a class="govuk-link" href="#statement-period">Statement period and sign-off details</a></li>
@@ -704,7 +708,14 @@ text: "A social audit is a review of an organisation’s working practices from 
 }) }}
 <p class="govuk-body">We asked the organisation to describe up to 3 priority risks it focused on during the period of the statement, including details of the affected workers, the activity involved, and the location.</p>
 <h4 class="govuk-heading-s">Organisation's response</h4>
-<p class="govuk-tag--blue">The organisation told us it did not identify any modern slavery risks in its operations or supply chains during the period of the statement.</p>
+<div class="govuk-!-padding-bottom-3">
+  {{govukTag({
+    text: "The organisation told us it did not identify any modern slavery risks in its operations or supply chains during the period of the statement.",
+    classes: "govuk-tag--grey"
+  })}}
+</div>
+
+
 </div>
 
 <div class="govuk-grid-column-two-thirds" id="indicators">
@@ -842,7 +853,13 @@ text: "A social audit is a review of an organisation’s working practices from 
   <h3 class="govuk-heading-m">Actions taken in response to finding ILO indicators</h3>
   <p class="govuk-body">We asked the organisation to tell us whether its statement refers to any actions it took after finding indicators of forced labour</p>
   <h4 class="govuk-heading-s">Organisation’s response</h4>
-  <p class="govuk-tag--blue">The organisation told us its statement does not refer to actions it took after finding indicators of forced labour.</p>
+
+  <div class="govuk-!-padding-bottom-3">
+    {{govukTag({
+      text: "The organisation told us its statement does not refer to actions it took after finding indicators of forced labour.",
+      classes: "govuk-tag--grey"
+    })}}
+  </div>
 </div>
 
 <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="progress">

@@ -39,11 +39,11 @@ router.post('/6_S1_2-2-2_MSSR', function (req, res)
      // Check whether the variable matches a condition
      if (deletedoc == "yes"){
        // Send user to next page
-       res.redirect('/6_S1_2-2_MSSR')
+       res.redirect('/6_S1_2-2A_MSSR')
      }
      else {
        // Send user to ineligible page
-       res.redirect('/6_S1_2-2-1_MSSR')
+       res.redirect('/6_S1_2-2-1A_MSSR')
      }
    })
 

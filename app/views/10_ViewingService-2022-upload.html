@@ -67,7 +67,6 @@ Basilurtea Export Pvt (Ltd)  – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="documents">
   <h2 class="govuk-heading-l">PDF version of the statement (optional)</h2>
-<p class="govuk-body">PDF file upload was first introduced for the 2023 statement year. You can also upload them for previous years, but this is optional.</p>
    <!-- <h4 class="govuk-heading-s">Organisation’s response</h4>
   <p class="govuk-body">The organisation uploaded a PDF version of their modern slavery statement, which you can download and view.</p>
   {{ govukDetails({
@@ -726,7 +725,12 @@ text: "A social audit is a review of an organisation’s working practices from 
 }) }}
 <p class="govuk-body">We asked the organisation to describe up to 3 priority risks it focused on during the period of the statement, including details of the affected workers, the activity involved, and the location.</p>
 <h4 class="govuk-heading-s">Organisation's response</h4>
-<p class="govuk-tag--blue">The organisation told us it did not identify any modern slavery risks in its operations or supply chains during the period of the statement.</p>
+<div class="govuk-!-padding-bottom-3">
+  {{govukTag({
+    text: "The organisation told us it did not identify any modern slavery risks in its operations or supply chains during the period of the statement.",
+    classes: "govuk-tag--grey"
+  })}}
+</div>
 </div>
 
 <div class="govuk-grid-column-two-thirds" id="indicators">
@@ -864,7 +868,12 @@ text: "A social audit is a review of an organisation’s working practices from 
   <h3 class="govuk-heading-m">Actions taken in response to finding ILO indicators</h3>
   <p class="govuk-body">We asked the organisation to tell us whether its statement refers to any actions it took after finding indicators of forced labour</p>
   <h4 class="govuk-heading-s">Organisation’s response</h4>
-  <p class="govuk-tag--blue">The organisation told us its statement does not refer to actions it took after finding indicators of forced labour.</p>
+  <div class="govuk-!-padding-bottom-3">
+    {{govukTag({
+      text: "The organisation told us its statement does not refer to actions it took after finding indicators of forced labour.",
+      classes: "govuk-tag--grey"
+    })}}
+  </div>
 </div>
 
 <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8" id="progress">
