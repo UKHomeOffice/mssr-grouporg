@@ -24,46 +24,26 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your organisation is required to publish a modern slavery statement</h1>
 
-<!-- Table 1 starts-->
+<!-- new panel starts-->
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-{{ govukTable({
-  firstCellIsHeader: true,
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    Declaration complete
+  </h3>
+  <p class="govuk-body">You have declared your organisation is required to publish a modern slavery statement on your website.</p>
+{% endset %}
 
-  rows: [
-    [
-      {
-        text: "Organisation Reference"
-      },
-      {
-        text: "NQHMYC2C"
-      }
-    ],
-    [
-      {
-        text: "Organisation Name"
-      },
-      {
-        text: "Name of the organisation"
-      }
-    ],
-    [
-      {
-        text: "Registered Address"
-      },
-      {
-        html: '34 Turner Street<br/>
-        London<br/>
-        England<br/>
-        E1 2AS'
-      }
-    ]
-  ]
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
 }) }}
-<!-- Table 1 ends-->
-<p class="govuk-body">Please confirm your organisation is required to publish a modern slavery statement.</p>
+<!-- new panel ends-->
 
+
+<h2 class="govuk-heading-m">Publishing your statement</h1>
+<p class="govuk-body">Some one liner could go here to visually create a separation between the confrimation box and CTA</p>
 
 
 <!--CTA start-->
@@ -71,8 +51,8 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Confirm",
-    href: "/6_S1_1-complete"
+    text: "Continue",
+    href: "/S12-complete"
   }
   ) }}
   <!-- <a class="govuk-link" href="#">Skip this question</a> -->
@@ -80,7 +60,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 <!--CTA end-->
 
       </form>
-<p class="govuk-body">If your organisation name or address is incorrect, email us at <a href="#">modernslaverystatements@homeoffice.gov.uk</a> and let us know the correct information.</p>
+
     </div>
   </div>
 

@@ -24,12 +24,11 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check your answers before sending</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your organisation is required to publish a modern slavery statement</h1>
 
 <!-- Table 1 starts-->
+
 {{ govukTable({
-  caption: "Organisation details",
-  captionClasses: "govuk-table__caption--m",
   firstCellIsHeader: true,
 
   rows: [
@@ -63,49 +62,13 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   ]
 }) }}
 <!-- Table 1 ends-->
-
-
-<h2 class="govuk-heading-m govuk-!-margin-bottom-5">Declaration</h1>
-
-<!--summary list start-->
-{% set detailsHtml %}
-  <ul class="govuk-list govuk-list--bullet">
-    <li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation.</li>
-    <li>Its turnover or budget is less than £36 million per year.</li>  </ul>
-{% endset %}
-
-{{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "Reason your organisation is not required to publish a modern slavery statement on your website"
-      },
-      value: {
-        html: detailsHtml
-      },
-      actions: {
-        items: [
-          {
-            href: "/6_S1_1-2-1A_MSSR",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
-      }
-    }
-  ]
-}) }}
-<!-- summary table ends-->
-
-
-
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton(
     {
     text: "Confirm",
-    href: "/6_S1_1-2-3_MSSR.html"
+    href: "/S12-3-YesDeclare"
   }
   ) }}
   <!-- <a class="govuk-link" href="#">Skip this question</a> -->
@@ -113,7 +76,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 <!--CTA end-->
 
       </form>
-
+<p class="govuk-body">If your organisation name or address is incorrect, email us at <a href="#">modernslaverystatements@homeoffice.gov.uk</a> and let us know the correct information.</p>
     </div>
   </div>
 

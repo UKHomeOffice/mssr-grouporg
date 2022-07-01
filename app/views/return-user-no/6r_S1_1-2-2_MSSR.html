@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Confirm In Scope – {{ serviceName }} – GOV.UK Prototype Kit
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -26,45 +26,44 @@ Confirm In Scope – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your organisation is required to publish a modern slavery statement</h1>
 
-<!-- Table 1 starts-->
 
-{{ govukTable({
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
+      {% set detailsHtml %}
+      <ul class="govuk-list govuk-list--bullet">
+        <li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation.</li>
+        <li>Its turnover or budget is less than £36 million per year.</li>  </ul>
+    {% endset %}
 
-  rows: [
-    [
-      {
-        text: "Organisation Reference"
-      },
-      {
-        text: "NQHMYC2C"
-      }
-    ],
-    [
-      {
-        text: "Organisation Name"
-      },
-      {
-        text: "Name of the Organisation"
-      }
-    ],
-    [
-      {
-        text: "Registered Address"
-      },
-      {
-        html: '34 Turner Street<br/>
-        London<br/>
-        England<br/>
-        E1 2AS'
-      }
-    ]
-  ]
-}) }}
-<!-- Table 1 ends-->
 
-<p class="govuk-body">Please confirm your organisation is required to publish a modern slavery statement.</p>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Organisation reference"
+            },
+            value: {
+              text: "NQHMYC2C"
+            }
+          },
+          {
+            key: {
+              text: "Organisation name"
+            },
+            value: {
+              text: "Name of the organisation"
+            }
+          },
+          {
+            key: {
+              text: "Registered Address"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            }
+          }
+        ]
+      }) }}
+
+
 
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -72,14 +71,16 @@ Confirm In Scope – {{ serviceName }} – GOV.UK Prototype Kit
   {{ govukButton(
     {
     text: "Confirm",
-    href: "/return-user-no/6r_MSSR-complete"
+    href: "/return-user-no/6r_S1_1-2-3_MSSR.html"
   }
   ) }}
-  <!-- <a class="govuk-link" href="#">Skip this question</a> -->
+  <a class="govuk-link" href="/return-user-no/6r_S1_1-2_MSSR">Cancel</a>
+<p class="govuk-body">If your organisation name or address is incorrect, email us at <a href="#">modernslaverystatements@homeoffice.gov.uk</a> and let us know the correct information.</p>
 </div>
 <!--CTA end-->
 
-<p class="govuk-body">If your organisation name or address is incorrect, email us at <a href="#">modernslaverystatements@homeoffice.gov.uk</a> and let us know the correct information.</p>
+      </form>
+
     </div>
   </div>
 

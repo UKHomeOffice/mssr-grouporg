@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Zero file size – {{ serviceName }} – GOV.UK Prototype Kit
+No file selected – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,7 +28,7 @@ Zero file size – {{ serviceName }} – GOV.UK Prototype Kit
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Invalid file size",
+            text: "Please select a document to upload",
             href: "#passport-issued-day"
           }
         ]
@@ -39,9 +39,10 @@ Zero file size – {{ serviceName }} – GOV.UK Prototype Kit
       <p class="govuk-body">You can upload a PDF file of your full modern slavery statement here. It will be available publicly on the statement summary page once your statement is published.</p>
       <p class="govuk-body">The information in the PDF document should be similar to the information on the URL if you have added one.</p>
 
+
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
         <li>You can upload only one file in PDF version</li>
-        <li>The file size limit should be under 20MB</li>
+        <li>The file size should be under 20MB</li>
         <li>The file should not be empty</li>
         <li>The file should not be password protected</li>
         <li>The file should not be printer locked</li>
@@ -55,7 +56,7 @@ Zero file size – {{ serviceName }} – GOV.UK Prototype Kit
     text: "Upload a file"
   },
   errorMessage: {
-    text: "Select a non-empty file"
+    text: "Select a file"
   }
 }) }}
 <!-- file upload end -->

@@ -3,6 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
+// Financial year check yes and no
 router.post('/3_FY-1', function (req, res)
   {
     const selectedOption = req.body['fy-year']
@@ -25,78 +26,55 @@ router.post('/3_FY-1', function (req, res)
      }
    })
 
-router.post('/6_S1_2-2-2_MSSR', function (req, res)
+// PDF document delete check yes and no
+router.post('/6S1-3-FY-PDF/S13-4-DeleteConfirm', function (req, res)
   {
     const selectedOption = req.body['delete-document']
      let error = {}
      if (!selectedOption) {
        error = { text: "Select an option" }
-      return res.render("6_S1_2-2-2_MSSR", { error })}
+      return res.render("6S1-3-FY-PDF/S13-4-DeleteConfirm", { error })}
 
      // Make a variable and give it the value from 'fy-year'
      var deletedoc = req.session.data['delete-document']
 
-     // Check whether the variable matches a condition
+     // Check to confirm the deletion
      if (deletedoc == "yes"){
        // Send user to next page
-       res.redirect('/6_S1_2-2A_MSSR')
+       res.redirect('/6S1-3-FY-PDF/S13-5-Deleted')
      }
      else {
-       // Send user to ineligible page
-       res.redirect('/6_S1_2-2-1_MSSR')
+       // Cancelling the deletion
+       res.redirect('/6S1-3-FY-PDF/S13-5B-Deleted')
      }
    })
 
 
-   router.post('return-user/6r_S1_2-2-2_MSSR', function (req, res)
-   {
-     const selectedOption = req.body['delete-document2']
-      let error = {}
-      if (!selectedOption) {
-        error = { text: "Select an option" }
-       return res.render("/return-user/6r_S1_2-2-2_MSSR", { error })}
-
-      // Make a variable and give it the value from 'fy-year'
-      var deletedoc2 = req.session.data['delete-document2']
-
-      // Check whether the variable matches a condition
-      if (deletedoc2 == "yes"){
-        // Send user to next page
-        res.redirect('/return-user/6r_S1_2-2_MSSR')
-      }
-      else {
-        // Send user to ineligible page
-        res.redirect('/return-user/6r_S1_2-2-1_MSSR')
-      }
-    })
-
-
-
-
-
-router.post('/6_S1_1-2_MSSR', function (req, res)
+// Scoping check yes and no
+router.post('/6S1-2-Scoping/S12-1-ScopingQ', function (req, res)
 {
   const selectedOption = req.body['scoping']
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
-    return res.render("6_S1_1-2_MSSR", { error })}
+    return res.render("6S1-2-Scoping/S12-1-ScopingQ", { error })}
 
-  // Make a variable and give it the value from 'fy-year'
+  // Make a variable and give it the value from 'scopingconfirm'
   var scopingconfirm = req.session.data['scoping']
 
-  // Check whether the variable matches a condition
+  // YES, company has to subnit the statement
   if (scopingconfirm == "yes"){
     // Send user to next page
-    res.redirect('/6_S1_1-2A-1_MSSR')
+    res.redirect('/6S1-2-Scoping/S12-3-YesConfirm')
   }
   else {
-    // Send user to ineligible page
-    res.redirect('/6_S1_1-2-1_MSSR')
+    // NO, company do not have to subnit the statement
+    res.redirect('/6S1-2-Scoping/S12-2-NoSelection')
   }
 })
 
 
+// Scoping NO check boxes - conditions
 router.post('/6_S1_1-2-1_MSSR', function (req, res)
 {
   const selectedOption = req.body['scopingNo']
@@ -118,6 +96,5 @@ router.post('/6_S1_1-2-1_MSSR', function (req, res)
     res.redirect('/6_S1_1-2-1_MSSR')
   }
 })
-
 
 module.exports = router

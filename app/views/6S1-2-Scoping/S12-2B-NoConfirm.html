@@ -71,7 +71,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       actions: {
         items: [
           {
-            href: "/return-user/6r_S1_1-2-1A_MSSR",
+            href: "/S12-2D-NoSelection-selected"",
             text: "Change",
             visuallyHiddenText: "name"
           }
@@ -84,16 +84,15 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 
 
 <!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton(
     {
     text: "Confirm",
-    href: "/return-user/6r_S1_1-2-3_MSSR.html"
+    href: "/S12-2C-NoDeclare"
   }
   ) }}
-  <a class="govuk-link" href="/return-user/6r_S1_1-2_MSSR">Cancel</a>
-
-
+  <!-- <a class="govuk-link" href="#">Skip this question</a> -->
 <p class="govuk-body">If your organisation name or address is incorrect, email us at <a href="#">modernslaverystatements@homeoffice.gov.uk</a> and let us know the correct information.</p>
 </div>
 <!--CTA end-->

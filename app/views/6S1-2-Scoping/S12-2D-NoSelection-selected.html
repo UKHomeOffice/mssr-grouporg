@@ -26,8 +26,6 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
     <div class="govuk-grid-column-two-thirds">
 <!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
  <!--Check boxes start-->
-
-
  {% set textHtml %}
  {{ govukInput({
   label: {
@@ -69,8 +67,9 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       {
         value: "turnover",
         text: "Its turnover or budget is less than £36 million per year",
+        checked: true,
         conditional: {
-        html: textHtml
+          html: textHtml
         }
       },
       {
@@ -83,16 +82,20 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       },
       {
         value: "liquidation",
-        text: "It is in administration or liquidation, has closed or is dormant, or has merged with another organisation"
+        text: "It is in administration or liquidation, has closed or is dormant, or has merged with another organisation",
+        checked: true
       },
       {
         value: "other",
         text: "Other",
-        conditional: {html: textAreaHtml}
+        conditional: {
+          html: textAreaHtml
+        }
       }
     ]
   }) }}
 <!--Check boxes ends-->
+
 
 <!-- Inset text starts-->
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
@@ -104,12 +107,11 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 
 
 <!--CTA start-->
-{% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton(
     {
     text: "Continue",
-    href: "/6_S1_1-2-2_MSSR.html"
+    href: "/S12-2B-NoConfirm"
   }
   ) }}
 <!--<a class="govuk-link" href="#">Skip this question</a>-->
