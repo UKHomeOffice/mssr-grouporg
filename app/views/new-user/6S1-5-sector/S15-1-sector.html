@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Which sectors does your organisation operate in?</h1>
+   <!-- Checkboxes start-->
+
+   {% set otherHtml %}
+   {{ govukInput({
+     id: "contact-by-text",
+     name: "contact-by-text",
+     type: "tel",
+     autocomplete: "tel",
+     classes: "govuk-!-width-three-quarters",
+     label: {
+       text: "Please specify"
+     }
+   }) }}
+   {% endset -%}
+
+
+   {{ govukCheckboxes({
+     idPrefix: "waste",
+     name: "waste",
+     fieldset: {
+       legend: {
+         text: "If your statement is for a group, select sectors for all organisations in the group.",
+         isPageHeading: true,
+         classes: "govuk-body-l"
+       }
+     },
+     hint: {
+       text: "Select all that apply."
+     },
+     items: [
+       {
+         value: "carcasses",
+         text: "Automotive, machinery and heavy electrical equipment"
+       },
+       {
+         value: "mines",
+         text: "Charitable / not-for-profit activities"
+       },
+       {
+         value: "farm",
+         text: "Cleaning and security services"
+       },
+       {
+        value: "carcasses",
+        text: "Construction, civil engineering and building products"
+      },
+      {
+        value: "mines",
+        text: "Consumer services, including accommodation, hospitality, tourism and leisure"
+      },
+      {
+        value: "farm",
+        text: "Cosmetics and toiletries"
+      },
+      {
+        value: "carcasses",
+        text: "Defence and aerospace"
+      },
+      {
+        value: "mines",
+        text: "Durable consumer goods, including electronics and appliances, home furnishings and other accessories"
+      },
+      {
+        value: "farm",
+        text: "Education and research"
+      },
+      {
+        value: "carcasses",
+        text: "Fashion, textiles, apparel and luxury goods"
+      },
+      {
+        value: "mines",
+        text: "Financial, insurance and real estate activities"
+      },
+      {
+        value: "farm",
+        text: "Food and beverages, agriculture and fishing"
+      },
+      {
+        value: "farm",
+        text: "Forestry, timber products, paper and containers and packaging"
+      },
+      {
+        value: "carcasses",
+        text: "Healthcare and pharmaceuticals"
+      },
+      {
+        value: "mines",
+        text: "Information technology and telecommunication"
+      },
+      {
+        value: "farm",
+        text: "Media, publishing, arts and entertainment"
+      },
+      {
+        value: "carcasses",
+        text: "Mining, metals, chemicals and resources (including oil and gas)"
+      },
+      {
+        value: "mines",
+        text: "Professional and administrative services and supplies, including legal, consulting and accounting services"
+      },
+      {
+        value: "farm",
+        text: "Public sector"
+      },
+      {
+        value: "carcasses",
+        text: "Transportation, logistics, and storage"
+      },
+      {
+        value: "mines",
+        text: "Utilities: gas, water and electricity"
+      },
+      {
+        value: "farm",
+        text: "Waste management and recycling"
+      },
+      {
+        value: "other",
+        text: "Other",
+        conditional: {html: otherHtml} }
+     ]
+   }) }}
+   <!-- Checkboxes end-->
+
+
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Save and continue",
+    href: "S15-2-turnover"
+  }
+  ) }}
+  <a class="govuk-link" href="S15-2-turnover">Skip this question</a>
+</div>
+<!--CTA end-->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

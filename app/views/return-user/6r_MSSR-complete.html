@@ -38,33 +38,39 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/return-user/6r_S1_1-1_MSSR" aria-describedby="eligibility-status">Organisations and scope covered by the statement</a>
+                <a href="6S1-1-org/S11-1-Org" aria-describedby="eligibility-status">Organisations covered by the statement</a>
+              </span>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
+            </li>
+			  
+			  <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="6S1-2-Scoping-Yes/S12-1-ScopingA" aria-describedby="eligibility-status">Scope to publish</a>
               </span>
               <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/return-user/6r_S1_2-1_MSSR" aria-describedby="read-declaration-status">Statement URL, PDF, dates and sign-off</a>
+    <a href="6S1-3-FY-PDF/S13-1-URL" aria-describedby="read-declaration-status">Statement URL, PDF, dates and sign-off</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name"> <a href="6S1-4-areas/S14-1" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
+              </span>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/return-user/6r_S1_3-1_MSSR" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
+                <a href="6S1-5-sector/S15-1-sector" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="/return-user/6r_S1_4-1_MSSR" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
+                <a href="6S1-6-years/S16-1-years" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="/return-user/6r_S1_5-1_MSSR" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
-              </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
           </ul>
         </li>
@@ -118,6 +124,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 <ul class="govuk-list govuk-list--bullet">
   <li>the information I have supplied is true, to the best of my knowledge, and based on the statement that was approved by the board (or equivalent) and signed-off by the relevant director (or equivalent)</li>
   <li>I am authorised to supply this information on behalf of the organisation(s) the modern slavery statement is for</li>
+
   <li>if the statement is for a group, all organisations in the group know that this statement is being submitted to the service on their behalf</li></ul>
 
   <p class="govuk-body">I understand that:</p>
@@ -151,13 +158,13 @@ html: declarationHtml
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Submit for publication",
-    href:'/return-user/6r_MSSR-confirmation'
+    href:'6r_MSSR-confirmation'
   }) }}
 
   {{ govukButton({
     text: "Save as draft",
     classes: "govuk-button--secondary",
-    href:'/return-user/2rA_org_page'
+    href:'../2_org_page'
   }) }}
 </div>
 <!-- CTA end-->

@@ -54,14 +54,14 @@
         iconFallbackText: "Warning"
       }) }}
 <!-- Warning text END -->
-<p class="govuk-body">You can calculate the registry year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year end.</p>
+<p class="govuk-body">You can calculate the registry year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year-end.</p>
 
 <!-- Details panel ED START -->
 {% set detailsHtml %}
   <ul class="govuk-list govuk-list--bullet">
-    <li>If your financial year-end falls in the first half of the calendar year (1 January to 30 June), submit your statement for the same calendar year.
+    <li>If your financial year-end date falls in the first half of the calendar year (1 January to 30 June), submit your statement for the same calendar year.
      <br/>For example, if your financial year-end is 31 March 2022, the correct registry year would be 2022.</li>
-    <li>If your financial year-end falls in the second half of the calendar year (1 July to 31 December), submit your statement in the next calendar year.
+    <li>If your financial year-end date falls in the second half of the calendar year (1 July to 31 December), submit your statement in the next calendar year.
       <br/>For example, if your financial year-end is 31 December 2022, the correct registry year would be 2023.</li>  </ul>
 {% endset %}
 
@@ -99,7 +99,7 @@
 {% set mySecondary2 %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "/return-user-no/6r_MSSR",
+        href: "/return-user/6S1-2-Scoping-No/6r_MSSR",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -113,7 +113,11 @@
       classes: 'app-custom-class'
     },
     {
-      text: "If your financial year-end falls between",
+      text: "If your financial year-end date falls between",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Do you have to publish a statement on your website by law?",
       classes: 'app-custom-class'
     },
     {
@@ -134,6 +138,9 @@
       },
       {
         text: "1 Jul 2021 - 30 Jun 2022"
+      },
+      {
+        html:'Yes <br/> <a href="#">Change</a>'
       },
       {
         text: "Not started"
@@ -177,13 +184,13 @@
 
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-m">Users who can add statements for this organisation</h1>
-      <p class="govuk-body">You are the only person registered to add this organisation’s modern slavery statements to the service.</p>
+      <p class="govuk-body">You are the only person registered to add this organisation’s Modern slavery statements to the service.</p>
 <!-- Details panel START -->
       <!-- text should be formatted - bulleted text/bold text-->
 {{ govukDetails({
   summaryText: "What happens if I remove myself?",
   text: "If you remove yourself:
-  you will not be able to add this organisation’s modern slavery statements to the registry
+  you will not be able to add this organisation’s Modern slavery statements to the registry
   someone else will need to register this organisation in order to add its statements to the registry; registering an organisation can take up to a week
   your account will remain open"
 }) }}

@@ -49,21 +49,21 @@
 <p class="govuk-body-l">Use this page to manage your statements on the registry. You can start or continue to provide information about your statement and submit it when you’re ready – or edit and resubmit a statement that you’ve already added.</p>
 
 
-<h2 class="govuk-heading-m">Manage your modern slavery statements</h2>
+<h2 class="govuk-heading-m">Manage your Modern slavery statements</h2>
 <!-- Warning text START -->
 {{ govukWarningText({
   text: "The registry categorises statements by the registry year they were due to be published rather than the financial year they cover.",
   iconFallbackText: "Warning"
 }) }}
 <!-- Warning text END -->
-<p class="govuk-body">You can calculate the registry year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year end.</p>
+<p class="govuk-body">You can calculate the registry year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year-end.</p>
 
 <!-- Details panel ED START -->
 {% set detailsHtml %}
 <ul class="govuk-list govuk-list--bullet">
-  <li>If your financial year-end falls in the first half of the calendar year (1 January to 30 June), submit your statement for the same calendar year.
+  <li>If your financial year-end date falls in the first half of the calendar year (1 January to 30 June), submit your statement for the same calendar year.
    <br/>For example, if your financial year-end is 31 March 2022, the correct registry year would be 2022.</li>
-  <li>If your financial year-end falls in the second half of the calendar year (1 July to 31 December), submit your statement in the next calendar year.
+  <li>If your financial year-end date falls in the second half of the calendar year (1 July to 31 December), submit your statement in the next calendar year.
     <br/>For example, if your financial year-end is 31 December 2022, the correct registry year would be 2023.</li>  </ul>
 {% endset %}
 
@@ -102,9 +102,13 @@ html: detailsHtml
     classes: 'app-custom-class'
   },
   {
-    text: "If your financial year-end falls between",
+    text: "If your financial year-end date falls between",
     classes: 'app-custom-class'
   },
+    {
+      text: "	Do you have to publish a statement on your website by law?",
+      classes: 'app-custom-class'
+    },
     {
       text: "Status of statement on the registry",
       classes: 'app-custom-class'
@@ -125,6 +129,9 @@ html: detailsHtml
         text: "1 Jul 2021 - 30 Jun 2022"
       },
       {
+        html:'Yes <br/> <a href="#">Change</a>'
+      },
+      {
         text: "In progress"
       },
       {
@@ -137,6 +144,9 @@ html: detailsHtml
     },
     {
       text: "1 Jul 2020 - 30 Jun 2021"
+    },
+    {
+      html:'Yes <br/> <a href="#">Change</a>'
     },
     {
       text: "Published on 20 April 2021"
@@ -155,6 +165,9 @@ html: detailsHtml
         text: "1 Jul 2019 - 30 Jun 2020"
       },
       {
+        html:'Yes <br/> <a href="#">Change</a>'
+      },
+      {
         text: "Published voluntarily on 28 April 2020"
       },
       {
@@ -170,14 +183,14 @@ html: detailsHtml
 
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-m">Users who can add statements for this organisation</h1>
-      <p class="govuk-body">You are the only person registered to add this organisation’s modern slavery statements to the service.</p>
+      <p class="govuk-body">You are the only person registered to add this organisation’s Modern slavery statements to the service.</p>
 <!-- Details panel START -->
       <!-- text should be formatted - bulleted text/bold text-->
       {% from "govuk/components/details/macro.njk" import govukDetails %}
 {{ govukDetails({
   summaryText: "What happens if I remove myself?",
   text: "If you remove yourself:
-  you will not be able to add this organisation’s modern slavery statements to the registry
+  you will not be able to add this organisation’s Modern slavery statements to the registry
   someone else will need to register this organisation in order to add its statements to the registry; registering an organisation can take up to a week
   your account will remain open"
 }) }}

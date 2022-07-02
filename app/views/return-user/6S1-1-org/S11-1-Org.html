@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Does your modern slavery statement cover a single organisation or a group of organisations?</h1>
+
+ <!-- Details panel ED START -->
+{% set detailsHtml %}
+<p> <span class="govuk-body govuk-!-font-weight-bold">Group statements for organisations in a group</span>
+    <br/>Where several organisations in a group (for example, a parent organisation and one or more subsidiaries) are required to publish a statement, they can agree to produce a combined group statement on behalf of all relevant organisations in the group. The statement must cover the steps that all relevant organisations have taken to tackle modern slavery risks in their operations and supply chains.</p>
+
+<p> <span class="govuk-body govuk-!-font-weight-bold">How to answer questions about your group statement</span>
+   <br/>Different organisations within the group may have taken different steps based on their circumstances. When answering questions on our service on behalf of a group, your answers should reflect the steps taken by any of the organisations in your group.</p>
+
+<p> <span class="govuk-body govuk-!-font-weight-bold">Individual statements for organisations in a group</span>
+    <br/>If there is no combined group statement, each organisation in the group that is required to publish a statement must produce its own individual statement.</p>
+{% endset %}
+
+{{ govukDetails({
+summaryText: "Read about statements for organisations in a group",
+html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+<!-- Radio button start -->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Organisation name's statement (2021) covers:",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "A single organisation",
+      text: "A single organisation",
+      checked: true
+    },
+    {
+      value: "A group of organisations",
+      text: "A group of organisations"
+    }
+  ]
+}) }}
+<!-- Radio button end-->
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Save and continue",
+    href: "../6r_MSSR-complete"
+  }
+  ) }}
+  <a class="govuk-link" href="../6r_MSSR-complete">Skip this question</a>
+</div>
+<!--CTA end-->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
