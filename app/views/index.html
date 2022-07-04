@@ -14,15 +14,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        {% if serviceName %} {{ serviceName }} {% endif %}
-      </h1>
+      <span class="govuk-caption-l">Modern slavery statement registry</span>
+<h1 class="govuk-heading-l">In-scope feature</h1>
 
-      <p>Updates on this prototype:</p>
+      <p>Functionalities covered in this prototype:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>Re-engineering statement submission journey</li>
-        <li>PDF Management</li>
-        <li>Updated viewing service page</li>
+        <li><b>New statement:</b><br/> Combined the "scope" functionality with the statement submission journey</li>
+        <li><b>Existing statement:</b><br/>Changing the scope in already published statement</li>
       </ul>
 
       <a href="1_manage_orgs.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
@@ -33,7 +31,7 @@
       </a>
 
     </div>
-<!--
+
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
@@ -41,56 +39,25 @@
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="/6_MSSR">
-                MSSR - tasks list page
-              </a>
+            <li><p><a href="new-user/6_MSSR">Tasks list page</a><br/>
+              <span class="govuk-body-s">MSSR - Tasks list page</span><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
             </li>
-            <li>----------</li>
-            <li>
-              <a href="/S12-1-ScopingQuestion">
-                Scoping feature journey
-              </a>
+            <li><p> <a href="new-user/6S1-2-Scoping/S12-1-ScopingQ">Scope declare</a><br/>
+              <span class="govuk-body-s">Declaring scope in their new statement</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+               </p>
             </li>
-            <li>
-              <a href="/6_S1_2-2_MSSR-InvalidFileSize-Error2">PDF Error - Invalid file size</a>
+            <li><p> <a href="return-user/6S1-2-Scoping-Yes/S12-1-ScopingA">Scope from YES to NO</a><br/>
+              <span class="govuk-body-s">Change scope in their published statement from YES to NO</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+              </p>
             </li>
             <li>
-              <a href="/6_S1_2-2_MSSR-InvalidFormat-Error3">PDF Error - Invalid file type</a>
-            </li>
-            <li>
-              <a href="/6_S1_2-2_MSSR-NoFileSelected-Error1">PDF Error - No file selected</a>
-            </li>
-            <li>
-              <a href="/6_S1_2-2_MSSR-PrinterLocked-Error4.html">PDF Error - Printer locked</a>
-            </li>
-            <li>
-              <a href="/6_S1_2-2_MSSR-PasswordLocked-Error5.html">PDF Error - Password locked</a>
-            </li>
-            <li>
-              <a href="/6_S1_2-2_MSSR-InvalidFileSize-Error7.html">PDF Error - Zero file size</a>
-            </li>
-            <li>
-              <a href="/6_S1_2-2_MSSR-VirusFile-Error6">PDF Error - Virus file</a>
-            </li>
-            <li>
-              <a href="/6_S1_2-2B_MSSR">
-                PDF page - 2023
-              </a>
-            </li>
-            <li>----------</li>
-            <li>
-              <a href="\10_ViewingService-2023">Viewing service page - 2023</a>
-            </li>
-            <li>
-              <a href="\10_ViewingService-2022">Viewing service page - 2022 (file not uploaded)</a>
-            </li>
-            <li>
-              <a href="\10_ViewingService-2022-upload">Viewing service page - 2022 (file uploaded)</a>
+              <p> <a href="return-user/6S1-2-Scoping-No/S12-1-ScopingA">Scope from NO to YES</a><br/>
+                <span class="govuk-body-s">Change scope in their published statement from NO to YES<br/>
+                </p>
             </li>
           </ul>
         </nav>
-      </aside> -->
+      </aside>
     </div>
   </div>
 {% endblock %}
