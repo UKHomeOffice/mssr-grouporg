@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- Phase banner starts-->
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!-- Phase banner ends-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+<h1 class="govuk-heading-xl">Administration</h1>
+<h2 class="govuk-heading-l">Search</h2>
+<p><strong>Organisation:</strong> current name, previous name, organisation reference, company number<br/>
+  <strong>User:</strong> name, email address</p>
+{{ govukInput({
+  id: "event-name",
+  name: "event-name",
+  classes: "govuk-input--width-40"
+}) }}
+
+
+<h2 class="govuk-heading-l">Actions</h2>
+<p><a href="#" class="govuk-link"><strong>Impersonate user</strong></a><br/>
+Login as a user to view their screens.</p>
+
+<p><a href="#" class="govuk-link"><strong>Execute manual changes</strong></a><br/>
+Execute various manual tasks on system and data.</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-l">Compliance</h2>
+<p><a href="#" class="govuk-link"><strong>Compliance reports</strong></a><br/>
+Login as a user to view their screens.</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<h2 class="govuk-heading-l">Registrations</h2>
+<p><a href="#" class="govuk-link"><strong>Unconfirmed PINs in the post</strong></a><br/>
+  PINs in the Post that haven't yet been confirmed.</p>
+
+<p><a href="#" class="govuk-link"><strong>Pending registrations</strong></a><br/>
+  List of registrations which are awaiting manual authorisation.</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<h2 class="govuk-heading-l">Information</h2>
+<p><a href="#" class="govuk-link"><strong>History</strong></a><br/>
+Registration and submission historical audit files.</p>
+
+<p><a href="#" class="govuk-link"><strong>Downloads</strong></a><br/>
+Download organisation, registration, user, consent.</p>
+
+<p><a href="#" class="govuk-link"><strong>Uploads</strong></a><br/>
+  Download organisation, registration, user, consent.</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<h2 class="govuk-heading-l">Logs</h2>
+<p><a href="#" class="govuk-link"><strong>Download feedback</strong></a><br/>
+  Download a CSV of feedback submitted through the "Send Feedback" links<br/>
+  <strong>Total feedback submissions:</strong> 71<br/>
+  <strong>Latest feedback received:</strong> 11 Jul 2022</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    </div>
+  </div>
+
+{% endblock %}
