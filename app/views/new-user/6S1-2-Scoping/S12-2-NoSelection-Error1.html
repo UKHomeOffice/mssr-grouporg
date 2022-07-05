@@ -24,10 +24,18 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Options selection is missing",
+      href: "#passport-issued-day"
+    }
+  ]
+}) }}
+
  <!--Check boxes start-->
-
-
  {% set textHtml %}
  {{ govukInput({
   label: {
@@ -52,7 +60,6 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
   }
 }) }}
  {% endset -%}
-
 
  {{ govukCheckboxes({
     idPrefix: "waste",

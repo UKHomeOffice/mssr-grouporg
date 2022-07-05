@@ -24,9 +24,18 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
- <!--Check boxes start-->
 
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Required information is missing",
+            href: "#passport-issued-day"
+          }
+        ]
+      }) }}
+
+ <!--Check boxes start-->
 
  {% set textHtml %}
  {{ govukInput({
