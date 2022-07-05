@@ -33,7 +33,7 @@ router.post('/new-user/6S1-3-FY-PDF/S13-4-DeleteConfirm', function (req, res)
      let error = {}
      if (!selectedOption) {
        error = { text: "Select an option" }
-      return res.render("/new-user/6S1-3-FY-PDF/S13-4-DeleteConfirm", { error })}
+      return res.render("new-user/6S1-3-FY-PDF/S13-4-DeleteConfirm", { error })}
 
      // Make a variable and give it the value from 'fy-year'
      var deletedoc = req.session.data['delete-document']
@@ -57,7 +57,7 @@ router.post('/new-user/6S1-2-Scoping/S12-1-ScopingQ', function (req, res)
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
-    return res.render("/new-user/6S1-2-Scoping/S12-1-ScopingQ", { error })}
+    return res.render("new-user/6S1-2-Scoping/S12-1-ScopingQ", { error })}
 
   // Make a variable and give it the value from 'scopingconfirm'
   var scopingconfirm = req.session.data['scoping']
