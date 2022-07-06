@@ -66,7 +66,7 @@ router.post('/new-user/6S1-2-Scoping/S12-1-ScopingQ', function (req, res)
   // YES, company has to subnit the statement
   if (scopingconfirm == "yes"){
     // Send user to next page
-    res.redirect('/new-user/6S1-2-Scoping/S12-3-YesConfirm')
+    res.redirect('/new-user/6S1-2-Scoping/S12-4-YesDeclare')
   }
   else {
     // NO, company do not have to subnit the statement
@@ -90,7 +90,7 @@ router.post('/new-user/6S1-2-Scoping/S12-2-NoSelection-code', function (req, res
   // YES, company has to subnit the statement
   if (scopingNOchoices == "yes"){
     // Send user to next page
-    res.redirect('/new-user/6S1-2-Scoping/S12-3-YesConfirm')
+    res.redirect('/new-user/6S1-2-Scoping/S12-4-YesDeclare')
   }
   else {
     // NO, company do not have to subnit the statement
