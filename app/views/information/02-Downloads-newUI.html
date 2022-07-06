@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Downloads – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- Phase banner starts-->
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!-- Phase banner ends-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+<span class="govuk-caption-l">Administration</span>
+<h1 class="govuk-heading-xl">Downloads</h1>
+
+<!-- Compliance Table starts-->
+{{ govukTable({
+  caption: "Compliance reports",
+  captionClasses: "govuk-table__caption--l",
+  firstCellIsHeader: true,
+  head: [
+  {
+    text: "Description"
+  },
+  {
+    text: "File"
+  }
+],
+  rows: [
+  [
+  {
+    html: '<span class="govuk-body-m"><strong>Compliance report (2023)</strong></span><br/>
+      <span class="govuk-body">The latest organisations Compliance report for 2023 <br/><span class="govuk-body-s">Records: 16606 ▪ Modified: 4 July 2022 at 12:30pm</span></span>'
+  },
+  {
+    html: '<a href="#" class="govuk-body">Compliance-report_2023.csv</a>'
+  }
+],
+    [
+    {
+      html: '<span class="govuk-body-m"><strong>Compliance report (2022)</strong></span><br/>
+      <span class="govuk-body">The latest organisations Compliance report for 2022 <br/><span class="govuk-body-s">Records: 16606 ▪ Modified: 12 January 2022 at 3:30pm</span></span>'
+    },
+    {
+      html: '<a href="#" class="govuk-body">Compliance-report_2022.csv</a>'
+    }
+    ],
+    [
+    {
+      html: '<span class="govuk-body-m"><strong>Compliance report (2021)</strong></span><br/>
+      <span class="govuk-body">The latest organisations Compliance report for 2021 <br/><span class="govuk-body-s">Records: 16606 ▪ Modified:25 February 2021 at 5:30pm</span></span>'
+    },
+    {
+      html: '<a href="#" class="govuk-body">Compliance-report_2021.csv</a>'
+    }
+  ],
+     [
+      {
+        html: '<span class="govuk-body-m"><strong>Compliance report (2020)</strong></span><br/>
+        <span class="govuk-body">The latest organisations Compliance report for 2021 <br/><span class="govuk-body-s">Records: 16606 ▪ 2 February 2021 at 5:30pm</span></span>'
+      },
+      {
+        html: '<a href="#" class="govuk-body">Download 2020 report</a><br/><span class="govuk-body-s">CSV file | 450 KB</span>'
+      }
+    ]
+  ]
+}) }}
+<!-- Compliance Table ends-->
+
+<p class="govuk-body govuk-!-margin-bottom-6">&nbsp;</p>
+
+<!-- Organisations Table starts-->
+{{ govukTable({
+  caption: "Organisations",
+  captionClasses: "govuk-table__caption--l",
+  firstCellIsHeader: true,
+  head: [
+  {
+    text: "Description"
+  },
+  {
+    text: "File"
+  }
+],
+  rows: [
+  [
+  {
+    html: '<span class="govuk-body-m"><a href="#"><strong>All organisations (2023)</strong></a></span><br/>
+      <span class="govuk-body">A list of All organisations and their statuses for 2023. <br/><span class="govuk-body-s">Records: 16606 ▪ Modified: 4 July 2022 at 12:30pm</span></span>'
+  },
+  {
+    html: '<a href="#" class="govuk-body">MSU-Organisations_2023.csv</a>'
+  }
+],
+    [
+    {
+      html: '<span class="govuk-body-m"><a href="#"><strong>All organisations (2022)</strong></a></span><br/>
+      <span class="govuk-body">A list of All organisations and their statuses for 2022.<br/><span class="govuk-body-s">Records: 16606 ▪ Modified: 12 January 2022 at 3:30pm</span></span>'
+    },
+    {
+      html: '<a href="#" class="govuk-body">MSU-Organisations_2022.csv</a>'
+    }
+    ],
+    [
+    {
+      html: '<span class="govuk-body-m"><a href="#"><strong>All organisations (2021)</strong></a></span><br/>
+      <span class="govuk-body">A list of All organisations and their statuses for 2021. <br/><span class="govuk-body-s">Records: 16606 ▪ Modified:25 February 2021 at 5:30pm</span></span>'
+    },
+    {
+      html: '<a href="#" class="govuk-body">MSU-Organisations_2021.csv</a>'
+    }
+  ],
+     [
+      {
+        html: '<span class="govuk-body-m"><a href="#"><strong>All organisations (2020)</strong></a></span><br/>
+        <span class="govuk-body">A list of All organisations and their statuses for 2020. <br/><span class="govuk-body-s">Records: 16606 ▪ 2 February 2021 at 5:30pm</span></span>'
+      },
+      {
+        html: '<a href="#" class="govuk-body">MSU-Organisations_2020.csv</a>'
+      }
+    ]
+  ]
+}) }}
+<!-- Organisations Table ends-->
+
+
+<p class="govuk-body govuk-!-margin-bottom-6">&nbsp;</p>
+
+<!-- Orphan organisations Table starts-->
+{{ govukTable({
+  caption: "Orphan organisations",
+  captionClasses: "govuk-table__caption--l",
+  firstCellIsHeader: true,
+  head: [
+  {
+    text: "Description"
+  },
+  {
+    text: "File"
+  }
+],
+  rows: [
+  [
+  {
+    html: '<span class="govuk-body-m"><a href="#"><strong>Orphan Organisations (2023)</strong></a></span><br/>
+      <span class="govuk-body">A list of in-scope organisations who no longer who have any registered or registering users.<br/><span class="govuk-body-s">Records: 16606 ▪ Modified: 4 July 2022 at 12:30pm</span></span>'
+  },
+  {
+    html: '<a href="#" class="govuk-body">MSU-OrphanOrganisations_2022.csv</a>'
+  }
+],
+    [
+    {
+      html: '<span class="govuk-body-m"><a href="#"><strong>Orphan Organisations (2021)</strong></a></span><br/>
+      <span class="govuk-body">A list of in-scope organisations who no longer who have any registered or registering users.<br/><span class="govuk-body-s">Records: 16606 ▪ Modified: 12 January 2022 at 3:30pm</span></span>'
+    },
+    {
+      html: '<a href="#" class="govuk-body">MSU-OrphanOrganisations_2021.csv</a>'
+    }
+    ]
+  ]
+}) }}
+<!-- Orphan organisations Table ends-->
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

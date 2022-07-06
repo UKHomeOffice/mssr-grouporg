@@ -1,25 +1,79 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+Downloads – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<!-- Phase banner starts-->
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!-- Phase banner ends-->
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+<span class="govuk-caption-l">Administration</span>
+<h1 class="govuk-heading-xl">Downloads</h1>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+{{ govukTable({
+  caption: "Compliance reports",
+  captionClasses: "govuk-table__caption--l",
+  firstCellIsHeader: true,
 
-      <h1 class="govuk-heading-xl">
-        Heading goes here
-      </h1>
+  rows: [
+  [
+  {
+    html: '<span class="govuk-body-m"><strong>Compliance report (2023)</strong></span><br/>
+      <span class="govuk-body">The latest organisations Compliance report for 2023. <br/> ▪ <a href="#">Compliance-report_2023.csv</a> ▪ Records: 16606 ▪ Modified: 4 July 2022 at 12:30pm </span>'
+  },
+  {
+    html: '&nbsp;'
+  }
+],
+    [
+    {
+      html: '<span class="govuk-body-m"><strong>Compliance report (2022)</strong></span><br/>
+        <span class="govuk-body">The latest organisations Compliance report for 2022. <br/> ▪ <a href="#">Compliance-report_2022.csv</a> ▪ Records: 56845 ▪ Modified: 12 July 2022 at 3:30pm </span>'
+    },
+    {
+      html: '&nbsp;'
+    }
+    ],
+    [
+    {
+      html: '<span class="govuk-body-m"><strong>Compliance report (2021)</strong></span><br/>
+        <span class="govuk-body">The latest organisations Compliance report for 2021. <br/> ▪ <a href="#">Compliance-report_2021.csv</a> ▪ Records: 34567 ▪ Modified: 2 March 2022 at 4:45pm </span>'
+    },
+    {
+      html: '&nbsp;'
+    }
 
-      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
+  ],
+     [
 
-      <p>Read more <a href="/url/of/onward/page">about this topic</a>.</p>
+     {
+      html: '<span class="govuk-body-m"><strong>Compliance report (2020)</strong></span><br/>
+        <span class="govuk-body">The latest organisations Compliance report for 2020. <br/> ▪ <a href="#">Compliance-report_2020.csv</a> ▪ Records: 45689 ▪ Modified: 12 February 2021 at 5:30pm </span>'
+    },
+    {
+      html: '&nbsp;'
+    }
+    ]
+  ]
+}) }}
+<!-- Compliance Table ends-->
+
+{{ govukPanel({
+  html: "<strong>Note:</strong> Rest of the sections on this page remains as is from the live site"
+}) }}
 
     </div>
   </div>
