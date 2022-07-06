@@ -29,7 +29,11 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Required information is missing",
+            text: "You must provide details for turnover",
+            href: "#passport-issued-day"
+          },
+          {
+            text: "You must provide the details for the other reason",
             href: "#passport-issued-day"
           }
         ]
@@ -46,7 +50,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
     text: "£"
   },
    errorMessage: {
-    text: "Please enter your turnover"
+    text: "Enter your annual turnover"
   },
   classes: "govuk-!-width-one-half",
   id: "annual-turnover",
@@ -110,6 +114,76 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
   ]
 }) }}
 <!--Check boxes ends-->
+
+<!-- testing the code starts-->
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        How would you like to be contacted?
+      </h1>
+    </legend>
+    <div id="contact-hint" class="govuk-hint">
+      Select all options that are relevant to you.
+    </div>
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-checkboxes__label" for="contact">
+          Its turnover or budget is less than £36 million per year
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            What is your organisations's annual turnover or budget?
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+          It does not provide goods or services
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+          It does not have a business presence in the UK</label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-checkboxes__label" for="contact-3">
+          It does not have a business presence in the UK</label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel" autocomplete="tel">
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </fieldset>
+</div>
+
+<!-- testing the code ends-->
+
 
 <!-- Inset text starts-->
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
