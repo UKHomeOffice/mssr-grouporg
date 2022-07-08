@@ -51,7 +51,7 @@ router.post('/new-user/6S1-3-FY-PDF/S13-4-DeleteConfirm', function (req, res)
    })
 
 
-// Scoping check yes and no
+// Scoping check yes and no - new user
 router.post('/new-user/6S1-2-Scoping/S12-1-ScopingQ', function (req, res)
 {
   const selectedOption = req.body['scoping']
@@ -75,33 +75,45 @@ router.post('/new-user/6S1-2-Scoping/S12-1-ScopingQ', function (req, res)
 })
 
 
-// Scoping selection - new user
-router.post('/new-user/6S1-2-Scoping/S12-2-NoSelection-code', function (req, res)
+
+// Scoping changing for No to Yes - return user
+router.post('/return-user/6S1-2-Scoping-No/S12-1-ScopingA', function (req, res)
 {
-  const selectedOption = req.body['scopingNOAns']
-  let error = {}
-  if (!selectedOption) {
-    error = { text: "Select an option" }
-    return res.render("new-user/6S1-2-Scoping/S12-2-NoSelection-code", { error })}
+  const selectedOption = req.body['scopingNY']
 
   // Make a variable and give it the value from 'scopingconfirm'
-  var scopingNOchoices = req.session.data['scopingNOAns']
+  var scopingNYconfirm = req.session.data['scopingNY']
 
   // YES, company has to subnit the statement
-  if (scopingNOchoices == "yes"){
+  if (scopingNYconfirm == "no"){
     // Send user to next page
-    res.redirect('/new-user/6S1-2-Scoping/S12-4-YesDeclare')
+    res.redirect('/return-user/6S1-2-Scoping-No/S12-2-NoSelection')
   }
   else {
     // NO, company do not have to subnit the statement
-    res.redirect('/new-user/6S1-2-Scoping/S12-2-NoSelection')
+    res.redirect('/return-user/6S1-2-Scoping-No/S12-4-YesDeclare')
   }
 })
 
 
+// Scoping changing for Yes to No - return user
+router.post('/return-user/6S1-2-Scoping-Yes/S12-1-ScopingA', function (req, res)
+{
+  const selectedOption = req.body['scopingYN']
 
+  // Make a variable and give it the value from 'scopingconfirm'
+  var scopingYNconfirm = req.session.data['scopingYN']
 
-
+  // YES, company has to subnit the statement
+  if (scopingYNconfirm == "yes"){
+    // Send user to next page
+    res.redirect('/return-user/6S1-2-Scoping-Yes/S12-4-YesDeclare')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user/6S1-2-Scoping-Yes/S12-2-NoSelection')
+  }
+})
 
 
 

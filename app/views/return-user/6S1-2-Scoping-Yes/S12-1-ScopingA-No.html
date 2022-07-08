@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-We need more information – {{ serviceName }} – GOV.UK Prototype Kit
+Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -23,71 +23,45 @@ We need more information – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-<!-- heading starts-->
-<!-- <span class="govuk-caption-l">ORGANISATION NAME</span> -->
-<h1 class="govuk-heading-l">Was your organisation required to publish a modern slavery statement on its website in 2021?</h1>
-<!-- heading ends-->
+    <div class="govuk-grid-column-two-thirds">
+<!-- heading starts
+<span class="govuk-caption-l">ORGANISATION NAME</span>
+<h1 class="govuk-heading-l">We need more information</h1>
+ heading ends-->
 
-<!-- summary table start-->
-{% set detailsHtml %}
-  <ul class="govuk-list govuk-list--bullet">
-    <li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation.</li>
-    <li>Its turnover or budget is less than £36 million per year.</li>  </ul>
-{% endset %}
-
-{{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "You have answered"
-      },
-      value: {
-        text: "No"
-      },
-      actions: {
-        items: [
-          {
-            href: "../6S1-2-Scoping-No/S12-3-YesConfirm",
-            text: "Change to Yes",
-            visuallyHiddenText: "name"
-          }
-        ]
+<!-- radio button start-->
+<form class="form" action="/return-user/6S1-2-Scoping-No/S12-1-ScopingA" method="post">
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "scoping",
+    name: "scoping",
+    fieldset: {
+      legend: {
+        text: "Was your organisation required to publish a modern slavery statement on its website in 2022?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
       }
     },
-    {
-      key: {
-        text: "Your reasons for not required to publish"
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: checked("scoping", "yes")
       },
-      value: {
-        html: detailsHtml
-      },
-      actions: {
-        items: [
-          {
-            href: "S12-2B-NoSelection-selected",
-            text: "Change",
-            visuallyHiddenText: "name"
-          }
-        ]
+      {
+        value: "no",
+        text: "No",
+        checked: true
       }
-    }
-  ]
-}) }}
-<!-- summary table ends-->
-</div>
-<div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
-  <p>If you don't know whether your organisation was required to publish a modern slavery statement, <a href="#">refer to the guidance (opens in new window)</a>.</p>
-
-<!-- CTA starts-->
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    href: "../6r_MSSR-complete"
+    ],
+    errorMessage: error
   }) }}
-<!--<a class="govuk-link" href="6r_MSSR-complete">Skip this</a>-->
-</div>
-<!-- CTA ends-->
+
+  <p>If you don't know whether your organisation was required to publish a modern slavery statement, <a href="#">refer to the guidance (opens in new window)</a>.</p>
+<button class="govuk-button" data-module="govuk-button">Continue</button> <!--<a class="govuk-link" href="../6S1-1-Org/S11-complete">Skip this question</a>-->
+</form>
+<!-- radio button ends-->
+
     </div>
   </div>
 
