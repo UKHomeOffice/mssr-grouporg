@@ -85,13 +85,13 @@ router.post('/return-user/6S1-2-Scoping-No/S12-1-ScopingA', function (req, res)
   var scopingNYconfirm = req.session.data['scopingNY']
 
   // YES, company has to subnit the statement
-  if (scopingNYconfirm == "no"){
+  if (scopingNYconfirm == "yes"){
     // Send user to next page
-    res.redirect('/return-user/6S1-2-Scoping-No/S12-2-NoSelection')
+    res.redirect('/return-user/6S1-2-Scoping-No/S12-4-YesDeclare')
   }
   else {
     // NO, company do not have to subnit the statement
-    res.redirect('/return-user/6S1-2-Scoping-No/S12-4-YesDeclare')
+    res.redirect('/return-user/6S1-2-Scoping-No/S12-2B-NoSelection-selected')
   }
 })
 
@@ -107,18 +107,13 @@ router.post('/return-user/6S1-2-Scoping-Yes/S12-1-ScopingA', function (req, res)
   // YES, company has to subnit the statement
   if (scopingYNconfirm == "yes"){
     // Send user to next page
-    res.redirect('/return-user/6S1-2-Scoping-Yes/S12-4-YesDeclare')
+    res.redirect('../6r_MSSR-complete')
   }
   else {
     // NO, company do not have to subnit the statement
     res.redirect('/return-user/6S1-2-Scoping-Yes/S12-2-NoSelection')
   }
 })
-
-
-
-
-
 
 
 module.exports = router
