@@ -74,12 +74,11 @@
 
 <div class="govuk-grid-column-full">
 <!-- Table START -->
-{% set myThing0 %}
-    {{ govukButton({
-        text: "Start",
-        href: "#"
-    }) }}
-{% endset %}
+{{ govukButton({
+  text: "Edit & Republish",
+  href: "/return-user/6r_MSSR",
+  classes: "govuk-button--secondary"
+}) }}
 
 {% set myThing %}
     {{ govukButton({
@@ -91,7 +90,7 @@
 {% set mySecondary %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "/return-user/6r_MSSR",
+        href: "#",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -99,7 +98,7 @@
 {% set mySecondary2 %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "/return-user/6S1-2-Scoping-No/6r_MSSR",
+        href: "#",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
