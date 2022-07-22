@@ -1,44 +1,75 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+Scope feature – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
 
+
+{% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Prototype your service using GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+      <span class="govuk-caption-l">Modern slavery statement registry</span>
+<h1 class="govuk-heading-l">In-scope feature</h1>
 
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
+      <p>Functionalities covered in this prototype:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
+        <li><b>New statement:</b><br/> Combined the "scope" functionality with the statement submission journey</li>
+        <li><b>Existing statement:</b><br/>Changing the scope in already published statement</li>
       </ul>
+
+      <a href="1_manage_orgs.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Jump to
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li><p><a href="new-user/6_MSSR">Tasks list page</a><br/>
+              <span class="govuk-body-s">MSSR - Tasks list page</span><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
+            </li>
+            <li><p> <a href="new-user/6S1-2-Scoping/S12-1-ScopingQ">Scope declare</a><br/>
+              <span class="govuk-body-s">Declaring scope in their new statement</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+               </p>
+            </li>
+            <li><p> <a href="2_org_page-Yes-No">Scope from YES to NO</a><br/>
+              <span class="govuk-body-s">Changing scope from Yes to No in their published statement 2021</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+              </p>
+            </li>
+            <li>
+              <p> <a href="2_org_page-No-Yes">Scope from NO to YES</a><br/>
+                <span class="govuk-body-s">Changing scope from No to Yes in their published statement 2020<br/><hr class="govuk-section-break govuk-section-break--visible">
+                </p>
+            </li>
+            <li>
+              <p> <a href="new-user/6S1-2-Scoping/S12-2-NoSelection-Error1">NO scope selection - error 1</a></p>
+              <p> <a href="new-user/6S1-2-Scoping/S12-2-NoSelection-Error2">NO scope selection - error 2</a><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
+            </li>
+            <li>
+              <p> <a href="10_ViewingService-2023">Viewing Service - In scope</a><br/>
+                <span class="govuk-body-s">Organisation who are IN scope to publish</p>
+            </li>
+            <li>
+              <p> <a href="10_ViewingService-2023-OutOfScope">Viewing Service - Out of scope</a><br/>
+                <span class="govuk-body-s">Organisation who are OUT of scope to publish</p><hr class="govuk-section-break govuk-section-break--visible">
+            </li>
+          </ul>
+        </nav>
+      </aside>
     </div>
   </div>
-
 {% endblock %}

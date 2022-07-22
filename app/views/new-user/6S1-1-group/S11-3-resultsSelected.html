@@ -1,0 +1,228 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your group statement?</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+
+<!--inset text starts-->
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% set myInset %}
+    <h3 class="govuk-heading-m">4 organisations included</h3>
+    <p class="govuk-body">in ALDI STORES LIMITED group statement (2023)<br/>
+    <a href="S11-4-orgsReview" class="govuk-link">See which organisations you've selected</a></p>
+{% endset %}
+
+{{ govukInsetText({
+  html: myInset
+}) }}
+<!--inset text ends-->
+
+ <!-- search box starts -->
+    {{ govukInput({
+      label: {
+        text: "Search for and select organisations"
+      },
+      hint:{
+        text: "Enter an organisation name or company number. You can search multiple times."
+      },
+      id: "event-name",
+      name: "event-name",
+      classes: "govuk-!-width-three-quarters"
+    }) }}
+    <!-- search box ends-->
+
+<p><a href="S11-5-addManually">Can't find the organisation you're looking for?</a></p>
+
+    </div>
+
+<div class="govuk-grid-column-full">
+
+
+
+<!-- Table START -->
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Include",
+        href: "#",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{% set myLink %}
+<p class="govuk-link"> <a href="#">Remove</a>.</p>
+{% endset %}
+
+
+
+{{ govukTable({
+  captionClasses: "govuk-body",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Organisation name",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Company number",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Address",
+      classes: 'app-custom-class'
+    },
+    {
+      text: " ",
+      classes: 'app-custom-class'
+    }
+
+  ],
+
+  rows: [
+    [
+      {
+        text: "ASDA GROUP LIMITED"
+      },
+      {
+        text: "01396513"
+      },
+      {
+        html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+      },
+      {
+        html:mySecondary
+      }
+    ],
+    [
+    {
+      text: "ASDA GROUP LIMITED"
+    },
+    {
+      text: "01396513"
+    },
+    {
+      html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+    },
+    {
+      html:myLink
+    }
+  ],
+  [
+  {
+    text: "ASDA GROUP LIMITED"
+  },
+  {
+    text: "01396513"
+  },
+  {
+    html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+  },
+  {
+    html:mySecondary
+  }
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+  html:myLink
+}
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+  html:mySecondary
+}
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+  html:mySecondary
+}
+],
+    [
+    {
+      text: "ASDA GROUP LIMITED"
+    },
+    {
+      text: "01396513"
+    },
+    {
+      html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+    },
+    {
+      html:myLink
+    }
+    ]
+  ]
+}) }}
+<!-- Table END -->
+
+<!--pagination starts-->
+<p> pagination comes here</p>
+<!--pagination ends-->
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Continue",
+    href: "../6r_MSSR-complete"
+  }
+  ) }}
+ <!--<a class="govuk-link" href="../6r_MSSR-complete">Skip this</a>-->
+</div>
+<!--CTA end-->
+
+</div>
+
+  </div>
+
+{% endblock %}

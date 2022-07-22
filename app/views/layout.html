@@ -30,8 +30,10 @@
 {% from "govuk/components/tag/macro.njk"                 import govukTag %}
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
+{% from "govuk/components/header/macro.njk"              import govukHeader %}
 
 {% block head %}
+{{data | log}}
   {% include "includes/head.html" %}
 {% endblock %}
 
@@ -39,15 +41,31 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
+
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+{# Set serviceName in config.js. #}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Modern slavery statement registry",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Your organisations",
+      active: true
+    },
+    {
+      href: "#2",
+      text: "Your details"
+    },
+    {
+      href: "#3",
+      text: "Sign out"
+    }
+  ]
+}) }}
 {% endblock %}
+
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
