@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}<!--
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>-->
+{% endblock %} 
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <h2 class="govuk-heading-m">Re-engineering statement submission journey</h2>
+      <p>Journey to show how Organisations submit their slavery statement. This journey has the FY page repeating twice in the journey.</p>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="/1_manage_orgs">Statement submission journey</a>
+        </li>
+        <li>
+      </ul>
+
+<!--divider line start-->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<!--divider line ends-->
+
+      <h2 class="govuk-heading-m">PDF Management</h2>
+      <p>Options to show the Trigger points of the document upload functionality.</p>
+      <ul class="govuk-list">
+        <li><a class="govuk-link" href="/6_MSSR">Trigger point 1</a> [Finalised version - 17.05.2022]</li>
+        <li><a class="govuk-link" href="/8_PDF-2">Trigger point 2</a></li>
+         <li><a class="govuk-link" href="/8_PDF-3">Trigger point 3</a> </li>
+      </ul>
+
+<!--divider line start-->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<!--divider line ends-->
+
+      <h2 class="govuk-heading-m">Compliance: Criteria 3</h2>
+      <p>Options to show how we could get the approvals.</p>
+      <ul class="govuk-list">
+        <li><a class="govuk-link" href="/9_Compliance-Crt3-1">Compliance Critera3 - option 1</a></li>
+        <li><a class="govuk-link" href="/9_Compliance-Crt3-2">Compliance Critera3 - option 2</a></li>
+      </ul>
+
+<!--divider line start-->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<!--divider line ends-->
+
+      <h2 class="govuk-heading-m">Compliance: Criteria 4</h2>
+      <p>Option to show how we could remind users to fill the mandatory information about compliance in order to submit their application.</p>
+      <ul class="govuk-list">
+        <li><a class="govuk-link" href="/7_Compliance-Crt4-E1">Compliance Critera4 - option 1</a></li>
+        <li><a class="govuk-link" href="/7_Compliance-Crt4-E2">Compliance Critera4 - option 2</a></li>
+         <li><a class="govuk-link" href="/7_Compliance-Crt4-E3">Compliance Critera4 - option 3</a></li>
+          <li><a class="govuk-link" href="/7_Compliance-Crt4-E4">Compliance Critera4 - option 4</a></li>
+      </ul>
+<!--
+      <p>Use this service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>do something</li>
+        <li>update your name, address or other details</li>
+        <li>do something else</li>
+      </ul>
+      <p>Registering takes around 5 minutes.</p> 
+      <a href="/1_manage_orgs.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+      
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div> -->
+
+  </div>
+{% endblock %}

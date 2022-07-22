@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+<!-- heading starts
+<span class="govuk-caption-l">ORGANISATION NAME</span>
+<h1 class="govuk-heading-l">We need more information</h1>
+ heading ends-->
+
+<!-- radio button start-->
+<form class="form" action="/return-user/6S1-2-Scoping-Yes/S12-1-ScopingA" method="post">
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "scopingYN",
+    name: "scopingYN",
+    fieldset: {
+      legend: {
+        text: "Was your organisation required to publish a modern slavery statement on its website in 2022?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        checked: true
+      },
+      {
+        value: "no",
+        text: "No",
+        checked: checked("scopingYN", "no")
+      }
+    ]
+  }) }}
+
+  <p>If you don't know whether your organisation was required to publish a modern slavery statement, <a href="#">refer to the guidance (opens in new window)</a>.</p>
+<button class="govuk-button" data-module="govuk-button">Continue</button> <!--<a class="govuk-link" href="../6S1-1-Org/S11-complete">Skip this question</a>-->
+</form>
+<!-- radio button ends-->
+
+    </div>
+  </div>
+
+{% endblock %}

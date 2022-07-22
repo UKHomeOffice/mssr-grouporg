@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+PDF delete confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/return-user/6r_S1_2-2-2_MSSR" method="post">
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "delete-document",
+          name: "delete-document",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to delete your PDF statement?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: '<p class="govuk-body">You are going to delete the file <strong>NameOfTheFileComesHere.PDF</strong>, which was uploaded on 15 April 2021.</p><p>The file deletion cannot be undone.</p>'
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("delete-document", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("delete-document", "no")
+            }
+          ],
+          errorMessage: error
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
