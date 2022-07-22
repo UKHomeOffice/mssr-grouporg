@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Before you start – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Before you start</h1>
+      <p class="govuk-body">To use this service, you will need to provide us with some basic information about your most recent modern slavery statement. </p>
+        <p class="govuk-body">We will then ask you some additional questions about your statement. These questions are optional, however, you are encouraged to answer all questions as fully as possible, to help increase awareness of modern slavery risks and best practice. All our questions relate to the period covered by your statement. </p>
+          <p class="govuk-body"> <a href="#" class="govuk-link">Read all of the required and optional questions to help you prepare your submission.</a></p>
+
+<h2 class="govuk-heading-m">Saving and editing your answers</h2>
+<p class="govuk-body">You do not have to answer all our questions in one go. You can save and edit your answers as often as you like before you submit them. </p>
+
+<h2 class="govuk-heading-m">Publishing your answers on GOV.UK</h2>
+<p class="govuk-body">When you submit your answers, we will publish all the information you’ve provided as a statement summary on the Modern slavery statement registry on GOV.UK. This will include a link to the full statement on your website. It will be available for public viewing.</p>
+<p class="govuk-body">If you need to, you can make changes to your published answers and resubmit them. Your updated information will then replace your original answers on the registry.</p>
+
+
+<h2 class="govuk-heading-m">What the published information will look like</h2>
+<p class="govuk-body">You can see examples of published statement summaries on <a href="#" class="govuk-link">Find a modern slavery statement (opens in new window)</a>.</p>
+
+<!-- Button -->
+{{ govukButton({
+  text: "Continue",
+  href: "/5_transparency"
+}) }}
+<!-- Button Ends-->
+
+
+</div>
+
+  </div>
+
+{% endblock %}
