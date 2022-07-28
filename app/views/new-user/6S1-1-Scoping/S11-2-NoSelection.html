@@ -26,6 +26,8 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
     <div class="govuk-grid-column-two-thirds">
 <!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
  <!--Check boxes start-->
+
+
  {% set textHtml %}
  {{ govukInput({
   label: {
@@ -34,7 +36,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
   prefix: {
     text: "£"
   },
-  hint: {
+ hint: {
     text: "For example, 25,560,000.00"
   },
   classes: "govuk-!-width-one-half",
@@ -70,10 +72,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
       {
         value: "turnover",
         text: "Its turnover or budget is less than £36 million per year",
-        checked: true,
-        conditional: {
-          html: textHtml
-        }
+        conditional:{html: textHtml}
       },
       {
         value: "goods",
@@ -85,20 +84,16 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
       },
       {
         value: "liquidation",
-        text: "It is in administration or liquidation, has closed or is dormant, or has merged with another organisation",
-        checked: true
+        text: "It is in administration or liquidation, has closed or is dormant, or has merged with another organisation"
       },
       {
         value: "other",
         text: "Other",
-        conditional: {
-          html: textAreaHtml
-        }
+        conditional: {html: textAreaHtml}
       }
     ]
   }) }}
 <!--Check boxes ends-->
-
 
 <!-- Inset text starts-->
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
@@ -110,11 +105,12 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 <!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Continue",
-    href: "S12-2B-NoConfirm"
+    text: "Confirm",
+    href: "../6S1-1-Scoping/S11-complete"
   }
   ) }}
 <!--<a class="govuk-link" href="#">Skip this question</a>-->

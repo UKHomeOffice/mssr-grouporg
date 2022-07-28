@@ -28,19 +28,6 @@
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your group statement?</h1>
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
 
-<!--inset text starts-->
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-{% set myInset %}
-    <h3 class="govuk-heading-m">4 organisations included</h3>
-    <p class="govuk-body">in ALDI STORES LIMITED group statement (2023)<br/>
-    <a href="../6S1-1-group/S11-4-orgsReview" class="govuk-link">See which organisations you've selected</a></p>
-{% endset %}
-
-{{ govukInsetText({
-  html: myInset
-}) }}
-<!--inset text ends-->
-
  <!-- search box starts -->
     {{ govukInput({
       label: {
@@ -55,15 +42,13 @@
     }) }}
     <!-- search box ends-->
 
-<p><a href="../6S1-1-group/S11-5-addManually">Can't find the organisation you're looking for?</a></p>
+<p><a href="../6S1-1-group/S12-5-addManually">Can't find the organisation you're looking for?</a></p>
 
     </div>
 
 <div class="govuk-grid-column-full">
-
-
-
 <!-- Table START -->
+
 {% set mySecondary %}
     {{ govukButton({
         text: "Include",
@@ -71,12 +56,6 @@
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
-
-{% set myLink %}
-<p class="govuk-link"> <a href="#">Remove</a>.</p>
-{% endset %}
-
-
 
 {{ govukTable({
   captionClasses: "govuk-body",
@@ -127,7 +106,7 @@
       html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
     },
     {
-      html:myLink
+      html:mySecondary
     }
   ],
   [
@@ -155,7 +134,7 @@
   html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
 },
 {
-  html:myLink
+  html:mySecondary
 }
 ],
 [
@@ -197,7 +176,7 @@
       html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
     },
     {
-      html:myLink
+      html:mySecondary
     }
     ]
   ]

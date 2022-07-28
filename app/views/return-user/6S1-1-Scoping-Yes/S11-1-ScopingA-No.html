@@ -30,11 +30,11 @@ Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK P
  heading ends-->
 
 <!-- radio button start-->
-<form class="form" action="/return-user/6S1-1-Scoping-No/S12-1-ScopingA" method="post">
+<form class="form" action="/return-user/6S1-1-Scoping-No/S11-1-ScopingA" method="post">
   {{ govukRadios({
     classes: "govuk-radios--inline",
-    idPrefix: "scopingNY",
-    name: "scopingNY",
+    idPrefix: "scoping",
+    name: "scoping",
     fieldset: {
       legend: {
         text: "Was your organisation required to publish a modern slavery statement on its website in 2022?",
@@ -46,18 +46,19 @@ Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK P
       {
         value: "yes",
         text: "Yes",
-        checked: checked("scopingNY", "yes")
+        checked: checked("scoping", "yes")
       },
       {
         value: "no",
         text: "No",
         checked: true
       }
-    ]
+    ],
+    errorMessage: error
   }) }}
 
   <p>If you don't know whether your organisation was required to publish a modern slavery statement, <a href="#">refer to the guidance (opens in new window)</a>.</p>
-<button class="govuk-button" data-module="govuk-button">Continue</button> <!--<a class="govuk-link" href="../6S1-2-Org/S11-complete">Skip this question</a>-->
+<button class="govuk-button" data-module="govuk-button">Continue</button> <!--<a class="govuk-link" href="../6S1-2-Org/S12A-complete">Skip this question</a>-->
 </form>
 <!-- radio button ends-->
 

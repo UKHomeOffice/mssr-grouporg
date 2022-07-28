@@ -24,10 +24,18 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "No reason is selected",
+      href: "#passport-issued-day"
+    }
+  ]
+}) }}
+
  <!--Check boxes start-->
-
-
  {% set textHtml %}
  {{ govukInput({
   label: {
@@ -36,7 +44,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
   prefix: {
     text: "£"
   },
- hint: {
+  hint: {
     text: "For example, 25,560,000.00"
   },
   classes: "govuk-!-width-one-half",
@@ -56,7 +64,6 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
 }) }}
  {% endset -%}
 
-
  {{ govukCheckboxes({
     idPrefix: "waste",
     name: "waste",
@@ -67,7 +74,9 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
         classes: "govuk-fieldset__legend--l"
       }
     },
-
+    errorMessage: {
+      text: "Select the reasons why your organisation does not have to publish a modern slavery statement"
+    },
     items: [
       {
         value: "turnover",
@@ -110,7 +119,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
   {{ govukButton(
     {
     text: "Confirm",
-    href: "../6S1-2-Org/S11-complete"
+    href: "S11-2B-NoConfirm"
   }
   ) }}
 <!--<a class="govuk-link" href="#">Skip this question</a>-->

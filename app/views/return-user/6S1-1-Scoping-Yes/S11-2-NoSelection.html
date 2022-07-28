@@ -24,8 +24,8 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+<!-- ****** supplement boxes needs to be added for the Value and the Other checbox *******-->
  <!--Check boxes start-->
- <form class="form" action="/new-user/6S1-1-Scoping/S12-2-NoSelection-code" method="post"></form>
  {% set textHtml %}
  {{ govukInput({
   label: {
@@ -33,6 +33,9 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
   },
   prefix: {
     text: "£"
+  },
+  hint: {
+    text: "For example, 25,560,000.00"
   },
   classes: "govuk-!-width-one-half",
   id: "annual-turnover",
@@ -57,7 +60,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
     name: "waste",
     fieldset: {
       legend: {
-        text: "Tell us why your organisation is not required to publish a modern slavery statement",
+        text: "Tell us why your organisation is not required to publish a 2021 modern slavery statement",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
@@ -90,31 +93,30 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
           html: textAreaHtml
         }
       }
-    ],
-    errorMessage: error
+    ]
   }) }}
 <!--Check boxes ends-->
 
 
 <!-- Inset text starts-->
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
 {{ govukInsetText({
   html: '<a href="#">Guidance (opens in new window)</a> is available to help you work out whether your organisation is required to publish a modern slavery statement.'
 }) }}
 <!-- Inset text ends-->
 
-<button class="govuk-button" data-module="govuk-button">Continue</button>
 
-</form>
-<!--CTA start
+<!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Continue",
-    href: "/return-user-no/6r_S1_1-2-2_MSSR"
+    text: "Confirm",
+    href: "../6r_MSSR-complete"
   }
   ) }}
-<a class="govuk-link" href="#">Skip this question</a>-->
+<!-- <a class="govuk-link" href="S11-1-ScopingA">Cancel</a> -->
 </div>
 <!--CTA end-->
 
