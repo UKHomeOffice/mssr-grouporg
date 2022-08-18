@@ -122,46 +122,6 @@ router.post('/new-user/scoping-journey/S12-1-ScopingQ', function (req, res)
 })
 
 
-// Scoping changing for No to Yes - return user
-router.post('/return-user/6S1-2-Scoping-No/S12-1-ScopingA', function (req, res)
-{
-  const selectedOption = req.body['scopingNY']
-
-  // Make a variable and give it the value from 'scopingconfirm'
-  var scopingNYconfirm = req.session.data['scopingNY']
-
-  // YES, company has to subnit the statement
-  if (scopingNYconfirm == "yes"){
-    // Send user to next page
-    res.redirect('/return-user/6S1-2-Scoping-No/6r_MSSR-complete')
-  }
-  else {
-    // NO, company do not have to subnit the statement
-    res.redirect('/return-user/6S1-2-Scoping-No/S12-2B-NoSelection-selected')
-  }
-})
-
-
-// Scoping changing for Yes to No - return user
-router.post('/return-user/6S1-2-Scoping-Yes/S12-1-ScopingA', function (req, res)
-{
-  const selectedOption = req.body['scopingYN']
-
-  // Make a variable and give it the value from 'scopingconfirm'
-  var scopingYNconfirm = req.session.data['scopingYN']
-
-  // YES, company has to subnit the statement
-  if (scopingYNconfirm == "yes"){
-    // Send user to next page
-    res.redirect('../6r_MSSR-complete')
-  }
-  else {
-    // NO, company do not have to subnit the statement
-    res.redirect('/return-user/6S1-2-Scoping-Yes/S12-2-NoSelection')
-  }
-})
-
-
 
 // Organisation type [Single/Group] - new user.
 router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
@@ -178,11 +138,11 @@ router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
   // YES, company has to subnit the statement
   if (orgTypeconfirm == "group"){
     // Send user to next page
-    res.redirect('/new-user/scoping-table/S12-complete')
+    res.redirect('/new-user/6S1-1-group/S11-2-search')
   }
   else {
     // NO, company do not have to subnit the statement
-    res.redirect('/new-user/scoping-table/S12-complete')
+    res.redirect('/new-user/6S1-1-Org/S11-complete.html')
   }
 })
 
