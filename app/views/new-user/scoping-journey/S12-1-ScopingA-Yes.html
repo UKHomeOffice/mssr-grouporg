@@ -30,7 +30,7 @@ Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK P
  heading ends-->
 
 <!-- radio button start-->
-<form class="form" action="/new-user/6S1-2-Scoping/S12-1-ScopingQ" method="post">
+<form class="form" action="/new-user/scoping-table/S12-1-ScopingQ" method="post">
   {{ govukRadios({
     classes: "govuk-radios--inline",
     idPrefix: "scoping",
@@ -46,7 +46,7 @@ Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK P
       {
         value: "yes",
         text: "Yes",
-        checked: checked("scoping", "yes")
+        checked: true
       },
       {
         value: "no",

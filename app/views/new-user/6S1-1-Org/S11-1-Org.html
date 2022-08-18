@@ -45,13 +45,13 @@ html: detailsHtml
 <!-- Details panel ED END -->
 
 <!-- Radio button start -->
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-
+<form class="form" action="/new-user/6S1-1-Org/S11-1-Org" method="post">
 {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
+  idPrefix: "org-type",
+  name: "org-type",
   fieldset: {
     legend: {
+      text: "Organisation name's statement (2021) covers:",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -59,17 +59,22 @@ html: detailsHtml
   items: [
     {
       value: "A single organisation",
-      text: "A single organisation"
+      text: "A single organisation",
+      checked: checked("org-type", "single")
     },
     {
       value: "A group of organisations",
-      text: "A group of organisations"
+      text: "A group of organisations",
+      checked: checked("org-type", "group")
     }
-  ]
+  ],
+  errorMessage: error
 }) }}
+<button class="govuk-button" data-module="govuk-button">Save and continue</button> <a class="govuk-link" href="S11-complete">Skip this question</a>
+</form>
 <!-- Radio button end-->
 
-<!--CTA start-->
+<!--CTA start
 <div class="govuk-button-group">
   {{ govukButton(
     {
@@ -79,9 +84,7 @@ html: detailsHtml
   ) }}
   <a class="govuk-link" href="../6_MSSR">Skip this question</a>
 </div>
-<!--CTA end-->
-
-      </form>
+CTA end-->
 
     </div>
   </div>

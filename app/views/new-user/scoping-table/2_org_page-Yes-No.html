@@ -74,20 +74,24 @@
 
 <div class="govuk-grid-column-full">
 <!-- Table START -->
-
-{% set mySecondary0 %}
+{% set myThing0 %}
     {{ govukButton({
-       text: "Edit & Republish",
-        href: "/return-user/6r_MSSR",
-        classes: "govuk-button--secondary"
+        text: "Start",
+        href: "#"
     }) }}
 {% endset %}
 
+{% set myThing %}
+    {{ govukButton({
+        text: "Start",
+        href: "/3_FY-1"
+    }) }}
+{% endset %}
 
 {% set mySecondary %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "#",
+        href: "/return-user/6r_MSSR",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -95,7 +99,7 @@
 {% set mySecondary2 %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "#",
+        href: "/return-user/6r_MSSR",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -113,6 +117,10 @@
       classes: 'app-custom-class'
     },
     {
+      text: "Do you have to publish a statement on your website by law?",
+      classes: 'app-custom-class'
+    },
+    {
       text: "Statement status on the registry",
       classes: 'app-custom-class'
     },
@@ -124,7 +132,24 @@
   ],
 
   rows: [
-    [
+  [
+  {
+    text: "2023"
+  },
+  {
+    text: "1 Jul 2022 - 30 Jun 2023"
+  },
+  {
+    html:'Yes <br/><a href="#">Change status</a>'
+  },
+  {
+    text: "Not started"
+  },
+  {
+    html:myThing
+  }
+],
+  [
       {
         text: "2022"
       },
@@ -132,10 +157,13 @@
         text: "1 Jul 2021 - 30 Jun 2022"
       },
       {
+        html:'Yes <br/><a href="#">Change status</a>'
+      },
+      {
         text: "Published on 19 Jul 2022"
       },
       {
-        html:mySecondary0
+        html:mySecondary2
       }
     ],
     [
@@ -146,10 +174,13 @@
       text: "1 Jul 2020 - 30 Jun 2021"
     },
     {
-      text: "Published on 15 Aug 2021"
+      html:'Yes <br/><a href="#">Change status</a>'
     },
     {
-     html:mySecondary
+      text: "Published on 24 Jul 2021"
+    },
+    {
+     html:mySecondary2
     }
   ],
     [
@@ -160,7 +191,10 @@
         text: "1 Jul 2019 - 30 Jun 2020"
       },
       {
-        text: "Published voluntarily on 15 Jul 2021"
+        html:'Yes <br/><a href="#">Change status</a>'
+      },
+      {
+        text: "Published on 8 Aug 2020"
       },
       {
         html:mySecondary2

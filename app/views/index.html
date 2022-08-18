@@ -18,10 +18,26 @@ Scope feature – {{ serviceName }} – GOV.UK Prototype Kit
 <h1 class="govuk-heading-l">In-scope feature</h1>
 
       <p>Functionalities covered in this prototype:</p>
+      <h1 class="govuk-heading-m">New statement submission:</h1>
       <ul class="govuk-list govuk-list--bullet">
-        <li><b>New statement:</b><br/> Combined the "scope" functionality with the statement submission journey</li>
-        <li><b>Existing statement:</b><br/>Changing the scope in already published statement</li>
+        <li>Organisations could declare their scope status using the column in the table</li>
+          <li>Organisations could declare their scope status wihtin the journey (if they have missed doing it from the table)</li>
+          <li>Organisations could only declare their scope status as NO and do nothing to submit the statement</li>
       </ul>
+
+      <h1 class="govuk-heading-m">Editing statements:</h1>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Organisations could change their scope status from Yes to No / No to Yes / Reasons for No</li>
+        <li>Organisations coming back to submit the statement voluntarily who has declared their scope status as NO</li>
+      </ul>
+
+      <h1 class="govuk-heading-m">Viewing statements:</h1>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Organisations are in scope to publish the statement</li>
+        <li>Organisations are out of scope, but submitted the statement voluntarily</li>
+        <li>Organisations are out of scope, so didn't submitted the statement</li>
+      </ul>
+
 
       <a href="1_manage_orgs.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
@@ -39,33 +55,50 @@ Scope feature – {{ serviceName }} – GOV.UK Prototype Kit
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
-            <li><p><a href="new-user/6_MSSR">Tasks list page</a><br/>
-              <span class="govuk-body-s">MSSR - Tasks list page</span><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
-            </li>
-            <li><p> <a href="new-user/6S1-2-Scoping/S12-1-ScopingQ">Scope declare</a><br/>
-              <span class="govuk-body-s">Declaring scope in their new statement</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+
+            <li><span class="govuk-caption-m">New statement submission</span>
+              <p> <a href="2_org_page">Scope declare - Table</a><br/>
+              <span class="govuk-body-s">Declaring scope of their new statement from a column in the table</span>
                </p>
             </li>
-            <li><p> <a href="2_org_page-Yes-No">Scope from YES to NO</a><br/>
-              <span class="govuk-body-s">Changing scope from Yes to No in their published statement 2021</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+            <li>
+              <p> <a href="2_org_page">Scope declare - Within Journey</a><br/>
+              <span class="govuk-body-s">Declaring scope of their new statement within the journey</span><br/><hr class="govuk-section-break govuk-section-break--visible">
+               </p>
+            </li>
+            <li><span class="govuk-caption-m">Editing statement</span>
+              <p> <a href="/return-user/scoping/2_org_page-Yes-No">Scope from YES to NO</a><br/>
+              <span class="govuk-body-s">Changing scope from Yes to No in their published statement 2023</span>
               </p>
             </li>
             <li>
-              <p> <a href="2_org_page-No-Yes">Scope from NO to YES</a><br/>
-                <span class="govuk-body-s">Changing scope from No to Yes in their published statement 2020<br/><hr class="govuk-section-break govuk-section-break--visible">
+              <p><a href="/return-user/scoping/2_org_page-No-Yes">Scope from NO to YES</a><br/>
+                <span class="govuk-body-s">Changing scope from No to Yes in their published statement 2023
                 </p>
             </li>
             <li>
-              <p> <a href="new-user/6S1-2-Scoping/S12-2-NoSelection-Error1">NO scope selection - error 1</a></p>
-              <p> <a href="new-user/6S1-2-Scoping/S12-2-NoSelection-Error2">NO scope selection - error 2</a><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
+              <p> <a href="/return-user/scoping/2_org_page-No">Publishing statement voluntarily</a><br/>
+                <span class="govuk-body-s">Orgs defined their status as NO but not submitted their statement yet<br/><hr class="govuk-section-break govuk-section-break--visible"></p>
+            </li>
+
+            <li><span class="govuk-caption-m">Viewing service</span>
+              <p> <a href="10_ViewingService-2023">In scope</a><br/>
+                <span class="govuk-body-s">Orgs who are IN scope to publish</p>
             </li>
             <li>
-              <p> <a href="10_ViewingService-2023">Viewing Service - In scope</a><br/>
-                <span class="govuk-body-s">Organisation who are IN scope to publish</p>
+              <p> <a href="10_ViewingService-2023-OutOfScope">Out of scope</a><br/>
+                <span class="govuk-body-s">Orgs who are OUT of scope to publish</p>
             </li>
             <li>
-              <p> <a href="10_ViewingService-2023-OutOfScope">Viewing Service - Out of scope</a><br/>
-                <span class="govuk-body-s">Organisation who are OUT of scope to publish</p><hr class="govuk-section-break govuk-section-break--visible">
+              <p> <a href="10_ViewingService-2023-OutOfScope">Published voluntarily</a><br/>
+                <span class="govuk-body-s">Orgs who are OUT of scope, but still published statement</p><hr class="govuk-section-break govuk-section-break--visible">
+            </li>
+            <li>
+              <p> <a href="new-user/scoping-table/S12-2-NoSelection-Error1">NO scope selection - error 1</a></p>
+              <p> <a href="new-user/scoping-table/S12-2-NoSelection-Error2">NO scope selection - error 2</a><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
+            </li>
+            <li><p><a href="new-user/6_MSSR">Tasks list page</a><br/>
+              <span class="govuk-body-s">MSSR - Tasks list page</span><br/><hr class="govuk-section-break govuk-section-break--visible"></p>
             </li>
           </ul>
         </nav>

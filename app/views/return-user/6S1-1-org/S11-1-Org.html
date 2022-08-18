@@ -45,11 +45,9 @@ html: detailsHtml
 <!-- Details panel ED END -->
 
 <!-- Radio button start -->
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-
 {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
+  idPrefix: "org-type",
+  name: "org-type",
   fieldset: {
     legend: {
       text: "Organisation name's statement (2021) covers:",

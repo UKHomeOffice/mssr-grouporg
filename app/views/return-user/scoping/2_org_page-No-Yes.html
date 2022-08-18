@@ -88,6 +88,13 @@
     }) }}
 {% endset %}
 
+{% set myThing1 %}
+    {{ govukButton({
+        text: "Publish statement voluntarily",
+        href: "../../3_FY-2"
+    }) }}
+{% endset %}
+
 {% set mySecondary %}
     {{ govukButton({
         text: "Edit & Republish",
@@ -140,13 +147,17 @@
     text: "1 Jul 2022 - 30 Jun 2023"
   },
   {
-    html: '<a href="/new-user/scoping-table/S12-1-ScopingQ">Declare status</a>'
+    html:'No <br/><a href="S12-4-YesDeclare">Change status</a>'
   },
   {
-    text: "Not started"
+    text: "Not required to publish"
   },
   {
-    html:myThing
+    html:myThing1
+  }
+  },
+  {
+    html:myThing0
   }
 ],
   [
