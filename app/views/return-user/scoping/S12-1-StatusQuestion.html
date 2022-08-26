@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/return-user/scoping/S12-1-StatusQuestion" method="post">
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "sc-ans",
+          name: "sc-ans",
+          fieldset: {
+            legend: {
+              text: "What would you like to do with the legal requirement for the statement year 2023?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "OrgStatus",
+              text: "Change the status to Yes",
+              checked: checked("sc-ans", "status")
+            },
+            {
+              value: "OrgReasons",
+              text: "Change the reasons",
+              checked: checked("sc-ans", "reasons")
+            }
+          ],
+          errorMessage: error
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

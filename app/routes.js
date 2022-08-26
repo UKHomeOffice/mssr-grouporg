@@ -122,6 +122,27 @@ router.post('/new-user/scoping-journey/S12-1-ScopingQ', function (req, res)
 })
 
 
+// Scoping changing reasons [WITHIN JOURNEY] - new user
+router.post('/return-user/scoping/S12-1-StatusQuestion', function (req, res)
+{
+  const selectedOption = req.body['sc-ans']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user/scoping/S12-1-StatusQuestion", { error })}
+
+  // Make a variable and give it the value from 'scopingconfirm'
+  var ansconfirm = req.session.data['sc-ans']
+
+  if (ansconfirm == "OrgStatus"){
+    res.redirect('/return-user/scoping/S12-3-YesConfirm')
+  }
+  else {
+    res.redirect('/return-user/scoping/S12-2A-NoSelection-selected')
+  }
+})
+
+
 
 // Organisation type [Single/Group] - new user.
 router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
