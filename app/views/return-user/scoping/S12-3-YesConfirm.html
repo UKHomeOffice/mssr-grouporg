@@ -24,7 +24,7 @@ Confirming publishing is required – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your organisation is required to publish a 2022 modern slavery statement</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your organisation is required to publish a modern slavery statement in 2023</h1>
 
 <!-- Table 1 starts-->
 
@@ -62,6 +62,18 @@ Confirming publishing is required – {{ serviceName }} – GOV.UK Prototype Kit
   ]
 }) }}
 <!-- Table 1 ends-->
+
+<!-- Inset text starts-->
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{{ govukInsetText({
+  html: '<a href="#">Guidance (opens in new window)</a> is available to help you work out whether your organisation is required to publish a modern slavery statement.'
+}) }}
+<!-- Inset text ends-->
+
+
+
+
+
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
