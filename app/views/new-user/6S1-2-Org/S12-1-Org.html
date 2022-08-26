@@ -51,21 +51,21 @@ html: detailsHtml
   name: "org-type",
   fieldset: {
     legend: {
-      text: "Organisation name's statement (2021) covers:",
+      text: "Organisation name's statement (2023) covers:",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
     {
-      value: "A single organisation",
+      value: "singleOrg",
       text: "A single organisation",
-      checked: checked("org-type", "single")
+      checked: checked("org-type", "singleOrg")
     },
     {
-      value: "A group of organisations",
+      value: "groupOrg",
       text: "A group of organisations",
-      checked: checked("org-type", "group")
+      checked: checked("org-type", "groupOrg")
     }
   ],
   errorMessage: error
@@ -79,7 +79,7 @@ html: detailsHtml
   {{ govukButton(
     {
     text: "Save and continue",
-    href: "S12A-complete"
+    href: "S12-complete"
   }
   ) }}
   <a class="govuk-link" href="../6_MSSR">Skip this question</a>

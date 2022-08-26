@@ -141,6 +141,35 @@
 }) }}
 <!-- Table END -->
 
+
+<!--accordian starts-->
+
+{{ govukAccordion({
+  id: "accordion-default",
+  items: [
+      {
+      heading: {
+        text: "How people read"
+      },
+      content: {
+        html: "<p class='govuk-body'>This is the content for How people read.</p>"
+      }
+    }
+  ]
+}) }}
+
+
+
+<!-- accoridan ends-->
+
+
+
+
+
+
+
+
+
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">

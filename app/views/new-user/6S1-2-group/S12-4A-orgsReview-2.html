@@ -72,7 +72,7 @@
 {% endset %}
 
 {% set myLink %}
-<p class="govuk-link"> <a href="#">Remove</a>.</p>
+<p class="govuk-link"> <a href="#">Remove</a></p>
 {% endset %}
 
 
@@ -161,7 +161,8 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Continue"
+    text: "Confirm",
+    href:"../6S1-2-Org/S12-complete.html"
   }) }}
 
   {{ govukButton({

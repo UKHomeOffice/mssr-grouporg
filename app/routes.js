@@ -66,7 +66,7 @@ router.post('/new-user/6S1-1-Scoping/S11-1-ScopingQ', function (req, res)
   // YES, company has to subnit the statement
   if (scopingconfirm == "yes"){
     // Send user to next page
-    res.redirect('/new-user/6S1-2-Org/S12A-complete')
+    res.redirect('/new-user/6S1-1-Scoping/S11-complete.html')
   }
   else {
     // NO, company do not have to subnit the statement
@@ -130,13 +130,11 @@ router.post('/new-user/6S1-2-Org/S12-1-Org', function (req, res)
   var orgTypeconfirm = req.session.data['org-type']
 
   // YES, company has to subnit the statement
-  if (orgTypeconfirm == "group"){
-    // Send user to next page
-    res.redirect('/new-user/6S1-2-group/S11-2-search')
+  if (orgTypeconfirm == "singleOrg"){
+    res.redirect('/new-user/6S1-2-Org/S12-complete')
   }
-  else {
-    // NO, company do not have to subnit the statement
-    res.redirect('/new-user/6S1-2-Org/S12A-complete')
+  else{
+    res.redirect('/new-user/6S1-2-group/S12-2-search')
   }
 })
 
