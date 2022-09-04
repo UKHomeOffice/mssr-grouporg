@@ -31,26 +31,6 @@
           <p class="govuk-body">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="#">single organisation.</a></p>
 
 <!-- Table START -->
-
-<!--inset text starts-->
-{% set myInset %}
-<h2 class="govuk-heading-s">Included in the 2023 statement for<br/>
-  ASDA GROUP LIMITED<br/>
-  (submitted to our service on 15 Jul 2022)</h2>
-<p class="govuk-!-font-weight-bold">ASDA GROUP LIMITED<br/>
-    <span class="govuk-body">Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>
-    Company number: 01396513</span></p>
-{% endset %}
-
-{% set myTableInset %}
-{{ govukInsetText({
-  html: myInset
-}) }}
-{% endset %}
-<!--inset text ends-->
-
-
-
 {% set mySecondary %}
     {{ govukButton({
         text: "Include",
@@ -60,7 +40,7 @@
 {% endset %}
 
 {% set myLink %}
-<p class="govuk-link"> <a href="#">Remove</a>.</p>
+<p class="govuk-link"> <a href="#">Remove</a></p>
 {% endset %}
 
 
@@ -88,22 +68,6 @@
         html:myLink
       }
     ],
-    [
-    {
-      html: myTableInset
-    },
-    {
-      html:myLink
-    }
-  ],
-  [
-  {
-    text: "ASDA GROUP LIMITED"
-  },
-  {
-    html:mySecondary
-  }
-],
 [
 {
   html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
@@ -145,12 +109,14 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Continue"
+    text: "Confirm",
+    href: "../6S1-1-Org/S11-complete"
   }) }}
 
   {{ govukButton({
     text: "Select more organisations",
-    classes: "govuk-button--secondary"
+    classes: "govuk-button--secondary",
+    href: "/S11-2-searchResults"
   }) }}
 </div>
 <!--CTA end-->

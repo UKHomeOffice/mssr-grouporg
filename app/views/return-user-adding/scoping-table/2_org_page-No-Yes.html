@@ -1,0 +1,234 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds  govuk-!-margin-bottom-7">
+      <h1 class="govuk-heading-xl">Your organisation name</h1>
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+  <p class="govuk-body">
+  34 Turner Street,<br/>
+  London,<br/>
+  England,<br/>
+  E1 2AS.
+  </p>
+  <p> <span class="govuk-body govuk-!-font-weight-bold">What to do if the organisation’s address is incorrect?</span>
+  <br/>If you are a private or voluntary organisation and need to change your organisation name, sector information, or address you should do this via Companies House. Changes that you make will automatically be reflected on this site. If this information is not available on Companies House, please contact <a href="mailto:modernslaverystatements@homeoffice.gov.uk" class="govuk-link">modernslaverystatements@homeoffice.gov.uk</a></p>
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "Organisation address",
+  html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+<p class="govuk-body-l">Use this page to manage your statements on the registry. You can start or continue to provide information about your statement and submit it when you’re ready – or edit and resubmit a statement that you’ve already added.</p>
+
+
+<h2 class="govuk-heading-m">Manage your modern slavery statements</h2>
+<!-- Warning text START -->
+      {{ govukWarningText({
+        text: "The registry categorises statements by the registry year they were due to be published rather than the financial year they cover.",
+        iconFallbackText: "Warning"
+      }) }}
+<!-- Warning text END -->
+<p class="govuk-body">You can calculate the registry year by adding 6 months to the date of your financial year-end as the Home Office expects statements to be published within six months of the organisation’s financial year-end.</p>
+
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+  <ul class="govuk-list govuk-list--bullet">
+    <li>If your financial year-end date falls in the first half of the calendar year (1 January to 30 June), submit your statement for the same calendar year.
+     <br/>For example, if your financial year-end is 31 March 2022, the correct registry year would be 2022.</li>
+    <li>If your financial year-end date falls in the second half of the calendar year (1 July to 31 December), submit your statement in the next calendar year.
+      <br/>For example, if your financial year-end is 31 December 2022, the correct registry year would be 2023.</li>  </ul>
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "Examples to calculate the correct registry year",
+  html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+    </div>
+
+<div class="govuk-grid-column-full">
+<!-- Table START -->
+{% set myThing0 %}
+    {{ govukButton({
+        text: "Start",
+        href: "#"
+    }) }}
+{% endset %}
+
+{% set myThing %}
+    {{ govukButton({
+        text: "Start",
+        href: "/3_FY-1"
+    }) }}
+{% endset %}
+
+{% set myThing1 %}
+    {{ govukButton({
+        text: "Publish voluntarily",
+        href: "../../3_FY-2"
+    }) }}
+{% endset %}
+
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Edit & Republish",
+        href: "/return-user/6r_MSSR",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{% set mySecondary2 %}
+    {{ govukButton({
+        text: "Edit & Republish",
+        href: "/return-user/6r_MSSR",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{{ govukTable({
+  captionClasses: "govuk-body",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Registry year",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "If your financial year-end date falls between",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Do you have to publish a statement on your website by law?",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Statement status on the registry",
+      classes: 'app-custom-class'
+    },
+    {
+      text: " ",
+      classes: 'app-custom-class'
+    }
+
+  ],
+
+  rows: [
+  [
+  {
+    text: "2023"
+  },
+  {
+    text: "1 Jul 2022 - 30 Jun 2023"
+  },
+  {
+    html:'No <br/><a href="#">Change</a>'
+  },
+  {
+    text: "Not started"
+  },
+  {
+    html:myThing1
+  }
+],
+  [
+      {
+        text: "2022"
+      },
+      {
+        text: "1 Jul 2021 - 30 Jun 2022"
+      },
+      {
+        html:'Yes <br/><a href="#">Change</a>'
+      },
+      {
+        text: "Published on 19 Jul 2022"
+      },
+      {
+        html:mySecondary2
+      }
+    ],
+    [
+    {
+      text: "2021"
+    },
+    {
+      text: "1 Jul 2020 - 30 Jun 2021"
+    },
+    {
+      html:'Yes <br/><a href="#">Change</a>'
+    },
+    {
+      text: "Published on 24 Jul 2021"
+    },
+    {
+     html:mySecondary2
+    }
+  ],
+    [
+      {
+        text: "2020"
+      },
+      {
+        text: "1 Jul 2019 - 30 Jun 2020"
+      },
+      {
+        html:'Yes <br/><a href="#">Change</a>'
+      },
+      {
+        text: "Published on 8 Aug 2020"
+      },
+      {
+        html:mySecondary2
+       }
+    ]
+  ]
+}) }}
+<!-- Table END -->
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-m">Users who can add statements for this organisation</h1>
+      <p class="govuk-body">You are the only person registered to add this organisation’s Modern slavery statements to the service.</p>
+<!-- Details panel START -->
+      <!-- text should be formatted - bulleted text/bold text-->
+{{ govukDetails({
+  summaryText: "What happens if I remove myself?",
+  text: "If you remove yourself:
+  you will not be able to add this organisation’s Modern slavery statements to the registry
+  someone else will need to register this organisation in order to add its statements to the registry; registering an organisation can take up to a week
+  your account will remain open"
+}) }}
+<!-- Details panel END -->
+
+<p class="govuk-body">Joe Gibbins (You) <a href="#" class="govuk-link">Remove</a></p>
+
+      </div>
+  </div>
+
+{% endblock %}

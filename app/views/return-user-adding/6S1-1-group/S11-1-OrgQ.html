@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2023 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">For the 2023 statement, would you consider reusing the same subsidiaries list from your previous submitted "<2022>" statement?</h1>
+<p class="gov-uk-body">You could able to add new or remove old subsidiaries from the list.</p>
+{{ govukDetails({
+  summaryText: "View the 6 organisations listed in your 2022 statement",
+  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+}) }}
+
+<!-- Radio button start -->
+<form class="form" action="/return-user-adding/6S1-1-group/S11-1-OrgQ" method="post">
+{{ govukRadios({
+  idPrefix: "use-list",
+  name: "use-list",
+  classes: "govuk-radios--inline",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: checked("use-list", "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: checked("use-list", "No")
+    }
+  ],
+  errorMessage: error
+}) }}
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+</form>
+<!-- Radio button end-->
+
+<!--CTA start
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Save and continue",
+    href: "S11-complete"
+  }
+  ) }}
+  <a class="govuk-link" href="../6_MSSR">Skip this question</a>
+</div>
+CTA end-->
+
+    </div>
+  </div>
+
+{% endblock %}

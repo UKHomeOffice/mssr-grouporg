@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review the organisations in your group statement</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+          <p class="govuk-body">You’ve told us your statement is for the following group of organisations. You can add more organisations to the group, or remove organisations, before confirming and continuing.</p>
+          <p class="govuk-body">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="#">single organisation.</a></p>
+
+<!-- Table START -->
+
+{{ govukTable({
+  captionClasses: "govuk-body",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Organisation",
+      classes: 'app-custom-class'
+    },
+    {
+      text: " ",
+      classes: 'app-custom-class'
+    }
+
+  ],
+
+  rows: [
+    [
+      {
+        html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
+      },
+      {
+        html:myLink
+      }
+    ],
+  [
+  {
+    text: "ASDA GROUP LIMITED"
+  },
+  {
+    html:mySecondary
+  }
+],
+[
+{
+  html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
+},
+{
+  html:myLink
+}
+],
+[
+{
+  html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
+},
+{
+  html:myLink
+}
+],
+[
+{
+  html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
+},
+{
+  html:myLink
+}
+],
+
+[
+{
+      html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
+    },
+    {
+      html:myLink
+    }
+    ]
+  ]
+}) }}
+<!-- Table END -->
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Confirm",
+    href: "../6S1-1-Org/S11-complete"
+  }) }}
+
+  {{ govukButton({
+    text: "Select more organisations",
+    classes: "govuk-button--secondary",
+    href: "/S11-2-searchResults"
+  }) }}
+</div>
+<!--CTA end-->
+
+</div>
+
+  </div>
+
+{% endblock %}

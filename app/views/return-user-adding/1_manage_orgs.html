@@ -1,0 +1,161 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Your organisations – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block beforeContent %}
+<!-- phase banner-->
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--Phase banner ends -->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Register or select organisations you want to add statements for</h1>
+      <p class="govuk-body-l">Before you can add an organisation’s statement to the registry, you need to register the organisation on your account.</p>
+
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+  <p class="govuk-body">If multiple people want to be able to use this service on behalf of the same organisation (for example, to collaborate on providing information):</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>each person must create their own account</li>
+    <li>each person must then register the organisation on their account</li>
+    <li>everyone who has registered the same organisation on their account is visible to one another</li>
+    <li>everyone who has registered the same organisation on their account can remove the other users from the list of people able to submit for that organisaiton (when this happens, the ‘removed’ person will receive an email notification)</li>  </ul>
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "Read about multiple users for the same organisation",
+  html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+
+<!-- Warning text START -->
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        text: "If your statement is for a group of organisations you only need to register the parent organisation.",
+        iconFallbackText: "Warning"
+      }) }}
+<!-- Warning text END -->
+</div>
+
+<div class="govuk-grid-column-full">
+<!-- Table START -->
+<!-- Links to be added 
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        caption: "Your registered organisations",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Organisation name"
+          },
+          {
+            text: "Registration status"
+          }
+        ],
+        rows: [
+          [
+            {
+             html: '<a href="#" class="govuk-link">Avon and Somerset Police Force</a>'
+            },
+            {
+              text: "Registration complete"
+            }
+          ],
+          [
+            {
+              html: '<a href="#" class="govuk-link">Harrods Limited</a>'
+            },
+            {
+              text: "Registration complete"
+            }
+          ],
+        [
+        {
+          html: '<a href="/2_org_page.html" class="govuk-link">Organisation name</a>'
+        },
+        {
+          text: "Registration complete"
+        }
+      ],
+      [
+      {
+        html: '<a href="#" class="govuk-link">Slack</a>'
+      },
+      {
+        text: "Awaiting activation PIN"
+      }
+    ],
+          [
+            {
+              html: '<a href="#" class="govuk-link">OWC Limited</a>'
+            },
+            {
+              text: "Registration complete"
+            }
+          ]
+        ]
+      }) }}
+ Table END -->
+
+
+<!-- Table START -->
+<!-- Links to be added -->
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  caption: "Your registered organisations",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Organisation name"
+    },
+    {
+      text: "Registration status"
+    }
+  ],
+  rows: [
+    [
+      {
+       html: '<a href="/2_org_page" class="govuk-link">Your organisation name</a>'
+      },
+      {
+        text: "Registration complete"
+      }
+    ]
+  ]
+}) }}
+<!-- Table END -->
+
+
+<!-- Button -->
+{{ govukButton({
+  text: "Register an organisation",
+  href: "#"
+}) }}
+<!-- Button Ends-->
+    </div>
+  </div>
+{% endblock %}
