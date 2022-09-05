@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2023 group statement?</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+          <p class="govuk-body"><a href="#">Return to previous search results</a></p>
+
+<!-- search box starts -->
+
+  {{ govukInput({
+  label: {
+    text: "Tell us the name of the organisation"
+  },
+  id: "event-name",
+  name: "event-name",
+  classes: "govuk-!-width-three-quarters"
+}) }}
+{{ govukButton({
+  text: "Include",
+  classes: "govuk-button--secondary",
+  href: "S11-5A-addManually-details"
+}) }}
+
+<!-- search box ends-->
+
+
+<!--CTA start-->
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+</div>
+<!--CTA end-->
+
+</div>
+
+  </div>
+
+{% endblock %}

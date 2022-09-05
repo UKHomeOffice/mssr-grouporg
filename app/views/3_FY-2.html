@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/3_FY-2" method="post">
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "fy-year",
+          name: "fy-year",
+          fieldset: {
+            legend: {
+              text: "Does your financial year-end date fall between 1 July 2022 and 30 June 2023?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "In order to submit your modern slavery statement for 2023, your financial year-end date should fall between 1 July 2022 and 30 June 2023."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("fy-year", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("fy-year", "no")
+            }
+          ],
+          errorMessage: error
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

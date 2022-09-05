@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+FY question – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set html %}
+        <h3 class="govuk-notification-banner__heading">Your document has been deleted</h3>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Upload PDF version of your 2022 statement (optional)</h1>
+      <p class="govuk-body">You can upload a PDF file of your full modern slavery statement here. It will be available publicly on the statement summary page once your statement is published.</p>
+      <p class="govuk-body">The information in the PDF document should be similar to the information on the URL if you have added one.</p>
+
+      {% set detailsHtml %}
+      <p class="govuk-body">You can create a PDF version of your modern slavery statement without buying specialised software.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Word processors (for example Microsoft Word or LibreOffice Writer) often provide the facility to directly save or export a document to PDF.</li>
+        <li>If your statement is only available on your website, Windows 10/11 and MacOS provide the ability to 'print' directly to PDF.</li>  </ul>
+        <p class="govuk-body">For further help, refer to the documentation for your word processing software / operating system, or contact your organisation's technical support.</p>
+        {% endset %}
+
+      {{ govukDetails({
+        summaryText: "How do I create a PDF version of my modern slavery statement?",
+        html: detailsHtml
+      }) }}
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+        <li>You can upload only one file in PDF version</li>
+        <li>The file size should be under 20MB</li>
+        <li>The file should not be empty</li>
+        <li>The file should not be password protected</li>
+        <li>The file should not be printer locked</li>
+      </ul>
+
+
+<!--File upload start -->
+{{ govukFileUpload({
+  id: "file-upload-1",
+  name: "file-upload-1",
+  label: {
+    text: "Upload a file"
+  }
+}) }}
+<!-- file upload end -->
+
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Upload document",
+    href: "S13-3-PDFUploaded"
+  }) }}
+  <a class="govuk-link" href="S13-6-FY">Skip this</a>
+</div>
+<!--CTA end-->
+
+
+      <!--  <button class="govuk-button" data-module="govuk-button">Continue</button> -->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

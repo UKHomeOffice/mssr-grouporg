@@ -74,12 +74,6 @@
 
 <div class="govuk-grid-column-full">
 <!-- Table START -->
-{% set myThing0 %}
-    {{ govukButton({
-        text: "Start",
-        href: "#"
-    }) }}
-{% endset %}
 
 {% set myThing %}
     {{ govukButton({
@@ -88,18 +82,10 @@
     }) }}
 {% endset %}
 
-{% set mySecondary %}
-    {{ govukButton({
-        text: "Edit & Republish",
-        href: "/return-user/6r_MSSR",
-        classes: "govuk-button--secondary"
-    }) }}
-{% endset %}
-
 {% set mySecondary2 %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "/return-user/6S1-1-Scoping-No/6r_MSSR",
+        href: "/return-user/6r_MSSR",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -137,10 +123,10 @@
     text: "2023"
   },
   {
-    text: "1 Jul 2021 - 30 Jun 2022"
+    text: "1 Jul 2022 - 30 Jun 2023"
   },
   {
-    html: '<a href="#">Declare status</a>'
+    html: '<a href="/new-user/scoping-table/S12-1-ScopingQ">Declare status</a>'
   },
   {
     text: "Not started"
@@ -157,7 +143,7 @@
         text: "1 Jul 2021 - 30 Jun 2022"
       },
       {
-        html:'Yes <br/><a href="#">Change status</a>'
+        html:'Yes <br/><a href="#">Change</a>'
       },
       {
         text: "Published on 19 Jul 2022"
@@ -174,7 +160,7 @@
       text: "1 Jul 2020 - 30 Jun 2021"
     },
     {
-      html:'Yes <br/><a href="#">Change status</a>'
+      html:'Yes <br/><a href="#">Change</a>'
     },
     {
       text: "Published on 24 Jul 2021"
@@ -191,7 +177,7 @@
         text: "1 Jul 2019 - 30 Jun 2020"
       },
       {
-        html:'Yes <br/><a href="#">Change status</a>'
+        html:'Yes <br/><a href="#">Change</a>'
       },
       {
         text: "Published on 8 Aug 2020"

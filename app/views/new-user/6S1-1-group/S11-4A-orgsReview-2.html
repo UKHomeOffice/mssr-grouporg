@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review the organisations in your group statement</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+          <p class="govuk-body">You’ve told us your statement is for the following group of organisations. You can add more organisations to the group, or remove organisations, before confirming and continuing.</p>
+          <p class="govuk-body">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="#">single organisation.</a></p>
+<!-- Table START -->
+
+<!--inset text starts-->
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% set myInset %}
+<h2 class="govuk-heading-s">Included in 2 other organisations' group statements</h2>
+
+{{ govukDetails({
+  summaryText: "Which other statements include this organisation?",
+  html: 'Included in:<br/><br/>
+  the 2023 statement for<br/>
+  ALDI STORES LIMITED<br/>
+  (submitted to our service on 20 Jul 2022)<br/><br/>
+  the 2023 statement for<br/>
+  ASDA GROUP LIMITED<br/>
+  (submitted to our service on 20 Jul 2022)'
+}) }}
+
+<p class="govuk-!-font-weight-bold">ASDA GROUP LIMITED<br/>
+    <span class="govuk-body">Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>
+    Company number: 01396513</span></p>
+{% endset %}
+
+{% set myTableInset2 %}
+{{ govukInsetText({
+  html: myInset2
+}) }}
+{% endset %}
+<!--inset text ends-->
+
+<!--inset text starts-->
+{% set myInset2 %}
+<h2 class="govuk-heading-s">Included in the 2023 statement for<br/>
+  ASDA GROUP LIMITED<br/>
+  (submitted to our service on 15 Jul 2022)</h2>
+<p class="govuk-!-font-weight-bold">ASDA GROUP LIMITED<br/>
+    <span class="govuk-body">Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>
+    Company number: 01396513</span></p>
+{% endset %}
+
+{% set myTableInset %}
+{{ govukInsetText({
+  html: myInset2
+}) }}
+{% endset %}
+<!--inset text ends-->
+
+
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Include",
+        href: "#",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{% set myLink %}
+<p class="govuk-link"> <a href="#">Remove</a></p>
+{% endset %}
+
+
+
+
+<!-- Table START -->
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Include",
+        href: "#",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{{ govukTable({
+  captionClasses: "govuk-body",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Organisation name",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Company number",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "Address",
+      classes: 'app-custom-class'
+    },
+    {
+      text: " ",
+      classes: 'app-custom-class'
+    }
+
+  ],
+
+  rows: [
+    [
+      {
+        text: "ASDA GROUP LIMITED"
+      },
+      {
+        text: "01396513"
+      },
+      {
+        html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+      },
+      {
+      html: myLink
+      }
+    ],
+    [
+    {
+      html: myTableInset
+    },
+    {
+      html:myLink
+    }
+  ],
+    [
+    {
+      text: "ASDA GROUP LIMITED"
+    },
+    {
+      text: "01396513"
+    },
+    {
+      html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+    },
+    {
+    html: myLink
+    }
+  ],
+  [
+  {
+    text: "ASDA GROUP LIMITED"
+  },
+  {
+    text: "01396513"
+  },
+  {
+    html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+  },
+  {
+  html: myLink
+  }
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+html: myLink
+}
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+html: myLink
+}
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+html: myLink
+}
+],
+[
+{
+  text: "ASDA GROUP LIMITED"
+},
+{
+  text: "01396513"
+},
+{
+  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
+},
+{
+html: myLink
+}
+]
+]
+}) }}
+<!-- Table END -->
+
+<!--pagination starts-->
+<p> pagination comes here</p>
+<!--pagination ends-->
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  {{ govukButton({
+    text: "Select more organisations",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+<!--CTA end-->
+
+</div>
+
+  </div>
+
+{% endblock %}
