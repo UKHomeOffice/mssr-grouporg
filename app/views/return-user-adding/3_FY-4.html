@@ -12,11 +12,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/3_FY-2" method="post">
+      <form class="form" action="/return-user-adding/3_FY-4" method="post">
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "fy2-year",
-          name: "fy2-year",
+          idPrefix: "fy4-year",
+          name: "fy4-year",
           fieldset: {
             legend: {
               text: "Does your financial year-end date fall between 1 July 2022 and 30 June 2023?",
@@ -29,14 +29,14 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes",
-              checked: checked("fy2-year", "yes")
+              checked: checked("fy4-year", "yes")
             },
             {
-              value: "no",
+              value: "No",
               text: "No",
-              checked: checked("fy2-year", "no")
+              checked: checked("fy4-year", "no")
             }
           ],
           errorMessage: error

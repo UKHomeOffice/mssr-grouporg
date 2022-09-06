@@ -50,20 +50,20 @@ router.post('/3_FY-1', function (req, res)
      }
    })
 
-
+// FYEAR CHECK yes and no - New user via DELCARE STATUS link
 router.post('/3_FY-2', function (req, res)
 {
-  const selectedOption = req.body['fy-year']
+  const selectedOption = req.body['fy2-year']
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
     return res.render("3_FY-2", { error })}
 
   // Make a variable and give it the value from 'fy-year'
-  var fyyear = req.session.data['fy-year']
+  var fy2year = req.session.data['fy2-year']
 
   // Check whether the variable matches a condition
-  if (fyyear == "yes"){
+  if (fy2year == "yes"){
     // Send user to next page
     res.redirect('/4_before_you_start')
   }
@@ -74,7 +74,7 @@ router.post('/3_FY-2', function (req, res)
 })
 
 
-// FYEAR CHECK for a user adding their 2nd group org statement
+// FYEAR CHECK for a user adding their 2nd group org statement [via DECLARE STATUS link in the table]
 router.post('/return-user-adding/3_FY-3', function (req, res)
 {
   const selectedOption = req.body['fy3-year']
@@ -97,6 +97,30 @@ router.post('/return-user-adding/3_FY-3', function (req, res)
   }
 })
 
+
+
+// FYEAR CHECK for a user adding their 2nd group org statement [via START button]
+router.post('/return-user-adding/3_FY-4', function (req, res)
+{
+  const selectedOption = req.body['fy4-year']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user-adding/3_FY-4", { error })}
+
+  // Make a variable and give it the value from 'fy3-year'
+  var fy4year = req.session.data['fy4-year']
+
+  // Check whether the variable matches a condition
+  if (fy4year == "Yes"){
+    // Send user to next page
+    res.redirect('/return-user-adding/scoping-journey/S12-1-ScopingQ')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/return-user-adding/3_FY-4-No')
+  }
+})
 
 // PDF document delete check yes and no
 router.post('/new-user/6S1-3-FY-PDF/S13-4-DeleteConfirm', function (req, res)
@@ -122,7 +146,7 @@ router.post('/new-user/6S1-3-FY-PDF/S13-4-DeleteConfirm', function (req, res)
    })
 
 
-// SCOPE CHECK [WITHIN TABLE] - new user
+// SCOPE CHECK - new user [via DECLARE STATUS link in the table]
 router.post('/new-user/scoping-table/S12-1-ScopingQ', function (req, res)
 {
   const selectedOption = req.body['scoping']
@@ -146,31 +170,7 @@ router.post('/new-user/scoping-table/S12-1-ScopingQ', function (req, res)
 })
 
 
-// SCOPE CHECK [WITHIN TABLE] - Return user adding their 2nd group statement
-router.post('/return-user-adding/scoping-table/S12-1-ScopingQ', function (req, res)
-{
-  const selectedOption = req.body['ruserA-scoping']
-  let error = {}
-  if (!selectedOption) {
-    error = { text: "Select an option" }
-    return res.render("return-user-adding/scoping-table/S12-1-ScopingQ", { error })}
-
-  // Make a variable and give it the value from 'scopingconfirm'
-  var ruserAScopeConfirm = req.session.data['ruserA-scoping']
-
-  // YES, company has to subnit the statement
-  if (ruserAScopeConfirm == "Yes"){
-    // Send user to next page
-    res.redirect('/return-user-adding/scoping-table/S12-3-YesConfirm.html')
-  }
-  else {
-    // NO, company do not have to subnit the statement
-    res.redirect('/return-user-adding/scoping-table/S12-2-NoSelection')
-  }
-})
-
-
-// SCOPE CHECK [WITHIN JOURNEY] - new user
+// SCOPE CHECK - new user [via START button]
 router.post('/new-user/scoping-journey/S12-1-ScopingQ', function (req, res)
 {
   const selectedOption = req.body['scoping']
@@ -190,30 +190,6 @@ router.post('/new-user/scoping-journey/S12-1-ScopingQ', function (req, res)
   else {
     // NO, company do not have to subnit the statement
     res.redirect('/new-user/scoping-journey/S12-2-NoSelection')
-  }
-})
-
-
-// SCOPE CHECK [WITHIN JOURNEY] - Return user adding their 2nd group statement
-router.post('/return-user-adding/scoping-journey/S12-1-ScopingQ', function (req, res)
-{
-  const selectedOption = req.body['ruserAJ-scoping']
-  let error = {}
-  if (!selectedOption) {
-    error = { text: "Select an option" }
-    return res.render("return-user-adding/scoping-journey/S12-1-ScopingQ", { error })}
-
-  // Make a variable and give it the value from 'scopingconfirm'
-  var ruserAJScopeConfirm = req.session.data['ruserAJ-scoping']
-
-  // YES, company has to subnit the statement
-  if (ruserAJScopeConfirm == "yes"){
-    // Send user to next page
-    res.redirect('../4_before_you_start')
-  }
-  else {
-    // NO, company do not have to subnit the statement
-    res.redirect('/return-user-adding/scoping-journey/S12-2-NoSelection')
   }
 })
 
@@ -239,7 +215,56 @@ router.post('/return-user/scoping/S12-1-StatusQuestion', function (req, res)
 })
 
 
-// ORG TYPE CHECK [Single/Group] - new user.
+// SCOPE CHECK - Return user adding their 2nd group statement [via DECLARE STATUS link in the table]
+router.post('/return-user-adding/scoping-table/S12-1-ScopingQ', function (req, res)
+{
+  const selectedOption = req.body['ruserA-scoping']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user-adding/scoping-table/S12-1-ScopingQ", { error })}
+
+  // Make a variable and give it the value from 'scopingconfirm'
+  var ruserAScopeConfirm = req.session.data['ruserA-scoping']
+
+  // YES, company has to subnit the statement
+  if (ruserAScopeConfirm == "Yes"){
+    // Send user to next page
+    res.redirect('/return-user-adding/scoping-table/S12-3-YesConfirm.html')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user-adding/scoping-table/S12-2-NoSelection')
+  }
+})
+
+
+// SCOPE CHECK - Return user adding their 2nd group statement [via START button]
+router.post('/return-user-adding/scoping-journey/S12-1-ScopingQ', function (req, res)
+{
+  const selectedOption = req.body['ruserAJ-scoping']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user-adding/scoping-journey/S12-1-ScopingQ", { error })}
+
+  // Make a variable and give it the value from 'scopingconfirm'
+  var ruserAJScopeConfirm = req.session.data['ruserAJ-scoping']
+
+  // YES, company has to subnit the statement
+  if (ruserAJScopeConfirm == "Yes"){
+    // Send user to next page
+    res.redirect('../4_before_you_start')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user-adding/scoping-journey/S12-2-NoSelection')
+  }
+})
+
+
+
+// ORG TYPE CHECK - new user.
 router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
 {
   const selectedOption = req.body['org-type']
@@ -263,7 +288,7 @@ router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
 })
 
 
-// ORG TYPE CHECK [Single/Group] - retrun user adding their 2nd group statement
+// ORG TYPE CHECK - retrun user adding their 2nd group statement
 router.post('/return-user-adding/6S1-1-Org/S11-1-Org', function (req, res)
 {
   const selectedOption = req.body['ruserA-org-type']
@@ -287,7 +312,7 @@ router.post('/return-user-adding/6S1-1-Org/S11-1-Org', function (req, res)
 })
 
 
-// ORG TYPE[Single/Group] - USE LIST CHECK - retrun user adding their 2nd group statement
+// ORG TYPE - LIST CHECK - retrun user adding their 2nd group statement [USING OLD LIST]
 router.post('/return-user-adding/6S1-1-group/S11-1-OrgQ', function (req, res)
 {
   const selectedOption = req.body['use-list']
@@ -310,6 +335,28 @@ router.post('/return-user-adding/6S1-1-group/S11-1-OrgQ', function (req, res)
   }
 })
 
+// ORG TYPE - LIST CHECK - retrun user adding their 2nd group statement [NOT USING OLD LIST]
+router.post('/return-user-adding-newlist/6S1-1-group/S11-1-OrgQ', function (req, res)
+{
+  const selectedOption = req.body['use-list']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user-adding-newlist/6S1-1-group/S11-1-OrgQ", { error })}
+
+  // Make a variable and give it the value from 'scopingconfirm'
+  var useListConfirm = req.session.data['use-list']
+
+  // YES, company has to subnit the statement
+  if (useListConfirm == "Yes"){
+    // Send user to next page
+    res.redirect('/return-user-adding/6S1-1-group/S11-4-orgsReview')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user-adding/6S1-1-group/S11-2-search')
+  }
+})
 
 
 

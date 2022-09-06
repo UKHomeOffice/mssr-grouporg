@@ -26,7 +26,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2023 group statement?</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED group statement (2023)</p>
 
 <!--inset text starts-->
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
@@ -205,7 +205,30 @@
 <!-- Table END -->
 
 <!--pagination starts-->
-<p> pagination comes here</p>
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      href: "#"
+    },
+    {
+      number: 2,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
 <!--pagination ends-->
 
 <!--CTA start-->

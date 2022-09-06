@@ -26,11 +26,23 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review the organisations in your group statement</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED group statement (2023)</p>
           <p class="govuk-body">You’ve told us your statement is for the following group of organisations. You can add more organisations to the group, or remove organisations, before confirming and continuing.</p>
           <p class="govuk-body">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="#">single organisation.</a></p>
 
 <!-- Table START -->
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Include",
+        href: "#",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{% set myLink %}
+<p class="govuk-link"> <a href="#">Remove</a></p>
+{% endset %}
+
 
 {{ govukTable({
   captionClasses: "govuk-body",
@@ -56,14 +68,6 @@
         html:myLink
       }
     ],
-  [
-  {
-    text: "ASDA GROUP LIMITED"
-  },
-  {
-    html:mySecondary
-  }
-],
 [
 {
   html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
@@ -112,7 +116,7 @@
   {{ govukButton({
     text: "Select more organisations",
     classes: "govuk-button--secondary",
-    href: "/S11-2-searchResults"
+    href: "S11-2-searchResults.html"
   }) }}
 </div>
 <!--CTA end-->
