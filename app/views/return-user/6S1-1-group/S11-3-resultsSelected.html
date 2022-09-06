@@ -26,13 +26,13 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2023 group statement?</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED group statement (2023)</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ORG NAME LIMITED group statement (2023)</p>
 
 <!--inset text starts
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% set myInset %}
     <h3 class="govuk-heading-m">4 organisations included</h3>
-    <p class="govuk-body">in ALDI STORES LIMITED group statement (2023)<br/>
+    <p class="govuk-body">in ORG NAME LIMITED group statement (2023)<br/>
     <a href="S11-4-orgsReview" class="govuk-link">See which organisations you've selected</a></p>
 {% endset %}
 
@@ -41,19 +41,24 @@
 }) }}
 inset text ends-->
 
- <!-- search box starts -->
-    {{ govukInput({
-      label: {
-        text: "Search for and select organisations"
-      },
-      hint:{
-        text: "Enter an organisation name or company number. You can search multiple times."
-      },
-      id: "event-name",
-      name: "event-name",
-      classes: "govuk-!-width-three-quarters"
-    }) }}
-    <!-- search box ends-->
+<!-- HTML search box-->
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper"><label class="govuk-label" for="event-name">
+    Search for and select organisations
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    Enter an organisation name or company number. You can search multiple times.
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
+<div class="govuk-grid-column-one-quarter"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Search
+</button></div>
+</div></div>
+<!-- HTML search box ends-->
 
 <p><a href="S11-5-addManually">Can't find the organisation you're looking for?</a></p>
 
@@ -62,12 +67,11 @@ inset text ends-->
 <div class="govuk-grid-column-full">
 
 
-
 <!-- Table START -->
 {% set mySecondary %}
     {{ govukButton({
         text: "Include",
-        href: "#",
+        href: "S11-3-resultsSelected",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -75,8 +79,6 @@ inset text ends-->
 {% set myLink %}
 <p class="govuk-link"> <a href="#">Remove</a></p>
 {% endset %}
-
-
 
 {{ govukTable({
   captionClasses: "govuk-body",
@@ -102,104 +104,107 @@ inset text ends-->
   ],
 
   rows: [
-    [
-      {
-        text: "ASDA GROUP LIMITED"
-      },
-      {
-        text: "01396513"
-      },
-      {
-        html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-      },
-      {
-        html:mySecondary
-      }
-    ],
-    [
-    {
-      text: "ASDA GROUP LIMITED"
-    },
-    {
-      text: "01396513"
-    },
-    {
-      html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-    },
-    {
-      html:myLink
-    }
-  ],
-  [
-  {
-    text: "ASDA GROUP LIMITED"
-  },
-  {
-    text: "01396513"
-  },
-  {
-    html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-  },
-  {
-    html:mySecondary
-  }
-],
-[
-{
-  text: "ASDA GROUP LIMITED"
-},
-{
-  text: "01396513"
-},
-{
-  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-},
-{
-  html:myLink
-}
-],
-[
-{
-  text: "ASDA GROUP LIMITED"
-},
-{
-  text: "01396513"
-},
-{
-  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-},
-{
-  html:mySecondary
-}
-],
-[
-{
-  text: "ASDA GROUP LIMITED"
-},
-{
-  text: "01396513"
-},
-{
-  html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-},
-{
-  html:mySecondary
-}
-],
-    [
-    {
-      text: "ASDA GROUP LIMITED"
-    },
-    {
-      text: "01396513"
-    },
-    {
-      html: 'Asda House, South Bank, <br/> Great Wilson Street, Leeds, <br/>LS11 5AD'
-    },
-    {
-      html:myLink
-    }
-    ]
+    [{text: "ORG NAME LTD"},
+    { text: "OC303151"},
+    { html: 'DAC BEACHCROFT LLP, Portwall Place, <br/>Portwall Lane, Bristol, BS1 9HS'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "12039490"},
+    { html: '12 Mayfield Road, London, England, W3 9HQ'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "11736662"},
+    { html: '66 High Street, Wickham Market, Woodbridge, <br/>Suffolk, United Kingdom, IP13 0QU'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "13226517"},
+    { html: '25 New Road, London, England, E1 1HE'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "01396513"},
+    { html: '14 Kingston Road, Surbiton, <br/>England, KT5 9NU'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "LP017007"},
+    { html: 'Unit 5, Olympia Industrial Estate, Coburg Road, <br/>London, England, N22 6TZ'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "SC042330"},
+    { html: 'Erskine Ferry Road, Old Kilpatrick,<br/> Dunbartonshire, G60 5EU'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "01396513"},
+    { html: '125 Old Broad Street, London, EC2N 1AR'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "06779345"},
+    { html: 'Notaries House, Chapel Street, Exeter,<br/> England, EX1 1AJ'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "09349948"},
+    { html: '95, Ashburton Avenue, Ilford, Essex, IG3 9EP'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "02133170"},
+    { html: 'Morgan House, Madeira Walk, Windsor, <br/>Berkshire, England, SL4 1EP'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "11154106"},
+    { html: '20-22, Wenlock Road, London, England, N1 7GU'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "12212714"},
+    { html: '14, Park Lane, Exeter, Devon, England, EX4 9HL'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "07061854"},
+    { html: 'Acre House 11-15 William Road,<br/> London, NW1 3ER'},
+    {html:mySecondary}],
+
+
+    [{text: "ORG NAME LTD"},
+    { text: "06210259"},
+    { html: 'Airport House, Suite 43-45 Purley Way, <br/>Croydon, Surrey, CR0 0XZ'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "07243250"},
+    { html: '95, Ashburton Avenue, Ilford, Essex, IG3 9EP'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "06385584"},
+    { html: '106, Damsonwood Road, Southall, Middlesex,<br/> United Kingdom, UB2 4RT'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "07506248"},
+    { html: '40a, Elmcroft Road, North Kilworth, Lutterworth,<br/> Leicestershire, England, LE17 6HX'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "12329860"},
+    { html: 'Flat 8, 337 Clapham Road, London, <br/>England, SW9 9BS'},
+    {html:mySecondary}],
+
+    [{text: "ORG NAME LTD"},
+    { text: "11818831"},
+    { html: '21, Buckingham Place, Flat 5, Brighton, Brighton,<br/> United Kingdom, BN1 3PQ'},
+    {html:mySecondary}]
+
   ]
 }) }}
 <!-- Table END -->
@@ -216,11 +221,11 @@ inset text ends-->
   items: [
     {
       number: 1,
+      current: true,
       href: "#"
     },
     {
       number: 2,
-      current: true,
       href: "#"
     },
     {

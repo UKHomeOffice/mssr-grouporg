@@ -26,13 +26,13 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2023 group statement?</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED group statement (2023)</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ORG NAME LIMITED group statement (2023)</p>
 
 <!--inset text starts
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% set myInset %}
     <h3 class="govuk-heading-m">4 organisations included</h3>
-    <p class="govuk-body">in ALDI STORES LIMITED group statement (2023)<br/>
+    <p class="govuk-body">in ORG NAME LIMITED group statement (2023)<br/>
     <a href="S11-4-orgsReview" class="govuk-link">See which organisations you've selected</a></p>
 {% endset %}
 
@@ -41,19 +41,24 @@
 }) }}
 inset text ends-->
 
- <!-- search box starts -->
-    {{ govukInput({
-      label: {
-        text: "Search for and select organisations"
-      },
-      hint:{
-        text: "Enter an organisation name or company number. You can search multiple times."
-      },
-      id: "event-name",
-      name: "event-name",
-      classes: "govuk-!-width-three-quarters"
-    }) }}
-    <!-- search box ends-->
+<!-- HTML search box-->
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper"><label class="govuk-label" for="event-name">
+    Search for and select organisations
+    </label>
+  </h1>
+  <div id="event-name-hint" class="govuk-hint">
+    Enter an organisation name or company number. You can search multiple times.
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+</div>
+<div class="govuk-grid-column-one-quarter"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Search
+</button></div>
+</div></div>
+<!-- HTML search box ends-->
 
 <p><a href="S11-5-addManually">Can't find the organisation you're looking for?</a></p>
 
@@ -216,11 +221,11 @@ inset text ends-->
   items: [
     {
       number: 1,
+      current: true,
       href: "#"
     },
     {
       number: 2,
-      current: true,
       href: "#"
     },
     {

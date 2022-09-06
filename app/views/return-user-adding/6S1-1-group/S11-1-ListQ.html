@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2023 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">For the 2023 statement, would you like to reuse the organisations list form your previously submitted <2022> statement?</h1>
+<p class="gov-uk-body">You could able to add new or remove old subsidiaries from the list.</p>
+
+<!--DETAILS: Organisation list starts-->
+{% set myTable %}
+        {{ govukTable({
+          captionClasses: "govuk-body",
+          firstCellIsHeader: true,
+          head: [
+          {
+            text: "S.No",
+            classes: 'app-custom-class'
+          },
+            {
+              text: "Organisation details",
+              classes: 'app-custom-class'
+            }
+          ],
+          rows: [
+          [{text: "1"},
+          {html: '<strong>ORG NAME ONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'}],
+          [{text: "2"},
+          {html: '<strong>ORG NAME TWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'}],
+          [{text: "3"},
+          {html:'<strong>ORG NAME THREE LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'}],
+          [{text: "4"},
+          {html: '<strong>ORG NAME FOUR LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'}],
+          [{text: "5"},
+          {html: '<strong>ORG NAME FIVE LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>'}],
+
+          [{text: "6"},
+          {html: '<strong>ORG NAME SIX LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'}],
+          [{text: "7"},
+          {html: '<strong>ORG NAME SEVEN LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'}],
+          [{text: "8"},
+          {html:'<strong>ORG NAME EIGHT LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'}],
+          [{text: "9"},
+          {html: '<strong>ORG NAME NINE LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'}],
+          [{text: "10"},
+          {html: '<strong>ORG NAME TEN LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>'}],
+
+          [{text: "11"},
+          {html: '<strong>ORG NAME ELEVEN LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'}],
+          [{text: "12"},
+          {html: '<strong>ORG NAME TWELVE LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'}],
+          [{text: "13"},
+          {html:'<strong>ORG NAME THIRTEEN LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'}],
+          [{text: "14"},
+          {html: '<strong>ORG NAME FOURTEEN LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'}],
+          [{text: "15"},
+          {html: '<strong>ORG NAME FIFTEEN LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' }],
+
+          [{text: "16"},
+          {html: '<strong>ORG NAME SIXTEEN LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'}],
+          [{text: "17"},
+          {html: '<strong>ORG NAME SEVENTEEN LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'}],
+          [{text: "18"},
+          {html:'<strong>ORG NAME EIGHTEEN LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'}],
+          [{text: "19"},
+          {html: '<strong>ORG NAME NINETEEN LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'}],
+          [{text: "20"},
+          {html: '<strong>ORG NAME TWENTY LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' }],
+
+          [{text: "21"},
+          {html: '<strong>ORG NAME TWENTYONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'}],
+          [{text: "22"},
+          {html: '<strong>ORG NAME TWENTYTWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'}],
+          [{text: "23"},
+          {html:'<strong>ORG NAME TWENTYTHREE LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'}],
+          [{text: "24"},
+          {html: '<strong>ORG NAME TWENTYFOUR LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'}],
+          [{text: "25"},
+          {html: '<strong>ORG NAME TWENTYFIVE LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>'}]
+          ]
+        }) }}
+{% endset %}
+<!--DETAILS: Organsiation list ends-->
+
+{{ govukDetails({
+  summaryText: "View the 25 organisations listed in your 2022 statement",
+  html: myTable
+}) }}
+
+
+<!-- Radio button start -->
+<form class="form" action="/return-user-adding/6S1-1-group/S11-1-ListQ" method="post">
+{{ govukRadios({
+  idPrefix: "use-list",
+  name: "use-list",
+  classes: "govuk-radios--inline",
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: checked("use-list", "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: checked("use-list", "No")
+    }
+  ],
+  errorMessage: error
+}) }}
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+</form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

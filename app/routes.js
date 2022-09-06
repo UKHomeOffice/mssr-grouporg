@@ -287,8 +287,57 @@ router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
   }
 })
 
+// ORG TYPE CHECK - return user editing group statement
+router.post('/return-user/6S1-1-org/S11-1-Org', function (req, res)
+{
+  const selectedOption = req.body['ruserE-org-type']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user/6S1-1-org/S11-1-Org", { error })}
 
-// ORG TYPE CHECK - retrun user adding their 2nd group statement
+  // Make a variable and give it the value from 'scopingconfirm'
+  var ruserEorgConfirm = req.session.data['ruserE-org-type']
+
+  // YES, company has to subnit the statement
+  if (ruserEorgConfirm == "groupOrg"){
+    // Send user to next page
+    res.redirect('/return-user/6S1-1-group/S11-4-orgsReview')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user/6S1-1-group/S11-7-OrgTypeQ')
+  }
+})
+
+// ORG TYPE CHANGE CHECK - return user changing their organisation type
+router.post('/return-user/6S1-1-group/S11-7-OrgTypeQ', function (req, res)
+{
+  const selectedOption = req.body['confirm-org']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user/6S1-1-group/S11-7-OrgTypeQ", { error })}
+
+  // Make a variable and give it the value from 'scopingconfirm'
+  var OrgChangeConfirm = req.session.data['confirm-org']
+
+  // YES, company has to submit the statement
+  if (OrgChangeConfirm == "groupOrg"){
+    // Send user to next page
+    res.redirect('/return-user/6S1-1-group/S11-4-orgsReview')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user/6r_MSSR-complete')
+  }
+})
+
+
+
+
+
+// ORG TYPE CHECK - return user adding their 2nd group statement
 router.post('/return-user-adding/6S1-1-Org/S11-1-Org', function (req, res)
 {
   const selectedOption = req.body['ruserA-org-type']
@@ -303,7 +352,7 @@ router.post('/return-user-adding/6S1-1-Org/S11-1-Org', function (req, res)
   // YES, company has to subnit the statement
   if (ruserAorgConfirm == "groupOrg"){
     // Send user to next page
-    res.redirect('/return-user-adding/6S1-1-group/S11-1-OrgQ')
+    res.redirect('/return-user-adding/6S1-1-group/S11-1-ListQ')
   }
   else {
     // NO, company do not have to subnit the statement
@@ -312,14 +361,14 @@ router.post('/return-user-adding/6S1-1-Org/S11-1-Org', function (req, res)
 })
 
 
-// ORG TYPE - LIST CHECK - retrun user adding their 2nd group statement [USING OLD LIST]
-router.post('/return-user-adding/6S1-1-group/S11-1-OrgQ', function (req, res)
+// ORG TYPE - LIST CHECK - return user adding their 2nd group statement [USING OLD LIST]
+router.post('/return-user-adding/6S1-1-group/S11-1-ListQ', function (req, res)
 {
   const selectedOption = req.body['use-list']
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
-    return res.render("return-user-adding/6S1-1-group/S11-1-OrgQ", { error })}
+    return res.render("return-user-adding/6S1-1-group/S11-1-ListQ", { error })}
 
   // Make a variable and give it the value from 'scopingconfirm'
   var useListConfirm = req.session.data['use-list']
@@ -335,14 +384,14 @@ router.post('/return-user-adding/6S1-1-group/S11-1-OrgQ', function (req, res)
   }
 })
 
-// ORG TYPE - LIST CHECK - retrun user adding their 2nd group statement [NOT USING OLD LIST]
-router.post('/return-user-adding-newlist/6S1-1-group/S11-1-OrgQ', function (req, res)
+// ORG TYPE - LIST CHECK - return user adding their 2nd group statement [NOT USING OLD LIST]
+router.post('/return-user-adding-newlist/6S1-1-group/S11-1-ListQ', function (req, res)
 {
   const selectedOption = req.body['use-list']
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
-    return res.render("return-user-adding-newlist/6S1-1-group/S11-1-OrgQ", { error })}
+    return res.render("return-user-adding-newlist/6S1-1-group/S11-1-ListQ", { error })}
 
   // Make a variable and give it the value from 'scopingconfirm'
   var useListConfirm = req.session.data['use-list']

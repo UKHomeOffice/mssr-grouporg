@@ -46,7 +46,7 @@ html: detailsHtml
 
 
 <!-- Radio button start -->
-<form class="form" action="/return-user/6S1-1-org/S11-1-Org" method="post">
+<form class="form" action="#" method="post">
   {{ govukRadios({
     idPrefix: "ruserE-org-type",
     name: "ruserE-org-type",
@@ -61,18 +61,19 @@ html: detailsHtml
       {
         value: "singleOrg",
         text: "A single organisation",
-        checked: checked("ruserE-org-type", "single")
+        checked: checked("ruserE-org-type", "single"),
+        checked: true
       },
       {
         value: "groupOrg",
         text: "A group of organisations",
-        checked: checked("ruserE-org-type", "group"),
-        checked: true
+        checked: checked("ruserE-org-type", "group")
+
       }
     ],
     errorMessage: error
   }) }}
-  <div class="govuk-button-group"><button class="govuk-button" data-module="govuk-button">Save and continue</button> <a class="govuk-link" href="../6r_MSSR-complete">Skip this question</a></div>
+  <div class="govuk-button-group"><button class="govuk-button" data-module="govuk-button">Save and continue</button> <a class="govuk-link" href="#">Skip this question</a></div>
   </form>
   <!-- Radio button end-->
       </form>

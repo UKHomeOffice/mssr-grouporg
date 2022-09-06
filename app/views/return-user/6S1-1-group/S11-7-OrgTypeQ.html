@@ -24,35 +24,37 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">For the 2023 statement, would you like to reuse the organisations list form your previously submitted <2022> statement?</h1>
-<p class="gov-uk-body">You could able to add new or remove old subsidiaries from the list.</p>
+
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+      {{ govukWarningText({
+        text: "",
+        iconFallbackText: "Warning"
+      }) }}
+  <!--    <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Are you sure you want to change your organisation type from group to single for the 2023 statement?</h1>
+<p class="gov-uk-body">Note: Once you change your organisation type you cannot see the organisations list anymore.</p> -->
 
 
-{{ govukDetails({
-  summaryText: "View the 6 organisations listed in your 2022 statement",
-  html: '<ol><li>Organisation </li><li>Organisation </li><li>Organisation </li><li>Organisation </li><li>Organisation </li><li>Organisation </li></ol>'
-}) }}
-
-
+<h1 class="govuk-heading-l govuk-!-margin-bottom-5">Are you sure your 2023 modern slavery statement covers a single organisation but not a group of organisations?</h1>
+<p class="gov-uk-body">Note: Once you confirm this, the organisations you have added for 2023 statement will not appear anymore.</p>
 
 
 
 <!-- Radio button start -->
-<form class="form" action="/return-user-adding/6S1-1-group/S11-1-OrgQ" method="post">
+<form class="form" action="/return-user/6S1-1-group/S11-7-OrgTypeQ" method="post">
 {{ govukRadios({
-  idPrefix: "use-list",
-  name: "use-list",
+  idPrefix: "confirm-org",
+  name: "confirm-org",
   classes: "govuk-radios--inline",
   items: [
     {
       value: "Yes",
-      text: "Yes",
-      checked: checked("use-list", "Yes")
+      text: "Yes, covers a single organisation",
+      checked: checked("confirm-org", "Yes")
     },
     {
       value: "No",
-      text: "No",
-      checked: checked("use-list", "No")
+      text: "No, covers a group organisations",
+      checked: checked("confirm-org", "No")
     }
   ],
   errorMessage: error
