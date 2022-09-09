@@ -25,16 +25,14 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
-      {{ govukWarningText({
-        text: "",
-        iconFallbackText: "Warning"
-      }) }}
-  <!--    <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Are you sure you want to change your organisation type from group to single for the 2023 statement?</h1>
-<p class="gov-uk-body">Note: Once you change your organisation type you cannot see the organisations list anymore.</p> -->
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text bigfont" >
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Are you sure your 2023 modern slavery statement covers a single organisation but not a group of organisations?
+        </strong>
+      </div>
 
-
-<h1 class="govuk-heading-l govuk-!-margin-bottom-5">Are you sure your 2023 modern slavery statement covers a single organisation but not a group of organisations?</h1>
 <p class="gov-uk-body">Note: Once you confirm this, the organisations you have added for 2023 statement will not appear anymore.</p>
 
 
