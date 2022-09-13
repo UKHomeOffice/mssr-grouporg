@@ -25,10 +25,12 @@
 {% block content %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review the organisations in your 2023 group statement</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ORG NAME LIMITED group statement (2023)</p>
-          <p class="govuk-body">You’ve told us your statement is for the following group of organisations. You can add more organisations to the group, or remove organisations, before confirming and continuing.</p>
-          <p class="govuk-body">If your statement is for a single organisation, and not a group, then <br/><a href="S11-7-OrgTypeQ">change to single organisation.</a></p>
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review your organisations from previously submitted statement (2022)</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LIMITED group statement (2023)</p>
+          <p class="govuk-body">You've told us that the subsidiaries from your previously submitted statement are still applicable for the 2023 statement, and they are listed below.
+            You can still add or remove organisations from that list.</p>
+          <p class="govuk-body red">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="#">single organisation.</a></p>
+
 
 <!-- Table START -->
 {% set mySecondary %}
@@ -147,12 +149,14 @@
 }) }}
 <!-- Table END -->
 
+
+
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Confirm 25 organisations",
-    href: "../6r_MSSR-complete"
+    href: "../6S1-1-Org/S11-complete"
   }) }}
 
   {{ govukButton({

@@ -27,7 +27,7 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">For the 2023 statement, would you like to reuse the organisations list form your previously submitted <2022> statement?</h1>
 <p class="gov-uk-body">You could able to add new or remove old subsidiaries from the list.</p>
 
-<!--DETAILS: Organisation list starts-->
+<!--DETAILS: Organisation list starts
 {% set myTable %}
         {{ govukTable({
           captionClasses: "govuk-body",
@@ -100,29 +100,28 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
           ]
         }) }}
 {% endset %}
-<!--DETAILS: Organsiation list ends-->
+DETAILS: Organsiation list ends
 
 {{ govukDetails({
   summaryText: "View the 25 organisations listed in your 2022 statement",
   html: myTable
 }) }}
-
+-->
 
 <!-- Radio button start -->
 <form class="form" action="/return-user-adding/6S1-1-group/S11-1-ListQ" method="post">
 {{ govukRadios({
   idPrefix: "use-list",
   name: "use-list",
-  classes: "govuk-radios--inline",
   items: [
     {
       value: "Yes",
-      text: "Yes",
+      text: "Review & Reuse the list",
       checked: checked("use-list", "Yes")
     },
     {
       value: "No",
-      text: "No",
+      text: "Create a new list",
       checked: checked("use-list", "No")
     }
   ],

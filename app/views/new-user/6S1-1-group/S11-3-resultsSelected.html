@@ -26,7 +26,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2023 group statement?</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ORG NAME LIMITED group statement (2023)</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LIMITED group statement (2023)</p>
 
 <!--inset text starts
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
@@ -233,12 +233,16 @@ inset text ends-->
 }) }}
 <!--pagination ends-->
 
+
+<p class="govuk-body-l">You have included 25 sub-organisations</p>
+
+
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Continue",
+    text: "Save and Continue",
     href: "S11-4-orgsReview"
   }
   ) }}
