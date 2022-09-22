@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Add your 2023 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+Add your 2021 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -21,13 +21,14 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
 <!--Back ends -->
 {% endblock %}
 
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Add your 2023 modern slavery statement to the registry</h1>
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Submission incomplete for Organisation name</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 12 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 5 of 12 sections.</p>
 
       <ol class="app-task-list">
         <li>
@@ -35,36 +36,39 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
             <span class="app-task-list__section-number">1. </span>Basic information about your statement and organisation (required)
           </h2>
           <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="6S1-1-org/S11-1-Org" aria-describedby="eligibility-status">Organisations covered by the statement</a>
+              </span>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
+            </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="S11-1-Org" aria-describedby="eligibility-status">Organisations covered by the statement</a>
+    <a href="6S1-3-FY-PDF/S13-1-URL" aria-describedby="read-declaration-status">Statement URL, PDF, dates and sign-off</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag govuk-tag--blue" id="read-declaration-status">IN PROGRESS</strong>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name"> <a href="../6S1-3-FY-PDF/S13-1-URL" aria-describedby="read-declaration-status">Statement URL, PDF, dates and sign-off</a>
+              <span class="app-task-list__task-name"> <a href="6S1-4-areas/S14-1" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name"> <a href="../6S1-4-areas/S14-1" aria-describedby="read-declaration-status">Recommended areas covered by the statement</a>
-              </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
-            </li>
-            <li class="app-task-list__item">
-              <span class="app-task-list__task-name"> <a href="../6S1-5-sector/S15-1-sector" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
-              </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="../6S1-6-years/S16-1-years" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
+                <a href="6S1-5-sector/S15-1-sector" aria-describedby="read-declaration-status">Your organisation's sectors and turnover</a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">COMPLETED</strong>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="6S1-6-years/S16-1-years" aria-describedby="read-declaration-status">How many years you've been producing statements</a>
+              </span>
+              <strong class="govuk-tag  app-task-list__tag" id="eligibility-status">COMPLETED</strong>
             </li>
           </ul>
         </li>
+
 
         <li>
           <h2 class="app-task-list__section">
@@ -107,16 +111,16 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
         </li>
 
       </ol>
-
- <!-- CTA starts-->
- {{ govukButton({
-   text: "Save as draft",
-   classes: "govuk-button--secondary",
-   href:'../../2_org_page'
- }) }}
- <!-- CTA ends-->
-
     </div>
   </div>
+
+  <!-- CTA starts-->
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Save as draft",
+    classes: "govuk-button--secondary",
+    href:'#'
+  }) }}
+  <!-- CTA ends-->
 
 {% endblock %}

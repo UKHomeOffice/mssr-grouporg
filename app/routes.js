@@ -287,7 +287,7 @@ router.post('/new-user/6S1-1-Org/S11-1-Org', function (req, res)
   }
 })
 
-// ORG TYPE CHECK - return user editing group statement
+// ORG TYPE CHECK - return user editing single to group statement
 router.post('/return-user/6S1-1-org/S11-1-Org', function (req, res)
 {
   const selectedOption = req.body['ruserE-org-type']
@@ -296,7 +296,29 @@ router.post('/return-user/6S1-1-org/S11-1-Org', function (req, res)
     error = { text: "Select an option" }
     return res.render("return-user/6S1-1-org/S11-1-Org", { error })}
 
-  // Make a variable and give it the value from 'scopingconfirm'
+  var ruserEorgConfirm = req.session.data['ruserE-org-type']
+
+  // YES, company has to subnit the statement
+  if (ruserEorgConfirm == "groupOrg"){
+    // Send user to next page
+    res.redirect('/return-user/6S1-1-group/S11-2-search.html')
+  }
+  else {
+    // NO, company do not have to subnit the statement
+    res.redirect('/return-user/6r_MSSR-complete')
+  }
+})
+
+
+// ORG TYPE CHECK - return user editing group to single statement (showing alert as conditional)
+router.post('/return-user/6S1-1-org/S11-1A-Org', function (req, res)
+{
+  const selectedOption = req.body['ruserE-org-type']
+  let error = {}
+  if (!selectedOption) {
+    error = { text: "Select an option" }
+    return res.render("return-user/6S1-1-org/S11-1-Org", { error })}
+
   var ruserEorgConfirm = req.session.data['ruserE-org-type']
 
   // YES, company has to subnit the statement
@@ -306,9 +328,15 @@ router.post('/return-user/6S1-1-org/S11-1-Org', function (req, res)
   }
   else {
     // NO, company do not have to subnit the statement
-    res.redirect('/return-user/6S1-1-group/S11-7-OrgTypeQ')
+    res.redirect('/return-user/6r_MSSR-complete')
   }
 })
+
+
+
+
+
+
 
 // ORG TYPE CHANGE CHECK - return user changing their organisation type
 router.post('/return-user/6S1-1-group/S11-7-OrgTypeQ', function (req, res)

@@ -44,43 +44,50 @@ html: detailsHtml
 }) }}
 <!-- Details panel ED END -->
 
-<!-- New radio buttons starts-->
+<!-- Radio button start -->
+<form class="form" action="/return-user/6S1-1-org/S11-1A-Org" method="post">
+  {% set singleCon %}
+  {{ govukWarningText({
+    text: "On confirming this option, your organsiations list will be lost and unrecoverable",
+    iconFallbackText: "Warning"
+  }) }}
+  {% endset -%}
 
-{% set singleCon %}
-{{ govukWarningText({
-  text: "On confirming this option, your organsiations list will be lost and unrecoverable",
-  iconFallbackText: "Warning"
-}) }}
-{% endset -%}
 
-{{ govukRadios({
-  idPrefix: "contact",
-  name: "contact",
-  items: [
-    {
-      value: "single",
-      text: "Single organisation",
-      conditional: {
-        html: singleCon
+
+
+  {{ govukRadios({
+    idPrefix: "ruserE-org-type",
+    name: "ruserE-org-type",
+    fieldset: {
+      legend: {
+        text: "Organisation name's statement (2023) covers:",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
       }
     },
-    {
-      value: "group",
-      text: "Group organisation",
-      checked: true
+    items: [
+      {
+        value: "singleOrg",
+        text: "A single organisation",
+        checked: checked("ruserE-org-type", "single"),
+        conditional: {
+          html: singleCon
+        }
+      },
+      {
+        value: "groupOrg",
+        text: "A group of organisations",
+        checked: checked("ruserE-org-type", "group"),
+        checked: true
       }
-  ]
-}) }}
-<!-- New radio buttons ends-->
-
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue",
-    href:"../6r_MSSR-complete"
+    ],
+    errorMessage: error
   }) }}
-
-  <a class="govuk-link" href="#">Cancel</a>
-</div>
+  <div class="govuk-button-group"><button class="govuk-button" data-module="govuk-button">Save and continue</button> <a class="govuk-link" href="../6r_MSSR-complete">Skip this question</a></div>
+  </form>
+  <!-- Radio button end-->
+      </form>
 
     </div>
   </div>
