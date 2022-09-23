@@ -404,7 +404,7 @@ router.post('/return-user-adding/6S1-1-group/S11-1-ListQ', function (req, res)
   // YES, company has to subnit the statement
   if (useListConfirm == "Yes"){
     // Send user to next page
-    res.redirect('/return-user-adding/6S1-1-group/S11-4A-orgsReview')
+    res.redirect('/return-user-adding/6S1-1-group/S11-4-orgsReview')
   }
   else {
     // NO, company do not have to subnit the statement
