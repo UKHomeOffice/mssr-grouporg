@@ -25,13 +25,14 @@
 {% block content %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review the organisations in your 2023 group statement</h1>
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review your organisations in your 2023 group statement</h1>
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LTD group statement (2023)</p>
-          <p class="govuk-body red">You’ve told us your statement is for the following group of organisations. You can add more organisations to the group, or remove organisations, before confirming and continuing.</p>
+          <p class="govuk-body">You've told us that the subsidiaries from your previously submitted statement are still applicable for the 2023 statement, and they are listed below.
+            You can still add or remove organisations from that list.</p>
+            {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
           {{ govukInsetText({
-            html: 'If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="../6S1-1-org/S11-1A-Org.html">single organisation.</a></p>'
+            html: '<span class="red">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="../../return-user/6S1-1-org/S11-1A-Org">single organisation.</a></span>'
           }) }}
-
 
 <!-- Table START -->
 {% set mySecondary %}
@@ -65,7 +66,7 @@
   rows: [
   [
   {html: '<strong>ORG NAME ONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
-  {html:myLink}],
+  {html:mySecondary}],
   [
   {html: '<strong>ORG NAME TWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
   {html:myLink}],
@@ -84,7 +85,7 @@
   {html:myLink}],
   [
   {html: '<strong>ORG NAME SEVEN LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
-  {html:myLink}],
+  {html:mySecondary}],
   [
   {html:'<strong>ORG NAME EIGHT LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
   {html:myLink}],
@@ -103,7 +104,7 @@
   {html:myLink}],
   [
   {html:'<strong>ORG NAME THIRTEEN LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
-  {html:myLink}],
+  {html:mySecondary}],
   [
   {html: '<strong>ORG NAME FOURTEEN LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
   {html:myLink}],
@@ -146,12 +147,14 @@
 }) }}
 <!-- Table END -->
 
+
+
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
     text: "Confirm 25 organisations",
-    href: "../6r_MSSR-complete"
+    href: "../6S1-1-Org/S11-complete"
   }) }}
 
   {{ govukButton({

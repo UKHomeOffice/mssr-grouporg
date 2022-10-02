@@ -44,9 +44,18 @@ html: detailsHtml
 }) }}
 <!-- Details panel ED END -->
 
-
 <!-- Radio button start -->
-<form class="form" action="/return-user/6S1-1-org/S11-1-Org" method="post">
+<form class="form" action="/return-user/6S1-1-org/S11-1A-Org" method="post">
+  {% set singleCon %}
+  {{ govukWarningText({
+    text: "On confirming this option, your organsiations list will be lost and unrecoverable",
+    iconFallbackText: "Warning"
+  }) }}
+  {% endset -%}
+
+
+
+
   {{ govukRadios({
     idPrefix: "ruserE-org-type",
     name: "ruserE-org-type",
@@ -62,12 +71,15 @@ html: detailsHtml
         value: "singleOrg",
         text: "A single organisation",
         checked: checked("ruserE-org-type", "single"),
-        checked: true
+        conditional: {
+          html: singleCon
+        }
       },
       {
         value: "groupOrg",
         text: "A group of organisations",
-        checked: checked("ruserE-org-type", "group")
+        checked: checked("ruserE-org-type", "group"),
+        checked: true
       }
     ],
     errorMessage: error

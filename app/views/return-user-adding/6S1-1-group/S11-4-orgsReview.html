@@ -25,12 +25,14 @@
 {% block content %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review the organisations in your 2023 group statement</h1>
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ALDI STORES LIMITED <a href="#">group statement</a> (2023)</p>
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Review your organisations in your 2023 group statement</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LTD group statement (2023)</p>
           <p class="govuk-body">You've told us that the subsidiaries from your previously submitted statement are still applicable for the 2023 statement, and they are listed below.
             You can still add or remove organisations from that list.</p>
-          <p class="govuk-body">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="#">single organisation.</a></p>
-
+            {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+          {{ govukInsetText({
+            html: '<span class="red">If your statement is for a single organisation, and not a group, you can return to the ‘Who is your statement for?’ page and specify a <a href="../../return-user/6S1-1-org/S11-1A-Org">single organisation.</a></span>'
+          }) }}
 
 <!-- Table START -->
 {% set mySecondary %}
@@ -42,16 +44,16 @@
 {% endset %}
 
 {% set myLink %}
-<p class="govuk-link"> <a href="#">Remove</a></p>
+<p class="govuk-link"> <a href="S11-4A-orgsReview">Remove</a></p>
 {% endset %}
-
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-4">25 organisations</h1> -->
 
 {{ govukTable({
   captionClasses: "govuk-body",
-  firstCellIsHeader: true,
+  firstCellIsHeader: false,
   head: [
     {
-      text: "Organisation",
+      text: "Organisation details",
       classes: 'app-custom-class'
     },
     {
@@ -62,51 +64,88 @@
   ],
 
   rows: [
-    [
-      {
-        html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
-      },
-      {
-        html:myLink
-      }
-    ],
-[
-{
-  html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
-},
-{
-  html:myLink
-}
-],
-[
-{
-  html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
-},
-{
-  html:myLink
-}
-],
-[
-{
-  html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
-},
-{
-  html:myLink
-}
-],
+  [
+  {html: '<strong>ORG NAME ONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
+  {html:myLink}],
+  [
+  {html:'<strong>ORG NAME THREE LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME FOUR LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME FIVE LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' },
+  {html:myLink }],
 
-[
-{
-      html: '<strong>ASDA GROUP LIMITED</strong><p>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777</p>'
-    },
-    {
-      html:myLink
-    }
-    ]
+  [
+  {html: '<strong>ORG NAME SIX LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME SEVEN LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
+  {html:myLink}],
+  [
+  {html:'<strong>ORG NAME EIGHT LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME NINE LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TEN LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' },
+  {html:myLink }],
+
+  [
+  {html: '<strong>ORG NAME ELEVEN LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TWELVE LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
+  {html:myLink}],
+  [
+  {html:'<strong>ORG NAME THIRTEEN LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME FOURTEEN LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME FIFTEEN LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' },
+  {html:myLink }],
+
+  [
+  {html: '<strong>ORG NAME SIXTEEN LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME SEVENTEEN LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
+  {html:myLink}],
+  [
+  {html:'<strong>ORG NAME EIGHTEEN LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME NINETEEN LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TWENTY LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' },
+  {html:myLink }],
+
+  [
+  {html: '<strong>ORG NAME TWENTYONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TWENTYTWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
+  {html:myLink}],
+  [
+  {html:'<strong>ORG NAME TWENTYTHREE LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TWENTYFOUR LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>ORG NAME TWENTYFIVE LTD</strong><br/>4, Aylesbury Walk, Burnley, England, BB10 2RQ<br/>Company number: 11657700<br/>' },
+  {html:myLink }]
   ]
 }) }}
 <!-- Table END -->
-
 
 
 
@@ -114,14 +153,14 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Confirm",
+    text: "Confirm 25 organisations",
     href: "../6S1-1-Org/S11-complete"
   }) }}
 
   {{ govukButton({
     text: "Select more organisations",
     classes: "govuk-button--secondary",
-    href: "/S11-2-searchResults"
+    href: "S11-2-searchResults"
   }) }}
 </div>
 <!--CTA end-->

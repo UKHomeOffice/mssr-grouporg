@@ -44,38 +44,48 @@ html: detailsHtml
 }) }}
 <!-- Details panel ED END -->
 
-
 <!-- Radio button start -->
-<form class="form" action="/return-user/6S1-1-org/S11-1-Org" method="post">
-  {{ govukRadios({
-    idPrefix: "ruserE-org-type",
-    name: "ruserE-org-type",
-    fieldset: {
-      legend: {
-        text: "Organisation name's statement (2023) covers:",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-      }
+<form class="form" action="/new-user/6S1-1-Org/S11-1-Org" method="post">
+{{ govukRadios({
+  idPrefix: "org-type",
+  name: "org-type",
+  fieldset: {
+    legend: {
+      text: "Organisation name's statement (2023) covers:",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "singleOrg",
+      text: "A single organisation",
+      checked: checked("org-type", "single")
     },
-    items: [
-      {
-        value: "singleOrg",
-        text: "A single organisation",
-        checked: checked("ruserE-org-type", "single"),
-        checked: true
-      },
-      {
-        value: "groupOrg",
-        text: "A group of organisations",
-        checked: checked("ruserE-org-type", "group")
-      }
-    ],
-    errorMessage: error
-  }) }}
-  <div class="govuk-button-group"><button class="govuk-button" data-module="govuk-button">Save and continue</button> <a class="govuk-link" href="../6r_MSSR-complete">Skip this question</a></div>
-  </form>
-  <!-- Radio button end-->
-      </form>
+    {
+      value: "groupOrg",
+      text: "A group of organisations",
+      checked: checked("org-type", "group"),
+      checked: true
+    }
+  ],
+  errorMessage: error
+}) }}
+<div class="govuk-button-group"><button class="govuk-button" data-module="govuk-button">Save and continue</button> <a class="govuk-link" href="../6S1-1-group/S11-6-inProgress">Skip this question</a></div>
+</form>
+<!-- Radio button end-->
+
+<!--CTA start
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Save and continue",
+    href: "S11-complete"
+  }
+  ) }}
+  <a class="govuk-link" href="../6_MSSR">Skip this question</a>
+</div>
+CTA end-->
 
     </div>
   </div>

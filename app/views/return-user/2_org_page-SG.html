@@ -77,22 +77,14 @@
 {% set myThing %}
     {{ govukButton({
         text: "Start",
-        href: "/return-user-adding/3_FY-4"
-    }) }}
-{% endset %}
-
-{% set mySecondary %}
-    {{ govukButton({
-        text: "Edit & Republish",
-        href: "/return-user/6r_MSSR",
-        classes: "govuk-button--secondary"
+        href: "/3_FY-1"
     }) }}
 {% endset %}
 
 {% set mySecondary2 %}
     {{ govukButton({
         text: "Edit & Republish",
-        href: "/return-user/6r_MSSR",
+        href: "/return-user/6r_MSSR-SG",
         classes: "govuk-button--secondary"
     }) }}
 {% endset %}
@@ -133,13 +125,13 @@
     text: "1 Jul 2022 - 30 Jun 2023"
   },
   {
-    html: '<a href="scoping-table/S12-1-ScopingQ">Declare status</a>'
+    html:'Yes <br/><a href="#">Change</a>'
   },
   {
-    text: "Not started"
+    text: "Published on 31 Aug 2022"
   },
   {
-    html:myThing
+    html:mySecondary2
   }
 ],
   [
@@ -153,7 +145,7 @@
         html:'Yes <br/><a href="#">Change</a>'
       },
       {
-        text: "Published on 19 Jul 2022"
+        text: "Published on 19 Jul 2021"
       },
       {
         html:mySecondary2
