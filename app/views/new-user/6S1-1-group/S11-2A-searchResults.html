@@ -214,24 +214,24 @@
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({
   previous: {
-    href: "#"
+    href: "S11-2-searchResults"
   },
   next: {
-    href: "#"
+    href: "S11-2B-searchResults"
   },
   items: [
     {
       number: 1,
-      current: true,
-      href: "#"
+      href: "S11-2-searchResults"
     },
     {
       number: 2,
-      href: "#"
+      current: true,
+      href: "S11-2A-searchResults"
     },
     {
       number: 3,
-      href: "#"
+      href: "S11-2B-searchResults"
     }
   ]
 }) }}

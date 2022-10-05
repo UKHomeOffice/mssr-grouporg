@@ -40,7 +40,7 @@
 {% endset %}
 
 {% set myLink %}
-<p class="govuk-link"> <a href="S11-4A-orgsReview">Remove</a></p>
+<p class="govuk-link"> <a href="#">Remove</a></p>
 {% endset %}
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-4">25 organisations</h1> -->
 
@@ -62,7 +62,7 @@
   rows: [
   [
   {html: '<strong>ORG NAME ONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
-  {html:myLink}],
+  {html:mySecondary}],
   [
   {html: '<strong>ORG NAME TWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
   {html:myLink}],
@@ -147,7 +147,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Confirm 25 organisations",
+    text: "Confirm 24 organisations",
     href: "../6S1-1-Org/S11-complete"
   }) }}
 
