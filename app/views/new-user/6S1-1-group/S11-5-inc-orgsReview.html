@@ -40,7 +40,7 @@
 {% endset %}
 
 {% set myLink %}
-<p class="govuk-link"> <a href="#">Remove</a></p>
+<p class="govuk-link"> <a href="S11-5A-inc-orgsReview">Remove</a></p>
 {% endset %}
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-4">25 organisations</h1> -->
 
@@ -60,6 +60,9 @@
   ],
 
   rows: [
+  [
+  {html: '<strong>ORG NAME ONE LTD</strong><br/>Asda House, South Bank, Great Wilson Street, Leeds, LS11 5AD<br/>Company number: 00464777<br/>'},
+  {html:myLink}],
   [
   {html: '<strong>ORG NAME TWO LTD</strong><br/>173, St. Dunstans Hill, Cheam, Sutton, England, SM1 2LR<br/>Company number: 14217167<br/>'},
   {html:myLink}],
@@ -83,7 +86,7 @@
   {html:'<strong>ORG NAME EIGHT LTD</strong><br/>10, Longwood Road, Huddersfield, West Yorkshire, United Kingdom, HD3 4EZ<br/>Company number: 12788706<br/>'},
   {html:myLink}],
   [
-  {html: '<strong>ORG NAME LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
+  {html: '<strong>ORG NAME NINE LTD</strong><br/>1, Bartholomew Lane, London, United Kingdom, EC2N 2AX<br/>Company number: 03918551<br/>'},
   {html:myLink}]
   ]
 }) }}
@@ -93,7 +96,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
   {{ govukButton({
-    text: "Confirm 8 organisations",
+    text: "Confirm 9 organisations",
     href: "../6S1-1-Org/S11-complete"
   }) }}
 
