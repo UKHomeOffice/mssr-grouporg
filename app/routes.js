@@ -334,10 +334,6 @@ router.post('/return-user/6S1-1-org/S11-1A-Org', function (req, res)
 
 
 
-
-
-
-
 // ORG TYPE CHANGE CHECK - return user changing their organisation type
 router.post('/return-user/6S1-1-group/S11-7-OrgTypeQ', function (req, res)
 {
@@ -404,7 +400,7 @@ router.post('/return-user-adding/6S1-1-group/S11-1-ListQ', function (req, res)
   // YES, company has to subnit the statement
   if (useListConfirm == "Yes"){
     // Send user to next page
-    res.redirect('/return-user-adding/6S1-1-group/S11-4-orgsReview')
+    res.redirect('/return-user-adding/6S1-1-group/S11-5-inc-orgsReview')
   }
   else {
     // NO, company do not have to subnit the statement
@@ -427,7 +423,7 @@ router.post('/return-user-adding-newlist/6S1-1-group/S11-1-ListQ', function (req
   // YES, company has to subnit the statement
   if (useListConfirm == "Yes"){
     // Send user to next page
-    res.redirect('/return-user-adding/6S1-1-group/S11-4-orgsReview')
+    res.redirect('/return-user-adding/6S1-1-group/S11-5-inc-orgsReview')
   }
   else {
     // NO, company do not have to subnit the statement

@@ -28,6 +28,19 @@
           <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2022 group statement?</h1>
           <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LTD group statement (2022)</p> -->
 
+<!--inset text starts
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% set myInset %}
+    <h3 class="govuk-heading-m">4 organisations included</h3>
+    <p class="govuk-body">in ORG NAME LTD group statement (2022)<br/>
+    <a href="S11-4-orgsReview" class="govuk-link">See which organisations you've selected</a></p>
+{% endset %}
+
+{{ govukInsetText({
+  html: myInset
+}) }}
+inset text ends-->
+
 <!-- HTML search box-->
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper"><label class="govuk-label" for="event-name">
@@ -53,6 +66,8 @@
 
 <div class="govuk-grid-column-full">
 
+
+
 <!-- Table START -->
 {% set mySecondary %}
     {{ govukButton({
@@ -70,7 +85,6 @@
 {{ govukCheckboxes({
   idPrefix: "include",
   name: "include",
-  href: "S11-3-resultsSelected",
   classes: "govuk-checkboxes--small",
   items: [
     {
@@ -82,34 +96,45 @@
 {% endset %}
 
 
+{% set myCheckboxSelected %}
+{{ govukCheckboxes({
+  idPrefix: "include",
+  name: "include",
+  classes: "govuk-checkboxes--small",
+  items: [
+    {
+      value: "carcasses",
+      text: " ",
+      checked: true
+    }
+  ]
+}) }}
+{% endset %}
+
+
 {{ govukTable({
   captionClasses: "govuk-body",
   firstCellIsHeader: true,
   head: [
-    {
-      text: "Organisation name",
+    { text: "Organisation name",
       classes: 'app-custom-class'
     },
-    {
-      text: "Company number",
+    { text: "Company number",
       classes: 'app-custom-class'
     },
-    {
-      text: "Address",
+    { text: "Address",
       classes: 'app-custom-class'
     },
-    {
-      text: "Include ",
+    {text: "Include ",
       classes: 'app-custom-class'
     }
-
   ],
 
   rows: [
     [{text: "ORG NAME LTD"},
     { text: "OC303151"},
     { html: 'DAC BEACHCROFT LLP, Portwall Place, <br/>Portwall Lane, Bristol, BS1 9HS'},
-    {html:myCheckbox}],
+    {html:myCheckboxSelected}],
 
     [{text: "ORG NAME LTD"},
     { text: "12039490"},
@@ -159,7 +184,7 @@
     [{text: "ORG NAME LTD"},
     { text: "02133170"},
     { html: 'Morgan House, Madeira Walk, Windsor, <br/>Berkshire, England, SL4 1EP'},
-    {html:myCheckbox}],
+    {html:myCheckboxSelected}],
 
     [{text: "ORG NAME LTD"},
     { text: "11154106"},
@@ -176,6 +201,7 @@
     { html: 'Acre House 11-15 William Road,<br/> London, NW1 3ER'},
     {html:myCheckbox}],
 
+
     [{text: "ORG NAME LTD"},
     { text: "06210259"},
     { html: 'Airport House, Suite 43-45 Purley Way, <br/>Croydon, Surrey, CR0 0XZ'},
@@ -184,7 +210,7 @@
     [{text: "ORG NAME LTD"},
     { text: "07243250"},
     { html: '95, Ashburton Avenue, Ilford, Essex, IG3 9EP'},
-    {html:myCheckbox}],
+    {html: myCheckbox}],
 
     [{text: "ORG NAME LTD"},
     { text: "06385584"},
@@ -199,7 +225,7 @@
     [{text: "ORG NAME LTD"},
     { text: "12329860"},
     { html: 'Flat 8, 337 Clapham Road, London, <br/>England, SW9 9BS'},
-    {html:myCheckbox}],
+    {html:myCheckboxSelected}],
 
     [{text: "ORG NAME LTD"},
     { text: "11818831"},
@@ -214,28 +240,32 @@
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({
   previous: {
-    href: "#"
+    href: "S11-3-resultsSelected"
   },
   next: {
-    href: "#"
+    href: "S11-3B-resultsSelected"
   },
   items: [
     {
       number: 1,
-      current: true,
-      href: "#"
+      href: "S11-3-resultsSelected"
     },
     {
       number: 2,
-      href: "#"
+      current: true,
+      href: "S11-3A-resultsSelected"
     },
     {
       number: 3,
-      href: "#"
+      href: "S11-3B-resultsSelected"
     }
   ]
 }) }}
 <!--pagination ends-->
+
+
+<p class="govuk-body-l">You have included 6 sub-organisations</p>
+
 
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
