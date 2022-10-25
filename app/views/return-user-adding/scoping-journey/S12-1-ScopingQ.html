@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Are you legally required to publish for 2023? – {{ serviceName }} – GOV.UK Prototype Kit
+Are you legally required to publish for 2022? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -30,11 +30,11 @@ Are you legally required to publish for 2023? – {{ serviceName }} – GOV.UK P
  heading ends-->
 
 <!-- radio button start-->
-<form class="form" action="/return-user-adding/scoping-journey/S12-1-ScopingQ" method="post">
+<form class="form" action="/new-user/scoping-journey/S12-1-ScopingQ" method="post">
   {{ govukRadios({
     classes: "govuk-radios--inline",
-    idPrefix: "ruserAJ-scoping",
-    name: "ruserAJ-scoping",
+    idPrefix: "scoping",
+    name: "scoping",
     fieldset: {
       legend: {
         text: "Was your organisation required to publish a modern slavery statement on its website in 2023?",
@@ -44,14 +44,14 @@ Are you legally required to publish for 2023? – {{ serviceName }} – GOV.UK P
     },
     items: [
       {
-        value: "Yes",
+        value: "yes",
         text: "Yes",
-        checked: checked("ruserAJ-scoping", "yes")
+        checked: checked("scoping", "yes")
       },
       {
-        value: "No",
+        value: "no",
         text: "No",
-        checked: checked("ruserAJ-scoping", "no")
+        checked: checked("scoping", "no")
       }
     ],
     errorMessage: error

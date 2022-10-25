@@ -14,12 +14,11 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/return-user/scoping/S12-1-StatusQuestion" method="post">
         {{ govukRadios({
-          classes: "govuk-radios--inline",
           idPrefix: "sc-ans",
           name: "sc-ans",
           fieldset: {
             legend: {
-              text: "What would you like to do with the legal requirement for the statement year 2022?",
+              text: "Tell us about a change to the legal requirement for publishing a 2023 modern slavery statement",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--l"
             }
@@ -27,12 +26,12 @@
           items: [
             {
               value: "OrgStatus",
-              text: "Change the status to Yes",
+              text: "Tell us you do need to submit a statement",
               checked: checked("sc-ans", "status")
             },
             {
               value: "OrgReasons",
-              text: "Change the reasons",
+              text: "Change the reasons you don’t need to submit a statement",
               checked: checked("sc-ans", "reasons")
             }
           ],

@@ -61,7 +61,7 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
     name: "waste",
     fieldset: {
       legend: {
-        text: "Tell us why your organisation is not required to publish a modern slavery statement in 2022",
+        text: "Tell us why your organisation is not required to publish a modern slavery statement in 2023",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
@@ -70,15 +70,12 @@ Give us more information – {{ serviceName }} – GOV.UK Prototype Kit
     items: [
       {
         value: "turnover",
-        text: "Its turnover or budget is less than £36 million per year",
-        checked: true,
-        conditional: {
-          html: textHtml
-        }
+        text: "Its turnover or budget is less than £36 million per year"
       },
       {
         value: "goods",
-        text: "It does not provide goods or services"
+        text: "It does not provide goods or services",
+        checked: true
       },
       {
         value: "presence",

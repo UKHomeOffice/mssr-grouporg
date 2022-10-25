@@ -62,7 +62,7 @@
     <li>If your financial year-end date falls in the first half of the calendar year (1 January to 30 June), submit your statement for the same calendar year.
      <br/>For example, if your financial year-end is 31 March 2022, the correct registry year would be 2022.</li>
     <li>If your financial year-end date falls in the second half of the calendar year (1 July to 31 December), submit your statement in the next calendar year.
-      <br/>For example, if your financial year-end is 31 December 2022, the correct registry year would be 2022.</li>  </ul>
+      <br/>For example, if your financial year-end is 31 December 2022, the correct registry year would be 2023.</li>  </ul>
 {% endset %}
 
 {{ govukDetails({
@@ -90,7 +90,7 @@
 
 {% set myThing1 %}
     {{ govukButton({
-        text: "Publish voluntarily",
+        text: "Start",
         href: "../../3_FY-2"
     }) }}
 {% endset %}
@@ -141,21 +141,38 @@
   rows: [
   [
   {
-    text: "2022"
+    text: "2023"
   },
   {
-    text: "1 Jul 2022 - 30 Jun 2022"
+    text: "1 Jul 2022 - 30 Jun 2023"
   },
   {
     html:'No <br/><a href="S12-1-StatusQuestion">Change</a>'
   },
   {
-    text: "Not required to publish"
+    text: "Published on 21 Jul 2022"
   },
   {
     html:mySecondary
   }
 ],
+  [
+      {
+        text: "2022"
+      },
+      {
+        text: "1 Jul 2021 - 30 Jun 2022"
+      },
+      {
+        html:'Yes <br/><a href="#">Change</a>'
+      },
+      {
+        text: "Published on 19 Jul 2022"
+      },
+      {
+        html:mySecondary2
+      }
+    ],
     [
     {
       text: "2021"
