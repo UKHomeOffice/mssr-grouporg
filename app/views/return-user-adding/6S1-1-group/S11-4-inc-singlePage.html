@@ -23,35 +23,16 @@
 <!--Back ends -->
 
 {% block content %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2022 group statement?</h1>
-          <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LTD group statement (2022)</p> -->
-
-<!-- HTML search box-->
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper"><label class="govuk-label" for="event-name">
-    Search for and select organisations
-    </label>
-  </h1>
-  <div id="event-name-hint" class="govuk-hint">
-    Enter an organisation name or company number. You can search multiple times.
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">50 search results</h1>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Search term: keyword comes here.</h2>
+    <p class="govuk-body govuk-!-margin-bottom-9"><a href="S11-2-search" class="govuk-link">Search again</a></p>
 </div>
-<div class="govuk-grid-column-one-quarter"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Search
-</button></div>
-</div></div>
-<!-- HTML search box ends-->
-
-<p><a href="S11-5-addManually">Can't find the organisation you're looking for?</a></p>
-
-    </div>
 
 <div class="govuk-grid-column-full">
+
+
 
 <!-- Table START -->
 {% set mySecondary %}
@@ -70,7 +51,6 @@
 {{ govukCheckboxes({
   idPrefix: "include",
   name: "include",
-  href: "S11-3-resultsSelected",
   classes: "govuk-checkboxes--small",
   items: [
     {
@@ -82,160 +62,145 @@
 {% endset %}
 
 
+{% set myCheckboxSelected %}
+{{ govukCheckboxes({
+  idPrefix: "include",
+  name: "include",
+  classes: "govuk-checkboxes--small",
+  items: [
+    {
+      value: "carcasses",
+      text: " ",
+      checked: true
+    }
+  ]
+}) }}
+{% endset %}
+
+
 {{ govukTable({
   captionClasses: "govuk-body",
   firstCellIsHeader: true,
   head: [
-    {
-      text: "Organisation name",
+    { text: "Organisation name",
       classes: 'app-custom-class'
     },
-    {
-      text: "Company number",
+    { text: "Company number",
       classes: 'app-custom-class'
     },
-    {
-      text: "Address",
+    { text: "Address",
       classes: 'app-custom-class'
     },
-    {
-      text: "Include ",
+    {text: "Include ",
       classes: 'app-custom-class'
     }
-
   ],
 
   rows: [
-    [{text: "ORG NAME LTD"},
-    { text: "OC303151"},
-    { html: 'DAC BEACHCROFT LLP, Portwall Place, <br/>Portwall Lane, Bristol, BS1 9HS'},
-    {html:myCheckbox}],
+    [{text: "SIEMENS ENERGY LIMITED"},
+    { text: "08190978"},
+    { html: 'C A Parsons Works, Shields Road, <br/>Newcastle Upon Tyne, England, NE6 2YL'},
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "12039490"},
     { html: '12 Mayfield Road, London, England, W3 9HQ'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
-    [{text: "ORG NAME LTD"},
+    [{text: "SIEMENS GAMESA RENEWABLE ENERGY LIMITED"},
     { text: "11736662"},
     { html: '66 High Street, Wickham Market, Woodbridge, <br/>Suffolk, United Kingdom, IP13 0QU'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "13226517"},
     { html: '25 New Road, London, England, E1 1HE'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "01396513"},
     { html: '14 Kingston Road, Surbiton, <br/>England, KT5 9NU'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
-    [{text: "ORG NAME LTD"},
+    [{text: "SIEMENS ENERGY INDUSTRIAL TURBOMACHINERY LIMITED"},
     { text: "LP017007"},
-    { html: 'Unit 5, Olympia Industrial Estate, Coburg Road, <br/>London, England, N22 6TZ'},
-    {html:myCheckbox}],
+    { html: 'C A Parsons Works, Shields Road, <br/>Newcastle Upon Tyne, England, NE6 2YL'},
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "SC042330"},
     { html: 'Erskine Ferry Road, Old Kilpatrick,<br/> Dunbartonshire, G60 5EU'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
-    { text: "01396513"},
-    { html: '125 Old Broad Street, London, EC2N 1AR'},
-    {html:myCheckbox}],
+    { text: "07422241"},
+    { html: 'Suite C Lancaster House Grange Business Park Enderby Road, <br/>Whetstone, Leicester, Leicestershire, LE8 6EP'},
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "06779345"},
-    { html: 'Notaries House, Chapel Street, Exeter,<br/> England, EX1 1AJ'},
-    {html:myCheckbox}],
+    { html: 'Blade Factory Sir William Siemens Way, <br/>Alexandra Dock, Hull, England, HU9 1TA'},
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "09349948"},
     { html: '95, Ashburton Avenue, Ilford, Essex, IG3 9EP'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "02133170"},
     { html: 'Morgan House, Madeira Walk, Windsor, <br/>Berkshire, England, SL4 1EP'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "11154106"},
     { html: '20-22, Wenlock Road, London, England, N1 7GU'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "12212714"},
     { html: '14, Park Lane, Exeter, Devon, England, EX4 9HL'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "07061854"},
     { html: 'Acre House 11-15 William Road,<br/> London, NW1 3ER'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "06210259"},
     { html: 'Airport House, Suite 43-45 Purley Way, <br/>Croydon, Surrey, CR0 0XZ'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "07243250"},
     { html: '95, Ashburton Avenue, Ilford, Essex, IG3 9EP'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "06385584"},
     { html: '106, Damsonwood Road, Southall, Middlesex,<br/> United Kingdom, UB2 4RT'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "07506248"},
     { html: '40a, Elmcroft Road, North Kilworth, Lutterworth,<br/> Leicestershire, England, LE17 6HX'},
-    {html:myCheckbox}],
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
-    { text: "12329860"},
-    { html: 'Flat 8, 337 Clapham Road, London, <br/>England, SW9 9BS'},
-    {html:myCheckbox}],
+    { text: "11414209"},
+    { html: 'Suite C Lancaster House Grange Business Park Enderby Road, <br/>Whetstone, Leicester, Leicestershire, LE8 6EP'},
+    {html:mySecondary}],
 
     [{text: "ORG NAME LTD"},
     { text: "11818831"},
     { html: '21, Buckingham Place, Flat 5, Brighton, Brighton,<br/> United Kingdom, BN1 3PQ'},
-    {html:myCheckbox}]
+    {html:mySecondary}]
 
   ]
 }) }}
 <!-- Table END -->
 
-<!--pagination starts-->
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  previous: {
-    href: "#"
-  },
-  next: {
-    href: "#"
-  },
-  items: [
-    {
-      number: 1,
-      current: true,
-      href: "S11-2-searchResults"
-    },
-    {
-      number: 2,
-      href: "#"
-    },
-    {
-      number: 3,
-      href: "#"
-    }
-  ]
-}) }}
-<!--pagination ends-->
 
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -243,11 +208,11 @@
   {{ govukButton(
     {
     text: "Save and Continue",
-    href: "S11-4-orgsReview"
+    href: "S11-5-inc-orgsReview"
   }
   ) }}
- <!--<a class="govuk-link" href="../6r_MSSR-complete">Skip this</a>-->
 </div>
+<p class="govuk-body"><a href="S11-5-addManually"> Can't find the organisation you're looking for?</a></p>
 <!--CTA end-->
 
 </div>

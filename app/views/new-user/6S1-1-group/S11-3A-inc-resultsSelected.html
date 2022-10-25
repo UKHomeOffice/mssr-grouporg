@@ -23,51 +23,14 @@
 <!--Back ends -->
 
 {% block content %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2022 group statement?</h1>
-          <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LTD group statement (2022)</p> -->
-
-<!--inset text starts
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-{% set myInset %}
-    <h3 class="govuk-heading-m">4 organisations included</h3>
-    <p class="govuk-body">in ORG NAME LTD group statement (2022)<br/>
-    <a href="S11-4-orgsReview" class="govuk-link">See which organisations you've selected</a></p>
-{% endset %}
-
-{{ govukInsetText({
-  html: myInset
-}) }}
-inset text ends-->
-
-<!-- HTML search box-->
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper"><label class="govuk-label" for="event-name">
-    Search for and select organisations
-    </label>
-  </h1>
-  <div id="event-name-hint" class="govuk-hint">
-    Enter an organisation name or company number. You can search multiple times.
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-  <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">150 search results</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-2">Search term: Siemens energy</p>
+    <p class="govuk-body govuk-!-margin-bottom-9"><a href="S11-2-search" class="govuk-link">Search again</a></p>
 </div>
-<div class="govuk-grid-column-one-quarter"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Search
-</button></div>
-</div></div>
-<!-- HTML search box ends-->
-
-<p><a href="S11-5-addManually">Can't find the organisation you're looking for?</a></p>
-
-    </div>
 
 <div class="govuk-grid-column-full">
-
-
-
 <!-- Table START -->
 {% set mySecondary %}
     {{ govukButton({
@@ -275,7 +238,7 @@ inset text ends-->
     href: "S11-5-inc-orgsReview"
   }
   ) }}
- <!--<a class="govuk-link" href="../6r_MSSR-complete">Skip this</a>-->
+
 </div>
 <!--CTA end-->
 

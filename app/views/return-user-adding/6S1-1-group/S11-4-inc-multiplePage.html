@@ -31,6 +31,9 @@
 </div>
 
 <div class="govuk-grid-column-full">
+
+
+
 <!-- Table START -->
 {% set mySecondary %}
     {{ govukButton({
@@ -97,7 +100,7 @@
   [{text: "SIEMENS ENERGY LIMITED"},
   { text: "08190978"},
   { html: 'C A Parsons Works, Shields Road, <br/>Newcastle Upon Tyne, England, NE6 2YL'},
-  {html:myLink}],
+  {html:mySecondary}],
 
   [{text: "ORG NAME LTD"},
   { text: "12039490"},
@@ -107,7 +110,7 @@
   [{text: "SIEMENS GAMESA RENEWABLE ENERGY LIMITED"},
   { text: "11736662"},
   { html: '66 High Street, Wickham Market, Woodbridge, <br/>Suffolk, United Kingdom, IP13 0QU'},
-  {html:myLink}],
+  {html:mySecondary}],
 
   [{text: "ORG NAME LTD"},
   { text: "13226517"},
@@ -122,7 +125,7 @@
   [{text: "SIEMENS ENERGY INDUSTRIAL TURBOMACHINERY LIMITED"},
   { text: "LP017007"},
   { html: 'C A Parsons Works, Shields Road, <br/>Newcastle Upon Tyne, England, NE6 2YL'},
-  {html:myLink}],
+  {html:mySecondary}],
 
   [{text: "ORG NAME LTD"},
   { text: "SC042330"},
@@ -225,10 +228,6 @@
 }) }}
 <!--pagination ends-->
 
-
-<p class="govuk-body-l">You have included 9 sub-organisations</p>
-
-
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
@@ -239,6 +238,7 @@
   }
   ) }}
 </div>
+<p class="govuk-body"><a href="S11-5-addManually">Can't find the organisation you're looking for?</a></p>
 <!--CTA end-->
 
 </div>
