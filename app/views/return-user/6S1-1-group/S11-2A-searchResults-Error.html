@@ -23,6 +23,28 @@
 <!--Back ends -->
 
 {% block content %}
+
+
+  <!-- Error summary START-->
+  {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "The date your passport was issued must be in the past",
+        href: "#passport-issued-day"
+      },
+      {
+        text: "Enter a postcode, like AA1 1AA",
+        href: "#postcode-input"
+      }
+    ]
+  }) }}
+  <!-- Error summary END-->
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">150 search results</h1>
@@ -30,10 +52,8 @@
     <p class="govuk-body govuk-!-margin-bottom-9"><a href="S11-2-search" class="govuk-link">Search again</a></p>
 </div>
 
+
 <div class="govuk-grid-column-full">
-
-
-
 <!-- Table START -->
 {% set mySecondary %}
     {{ govukButton({
@@ -77,9 +97,8 @@
 }) }}
 {% endset %}
 
-
 {{ govukTable({
-  captionClasses: "govuk-body",
+captionClasses: "govuk-body",
   firstCellIsHeader: true,
   head: [
     { text: "Organisation name",
@@ -95,7 +114,9 @@
       classes: 'app-custom-class'
     }
   ],
-
+  errorMessage: {
+    text: "The date your passport was issued must be in the past"
+  },
   rows: [
     [{text: "ORG NAME LTD"},
     { text: "08190978"},
@@ -196,10 +217,12 @@
     { text: "11818831"},
     { html: '21, Buckingham Place, Flat 5, Brighton, Brighton,<br/> United Kingdom, BN1 3PQ'},
     {html:mySecondary}]
-
   ]
 }) }}
 <!-- Table END -->
+
+
+
 
 <!--pagination starts-->
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
