@@ -218,17 +218,17 @@ router.post('/return-user/scoping/S12-1-StatusQuestion', function (req, res)
 // SCOPE CHECK - Return user adding their 2nd group statement [via DECLARE STATUS link in the table]
 router.post('/return-user-adding/scoping-table/S12-1-ScopingQ', function (req, res)
 {
-  const selectedOption = req.body['ruserA-scoping']
+  const selectedOption = req.body['ruserA']
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
     return res.render("return-user-adding/scoping-table/S12-1-ScopingQ", { error })}
 
   // Make a variable and give it the value from 'scopingconfirm'
-  var ruserAScopeConfirm = req.session.data['ruserA-scoping']
+  var ruserAScopeConfirm = req.session.data['ruserA']
 
   // YES, company has to subnit the statement
-  if (ruserAScopeConfirm == "Yes"){
+  if (ruserAScopeConfirm == "yes"){
     // Send user to next page
     res.redirect('/return-user-adding/scoping-table/S12-3-YesConfirm.html')
   }
@@ -242,17 +242,17 @@ router.post('/return-user-adding/scoping-table/S12-1-ScopingQ', function (req, r
 // SCOPE CHECK - Return user adding their 2nd group statement [via START button]
 router.post('/return-user-adding/scoping-journey/S12-1-ScopingQ', function (req, res)
 {
-  const selectedOption = req.body['ruserAJ-scoping']
+  const selectedOption = req.body['ruserAJ']
   let error = {}
   if (!selectedOption) {
     error = { text: "Select an option" }
     return res.render("return-user-adding/scoping-journey/S12-1-ScopingQ", { error })}
 
   // Make a variable and give it the value from 'scopingconfirm'
-  var ruserAJScopeConfirm = req.session.data['ruserAJ-scoping']
+  var ruserAJScopeConfirm = req.session.data['ruserAJ']
 
   // YES, company has to subnit the statement
-  if (ruserAJScopeConfirm == "Yes"){
+  if (ruserAJScopeConfirm == "yes"){
     // Send user to next page
     res.redirect('/return-user-adding/4_before_you_start')
   }
