@@ -18,7 +18,7 @@ router.post('/3_FY-1', function (req, res)
      // Check whether the variable matches a condition
      if (fyyear == "yes"){
        // Send user to next page
-       res.redirect('/new-user/scoping-journey/S12-1-ScopingQ')
+       res.redirect('/4_before_you_start')
      }
      else {
        // Send user to ineligible page
@@ -114,7 +114,7 @@ router.post('/return-user-adding/3_FY-4', function (req, res)
   // Check whether the variable matches a condition
   if (fy4year == "Yes"){
     // Send user to next page
-    res.redirect('/return-user-adding/scoping-journey/S12-1-ScopingQ')
+    res.redirect('/return-user-adding/4_before_you_start')
   }
   else {
     // Send user to ineligible page
@@ -185,7 +185,7 @@ router.post('/new-user/scoping-journey/S12-1-ScopingQ', function (req, res)
   // YES, company has to subnit the statement
   if (scopingconfirm == "yes"){
     // Send user to next page
-    res.redirect('../../4_before_you_start')
+    res.redirect('../../3_FY-1')
   }
   else {
     // NO, company do not have to subnit the statement
@@ -254,7 +254,7 @@ router.post('/return-user-adding/scoping-journey/S12-1-ScopingQ', function (req,
   // YES, company has to subnit the statement
   if (ruserAJScopeConfirm == "yes"){
     // Send user to next page
-    res.redirect('/return-user-adding/4_before_you_start')
+    res.redirect('/return-user-adding/3_FY-4')
   }
   else {
     // NO, company do not have to subnit the statement
