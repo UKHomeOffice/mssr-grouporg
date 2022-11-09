@@ -27,19 +27,20 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
       <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which organisations are included in your 2023 group statement?</h1>
       <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">ORG NAME LTD group statement (2023)</p>
 
-      <!-- search box starts -->
-{{ govukInput({
+ <!-- new search start-->
+ {{ govukInput({
   label: {
-    text: "Search for and select organisations"
+    html: 'Search for and select subsidiaries',
+    classes: "govuk-label--s",
+    isPageHeading: true
   },
-  hint:{
-    text: "Enter an organisation name or company number."
+  hint: {
+    html: '<p class="govuk-body">Enter an subsidiary name or company number.</p>'
   },
   id: "event-name",
-  name: "event-name",
-  classes: "govuk-!-width-three-quarters"
+  name: "event-name"
 }) }}
-<!-- search box ends-->
+<!-- new search ends-->
 
 
 <!--CTA start-->
