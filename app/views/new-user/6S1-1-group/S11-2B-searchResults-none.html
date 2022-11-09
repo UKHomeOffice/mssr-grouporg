@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">0 search results</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-2">Search term: Siemens energy</p>
+
+    <!-- No results text START-->
+    {{ govukWarningText({
+      text: "No subsidiaries found that match your search. Try searching again using a different subsidiary name or company number.",
+      iconFallbackText: "Warning"
+    }) }}
+    <!-- No results text END-->
+
+<!--CTA start-->
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Back to search"
+  }) }}
+
+  {{ govukButton({
+    text: "Add a subsidiary",
+    classes: "govuk-button--secondary"
+  }) }}
+</div>
+<!--CTA end-->
+
+</div>
+</div>
+
+{% endblock %}

@@ -4,7 +4,6 @@
 Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
 {% block beforeContent %}
 <!-- phase banner starts-->
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -24,9 +23,18 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Which <s>organisations</s> subsidiaries are included in your 2022 group statement?</h1>
-      <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5 red">ORG NAME LTD group statement (2022)</p> -->
-
+<!-- error summary start-->
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Keyword missing",
+      href: "#passport-issued-day"
+    }
+  ]
+}) }}
+<!--error summary ends-->
+<h1 class="govuk-heading-l govuk-!-margin-bottom-4">Which <s>organisations</s> subsidiaries are included in your 2022 group statement?</h1>
 <!-- new search start-->
 {{ govukInput({
   label: {
@@ -38,7 +46,10 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
     html: '<p class="govuk-body">Enter an <s>organisations</s> subsidiary name or company number.</p>'
   },
   id: "event-name",
-  name: "event-name"
+  name: "event-name",
+  errorMessage: {
+    text: "Enter a search keyword"
+  }
 }) }}
 <!-- new search ends-->
 
