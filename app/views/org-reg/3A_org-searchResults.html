@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <!-- text field START-->
+      {{ govukInput({
+        label: {
+          text: "Find your organisation",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Organisation name or company number"
+        },
+        id: "event-name",
+        name: "event-name"
+      }) }}
+    <!-- text field END-->
+
+<!-- CTA START-->
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Search"
+  }) }}
+</div>
+<!-- CTA END-->
+
+
+
+<!-- Warning text START -->
+{{ govukWarningText({
+  html: 'If your organisation’s headquarters are outside the UK, it may not appear in the search results. In this case, you’ll need to <a href="#">provide us with its details</a>.',
+  iconFallbackText: "Warning"
+}) }}
+<!-- Warning text END -->
+
+
+    </div>
+
+  </div>
+
+{% endblock %}

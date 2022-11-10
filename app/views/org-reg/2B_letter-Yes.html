@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Enter your organisation reference and security code</h1>
+      <p class="govuk-body">You’ll find them in the letter we sent you about the service.</p>
+
+<!--Textfield1 START-->
+{{ govukInput({
+  label: {
+    text: "Organisation reference",
+    classes: "govuk-body",
+    isPageHeading: true
+  },
+  classes: "govuk-input--width-20",
+  hint: {
+    text: "For example, FSB8NATH"
+  },
+  id: "account-number",
+  name: "account-number",
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+<!--Textfield1 END-->
+
+<!--Textfield2 START-->
+{{ govukInput({
+  label: {
+    text: "Security code",
+    classes: "govuk-body",
+    isPageHeading: true
+  },
+  classes: "govuk-input--width-20",
+  hint: {
+    text: "For example, FSB8NATH"
+  },
+  id: "account-number",
+  name: "account-number",
+  inputmode: "numeric",
+  spellcheck: false
+}) }}
+<!--Textfield2 END-->
+
+
+<!-- CTA START-->
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
+<!-- CTA END-->
+
+    </div>
+
+  </div>
+
+{% endblock %}

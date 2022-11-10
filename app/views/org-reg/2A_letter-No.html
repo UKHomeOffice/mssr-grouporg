@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  {{ govukRadios({
+        name: "sign-in",
+        fieldset: {
+          legend: {
+            text: "What type of organisation do you want to register?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "private",
+            text: "Private or voluntary sector organisation",
+            hint: {
+              html: 'This includes:
+                <li>private limited companies</li>
+                <li>public limited companies</li>
+                <li>limited liability partnerships</li>
+                <li>charities</li>
+                <li>private schools</li>
+                <li>other private sector organisations</li>'
+            }
+          },
+          {
+            value: "public",
+            text: "Public sector organisation",
+            hint: {
+              html: 'This includes:
+                <li>government departments and arms-length bodies</li>
+                <li>police forces</li>
+                <li>fire and rescue services</li>
+                <li>local authorities</li>
+                <li>NHS bodies</li>
+                <li>other public sector organisations</li>'
+            }
+          }
+        ]
+      }) }}
+
+<!-- CTA START-->
+{{ govukButton({
+  text: "Continue"
+}) }}
+<!-- CTA END-->
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Register or select organisations you want to add statements for</h1>
+      <p class="govuk-body-l">Before you can add an organisation’s statement to the registry, you need to register the organisation on your account.</p>
+
+<!-- Details panel ED START -->
+{% set detailsHtml %}
+  <p class="govuk-body">If multiple people want to be able to use this service on behalf of the same organisation (for example, to collaborate on providing information):</p>
+  <ul><li>each person must create their own account</li>
+    <li>each person must then register the organisation on their account</li>
+    <li>everyone who has registered the same organisation on their account is visible to one another</li>
+    <li>everyone who has registered the same organisation on their account can remove the other users from the list of people able to submit for that organisaiton (when this happens, the ‘removed’ person will receive an email notification)</li>
+  </ul>
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "Read about multiple users for the same organisation",
+  html: detailsHtml
+}) }}
+<!-- Details panel ED END -->
+
+<!-- Warning text START -->
+      {{ govukWarningText({
+        text: "If your statement is for a group of organisations you only need to register the parent organisation.",
+        iconFallbackText: "Warning"
+      }) }}
+<!-- Warning text END -->
+</div>
+
+<div class="govuk-grid-column-full">
+<h2 class="govuk-heading-m">Your registered organisations</h2>
+
+<!-- Table START -->
+{{ govukTable({
+  captionClasses: "govuk-body",
+  head: [
+    {
+      text: "Organisation name",
+      classes: 'app-custom-class'
+    },
+    {
+      text: "	Registration status",
+      classes: 'app-custom-class'
+    }
+  ],
+
+  rows: [
+  [
+      {
+        html: '<a href="#">ALDI STORES LTD</a>'
+      },
+      {
+        text: "Registration complete"
+      }
+    ],
+    [
+    {
+      html: '<a href="#">APPLE (UK) LIMITED</a>'
+    },
+    {
+      text: "Registration complete"
+    }
+  ],
+    [
+    {
+      html: '<a href="#">AVON AND SOMERSET POLICE FORCE</a>'
+    },
+    {
+      text: "Registration complete"
+    }
+    ]
+  ]
+}) }}
+<!-- Table END -->
+
+<!-- CTA START-->
+{{ govukButton({
+  text: "Register an organisation"
+}) }}
+<!-- CTA END-->
+
+
+    </div>
+
+  </div>
+
+{% endblock %}
