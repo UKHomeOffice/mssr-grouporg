@@ -25,6 +25,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Does your 2022 modern slavery statement cover a single organisation or a group of organisations?</h1>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">for < ORG NAME LTD ></p>
 
  <!-- Details panel ED START -->
 {% set detailsHtml %}
@@ -50,13 +51,6 @@ html: detailsHtml
   {{ govukRadios({
     idPrefix: "ruserE-org-type",
     name: "ruserE-org-type",
-    fieldset: {
-      legend: {
-        text: "<Organisation name>'s statement (2022) covers:",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
     items: [
       {
         value: "singleOrg",
