@@ -39,6 +39,9 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 
 
 <!--radio buttons STARTS-->
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
 {% set charityHtml %}
 {{ govukInput({
   id: "charity-number",
@@ -92,7 +95,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   spellcheck: false,
   classes: "govuk-!-width-one-third",
   label: {
-    text: "Name or type (e.g., 'DUNS '):"
+    text: "Name or type (e.g., 'DUNS'):"
   }
 }) }}
 
@@ -110,31 +113,33 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 
 {% endset -%}
 
+
 {{ govukRadios({
+  name: "contact",
   items: [
     {
-      value: "company-number",
+      value: "email",
       text: "Company number",
       conditional: {
         html: companyHtml
       }
     },
     {
-      value: "charity-number",
+      value: "phone",
       text: "Charity number",
       conditional: {
         html: charityHtml
       }
     },
     {
-      value: "mutual-partnership-number",
+      value: "phone",
       text: "Mutual partnership number",
       conditional: {
         html: partnerHtml
       }
     },
     {
-      value: "other",
+      value: "phone",
       text: "Other",
       conditional: {
         html: otherHtml
@@ -144,20 +149,22 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
       divider: "or"
     },
     {
-      value: "none",
-      text: "I don't have a reference for this organisation"
+      value: "text",
+      text: "I don't have a reference for this organisation",
+      conditional: {
+        html: textHtml
+      }
     }
   ]
 }) }}
-<!--radio buttons END-->
-
+<!--new radio buttons end-->
 
 
 <!--CTA start-->
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Continue",
+    text: "Save and continue",
     href: "S11-4A-org-address"
   }
   ) }}

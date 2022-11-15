@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Organisation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+<!-- Back starts-->
+{% block beforeContent %}
+
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+ <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+<!--Back ends -->
+
+{% block content %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Subsidiaries you added</h1>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">for < ORG NAME LTD ></p>
+
+<!-- Table START -->
+{% set mySecondary %}
+    {{ govukButton({
+        text: "Include",
+        href: "S11-5-inc-orgsReview",
+        classes: "govuk-button--secondary"
+    }) }}
+{% endset %}
+
+{% set myLink %}
+<p class="govuk-link"> <a href="S11-5A-inc-orgsReview">Remove</a></p>
+{% endset %}
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-4">25 organisations</h1> -->
+
+{{ govukTable({
+  captionClasses: "govuk-body",
+  firstCellIsHeader: false,
+  head: [
+    {
+      html: '<s>Organisation</s> Subsidiary details',
+      classes: 'app-custom-class'
+    },
+    {
+      text: " ",
+      classes: 'app-custom-class'
+    }
+
+  ],
+
+  rows: [
+  [
+  {html: '<strong>SIEMENS SOLUTIONS LTD</strong><br/>Suite C Lancaster House Grange Business Park, Enderby Road, Leicester, Leicestershire, LE8 6EP<br/>Company number: 04750737<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>SIEMENS CHARITY LTD</strong><br/>Suite C Lancaster House Grange Business Park, Enderby Road, Leicester, Leicestershire, LE8 6EP<br/>Charity number: 04750737<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>SIEMENS SERVICES LTD</strong><br/>Suite C Lancaster House Grange Business Park, Enderby Road, Leicester, Leicestershire, LE8 6EP<br/>Mutual partnership number: 04750737<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>SIEMENS HOSPITALS LTD</strong><br/>Suite C Lancaster House Grange Business Park, Enderby Road, Leicester, Leicestershire, LE8 6EP<br/>Name or type: DUNS<br/>Unique number or value: 04750737<br/>'},
+  {html:myLink}],
+  [
+  {html: '<strong>SIEMENS RESTAURANTS LTD</strong><br/>Suite C Lancaster House Grange Business Park, Enderby Road, Leicester, Leicestershire, LE8 6EP<br/>Company reference number: Not available<br/>'},
+  {html:myLink}]
+  ]
+}) }}
+<!-- Table END -->
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton({
+    html: 'Save and continue',
+    href: "S11-5-inc-orgsReview"
+  }) }}
+
+  {{ govukButton({
+    html: 'Add a new <s>organisations</s> subsidiary',
+    classes: "govuk-button--secondary",
+    href: "S11-4-org-details"
+  }) }}
+</div>
+<!--CTA end-->
+
+</div>
+</div>
+
+{% endblock %}
