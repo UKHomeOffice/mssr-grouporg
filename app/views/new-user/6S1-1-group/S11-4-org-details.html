@@ -24,18 +24,18 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Details of the organisation you want to register</h1>
-      <p class="govuk-body-l">Enter the details of the organisation you want to register.</p>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Add your subsidiary details</h1>
+      <p class="govuk-body-l">Enter the details of the subsidiary you want to add.</p>
       {{ govukInput({
         label: {
-          text: "Organisation name"
+          text: "Subsidiary name"
         },
         classes: "govuk-input--width-20",
         id: "width-20",
         name: "width-20"
       }) }}
 
-      <p class="govuk-body-l">Enter one or more unique references to help identify your organisation:</p>
+      <p class="govuk-body-l">Enter one or more unique references to help identify your subsidiary:</p>
 
 
 <!--radio buttons STARTS-->
@@ -158,10 +158,10 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   {{ govukButton(
     {
     text: "Continue",
-    href: "S11-3-inc-resultsSelected"
+    href: "S11-4A-org-address"
   }
   ) }}
-  <a class="govuk-link" href="S11-6-inProgress">Skip this</a>
+  <!--<a class="govuk-link" href="S11-4A-org-address">Skip this</a>-->
 </div>
 <!--CTA end-->
 

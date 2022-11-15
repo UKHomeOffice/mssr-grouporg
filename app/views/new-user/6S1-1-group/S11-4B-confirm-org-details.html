@@ -24,75 +24,72 @@ Publishing is not required - Confirmation – {{ serviceName }} – GOV.UK Proto
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your organisation’s details</h1>
+      <span class="govuk-caption-m">SIEMENS CHARITY LTD</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Confirm your subsidiary details</h1>
       {% set detailsHtml %}
       <ul class="govuk-list govuk-list--bullet">
         <li>It is in administration or liquidation, has closed or is dormant, or has merged with another organisation.</li>
         <li>Its turnover or budget is less than £36 million per year.</li>  </ul>
     {% endset %}
 
-<!-- Summary table START-->
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Organisation name"
-          },
-          value: {
-            text: "Sanihands"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "name"
-              }
-            ]
+
+
+<!--Summary table-->
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Organisation name"
+      },
+      value: {
+        text: "SIEMENS CHARITY LTD"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
           }
-        },
-        {
-          key: {
-            text: "<Charity> number"
-          },
-          value: {
-            text: "5 January 1978"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "date of birth"
-              }
-            ]
+        ]
+      }
+    },
+    {
+      key: {
+        text: "< Charity > number"
+      },
+      value: {
+        text: "72236FH"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "address"
           }
-        },
-        {
-          key: {
-            text: "Organisation address"
-          },
-          value: {
-            html: "72 Guild Street<br>London<br>SE23 6FH"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "address"
-              }
-            ]
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Registered address"
+      },
+      value: {
+        html: '72 Guild Street<br>London<br>SE23 6FH'
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "contact details"
           }
-        }
-        }
-      ]}
-    }) }}
-
-<!-- Summary table END-->
-
-
-
+        ]
+      }
+    }
+  ]
+}) }}
 
 
 <!--CTA start-->
@@ -100,12 +97,10 @@ Publishing is not required - Confirmation – {{ serviceName }} – GOV.UK Proto
 <div class="govuk-button-group">
   {{ govukButton(
     {
-    text: "Confirm",
-    href: "S12-2C-NoDeclare"
+    text: "Confirm Subsidiary",
+    href: "S11-4C-added-subsidiaries"
   }
   ) }}
-  <!-- <a class="govuk-link" href="#">Skip this question</a> -->
-<p class="govuk-body">If your organisation name or address is incorrect, email us at <a href="#">modernslaverystatements@homeoffice.gov.uk</a> and let us know the correct information.</p>
 </div>
 <!--CTA end-->
 

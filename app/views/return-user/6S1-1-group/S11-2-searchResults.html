@@ -201,34 +201,6 @@
 }) }}
 <!-- Table END -->
 
-<!--pagination starts-->
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  previous: {
-    href: "#"
-  },
-  next: {
-    href: "#"
-  },
-  items: [
-    {
-      number: 1,
-      current: true,
-      href: "#"
-    },
-    {
-      number: 2,
-      href: "#"
-    },
-    {
-      number: 3,
-      href: "#"
-    }
-  ]
-}) }}
-<!--pagination ends-->
-
-
 <!--CTA start-->
 {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
@@ -238,8 +210,8 @@
     href: "S11-4-orgsReview"
   }
   ) }}
- <!--<a class="govuk-link" href="../6r_MSSR-complete">Skip this</a>-->
 </div>
+<p class="govuk-body"><a href="../../new-user/6S1-1-group/S11-4-org-details"> Can't find the organisation you're looking for?</a></p>
 <!--CTA end-->
 
 </div>
