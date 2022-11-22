@@ -24,6 +24,17 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Unique reference number for your subsidiary is missing.",
+            href: "#passport-issued-day"
+          }
+        ]
+      }) }}
+
       <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Add your subsidiary details</h1>
       <p class="govuk-body-l">Enter the details of the subsidiary you want to add.</p>
       {{ govukInput({
@@ -35,7 +46,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
         name: "width-20"
       }) }}
 
-      <p class="govuk-body-l">Enter one or more unique references to help identify your subsidiary:</p>
+<p class="govuk-body-l">Enter one or more unique references to help identify your subsidiary:</p>
 
 
 <!--radio buttons STARTS-->
@@ -50,9 +61,8 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   autocomplete: "email",
   spellcheck: false,
   classes: "govuk-input--width-10",
-  label: {
-    text: "Enter your Charity number:"
-  }
+  label: {  text: "Enter your Charity number:" },
+  errorMessage: {text: "Provide charity number"}
 }) }}
 {% endset -%}
 
@@ -94,9 +104,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   autocomplete: "email",
   spellcheck: false,
   classes: "govuk-input--width-10",
-  label: {
-    text: "Name or type (e.g., 'DUNS'):"
-  }
+  label: { text: "Name or type (e.g., 'DUNS'):" }
 }) }}
 
 {{ govukInput({
@@ -114,7 +122,6 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
 
 
 {{ govukCheckboxes({
-
   items: [
     {
       value: "company",
@@ -124,6 +131,7 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
     },
     {
       value: "charity",
+      checked: true,
       text: "Charity number",
       conditional: {
         html: charityHtml}
