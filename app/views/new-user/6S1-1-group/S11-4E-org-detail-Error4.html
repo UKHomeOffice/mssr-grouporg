@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Add your 2022 modern slavery statement to the registry – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+<!-- phase banner starts-->
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+<!--phase banner ends-->
+
+<!-- Back starts-->
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+<!--Back ends -->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Name or type for your subsidiary reference number is missing.",
+            href: "#passport-issued-day"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Add your subsidiary details</h1>
+      <p class="govuk-body-l">Enter the details of the subsidiary you want to add.</p>
+      {{ govukInput({
+        label: {
+          text: "Subsidiary name"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+<p class="govuk-body-l">Enter one or more unique references to help identify your subsidiary:</p>
+
+
+<!--radio buttons STARTS-->
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set charityHtml %}
+{{ govukInput({
+  id: "charity-number",
+  name: "charity-number",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-input--width-10",
+  label: {  text: "Enter your Charity number:" }
+}) }}
+{% endset -%}
+
+{% set companyHtml %}
+{{ govukInput({
+  id: "company-number",
+  name: "company-number",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-input--width-10",
+  label: {
+    text: "Enter your Company number:"
+  }
+}) }}
+{% endset -%}
+
+
+{% set partnerHtml %}
+{{ govukInput({
+  id: "partner-number",
+  name: "partner-number",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-input--width-10",
+  label: {
+    text: "Enter your Mutual partnership number:"
+  }
+}) }}
+{% endset -%}
+
+
+{% set otherHtml %}
+{{ govukInput({
+  id: "other1-number",
+  name: "other1-number",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  value: "Special number",
+  classes: "govuk-input--width-10",
+  label: { text: "Name or type (e.g., 'DUNS'):" },
+  errorMessage: {text: "Provide the name or type"}
+}) }}
+
+{{ govukInput({
+  id: "other2-number",
+  name: "other2-number",
+  type: "email",
+  autocomplete: "email",
+  spellcheck: false,
+  classes: "govuk-input--width-10",
+  label: {text: "Unique number or value (e.g., '987654321'):"}
+}) }}
+{% endset -%}
+
+
+{{ govukCheckboxes({
+  items: [
+    {
+      value: "company",
+      text: "Company number",
+      conditional: {
+      html: companyHtml}
+    },
+    {
+      value: "charity",
+      text: "Charity number",
+      conditional: {
+        html: charityHtml}
+    },
+    {
+      value: "partnership",
+      text: "Mutual partnership number",
+      conditional: {
+        html: partnerHtml}
+    },
+    {
+      value: "other",
+      text: "Other",
+      checked: true,
+      conditional: {
+        html: otherHtml}
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "text",
+      text: "I don't have a reference for this organisation",
+      conditional: {
+      html: textHtml},
+      behaviour: "exclusive"
+    }
+  ]
+}) }}
+<!--new radio buttons end-->
+
+
+<!--CTA start-->
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Continue",
+    href: "S11-4A-org-address"
+  }
+  ) }}
+  <!--<a class="govuk-link" href="S11-4A-org-address">Skip this</a>-->
+</div>
+<!--CTA end-->
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
