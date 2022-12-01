@@ -389,7 +389,7 @@ router.post('/return-user-adding/6S1-1-Org/S11-1-Org', function (req, res)
 })
 
 
-// ORG TYPE - LIST CHECK - return user adding their 2nd group statement [USING OLD LIST]
+// ORG TYPE - LIST CHECK - Checking if the user adding 2nd group statement would like to use their old list
 router.post('/return-user-adding/6S1-1-group/S11-1-ListQ', function (req, res)
 {
   const selectedOption = req.body['use-list']
@@ -404,7 +404,7 @@ router.post('/return-user-adding/6S1-1-group/S11-1-ListQ', function (req, res)
   // YES, company has to subnit the statement
   if (useListConfirm == "Yes"){
     // Send user to next page
-    res.redirect('/return-user-adding/6S1-1-group/S11-5-inc-orgsReview')
+    res.redirect('/return-user-adding/6S1-1-group/S11-1A-oldLists')
   }
   else {
     // NO, company do not have to subnit the statement
@@ -412,27 +412,5 @@ router.post('/return-user-adding/6S1-1-group/S11-1-ListQ', function (req, res)
   }
 })
 
-// ORG TYPE - LIST CHECK - return user adding their 2nd group statement [NOT USING OLD LIST]
-router.post('/return-user-adding-newlist/6S1-1-group/S11-1-ListQ', function (req, res)
-{
-  const selectedOption = req.body['use-list']
-  let error = {}
-  if (!selectedOption) {
-    error = { text: "Select an option" }
-    return res.render("return-user-adding-newlist/6S1-1-group/S11-1-ListQ", { error })}
-
-  // Make a variable and give it the value from 'scopingconfirm'
-  var useListConfirm = req.session.data['use-list']
-
-  // YES, company has to subnit the statement
-  if (useListConfirm == "Yes"){
-    // Send user to next page
-    res.redirect('/return-user-adding/6S1-1-group/S11-5-inc-orgsReview')
-  }
-  else {
-    // NO, company do not have to subnit the statement
-    res.redirect('/return-user-adding/6S1-1-group/S11-2-search')
-  }
-})
 
 module.exports = router

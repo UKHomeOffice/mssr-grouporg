@@ -24,10 +24,9 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">For the 2023 group statement, would you like to reuse the subsidiaries list from your previous submission?</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-5">For the 2023 group statement which of these subsidiaries list you would like to use?</h1>
         <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-5">for < ORG NAME LTD ></p>
 <p class="gov-uk-body">You will be able to add new or remove old subsidiaries from the list.</p>
-
 
 <!-- Radio button start -->
 <form class="form" action="/return-user-adding/6S1-1-group/S11-1A-oldLists" method="post">
@@ -46,28 +45,43 @@ Add your 2023 modern slavery statement to the registry – {{ serviceName }} –
       value: "government-gateway",
       text: "Financial year: 01 April 2022 - 31 March 2023",
       hint: {
-        text: "Last updated on 25th August 2021 at 11:20"
+      html:'20 subsidiaries <br/>Last updated on 25th August 2021 at 11:20'
       }
     },
     {
       value: "govuk-verify",
       text: "Financial year: 01 April 2021 - 31 March 2022",
-      hint: {
-        text: "Last updated on 23rd November 2022 at 13:34"
-      },
+      hint:{
+      html: '10 subsidiaries <br/>Last updated on 23rd November 2022 at 13:34'
+      }
+    },
+
       {
         value: "govuk-verify",
         text: "Financial year: 01 April 2020 - 31 March 2021",
         hint: {
-          text: "Last updated on 23rd November 2022 at 13:34"
+        html:'20 subsidiaries <br/>Last updated on 23rd November 2022 at 18:00'
         }
     }
   ],
   errorMessage: error
 }) }}
-<button class="govuk-button" data-module="govuk-button">Continue</button>
 </form>
 <!-- Radio button end -->
+
+<!--CTA start-->
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<div class="govuk-button-group">
+  {{ govukButton(
+    {
+    text: "Continue",
+    href: "S11-5-inc-orgsReview"
+  }
+  ) }}
+</div>
+<!--CTA end-->
+
+
 
     </div>
   </div>
