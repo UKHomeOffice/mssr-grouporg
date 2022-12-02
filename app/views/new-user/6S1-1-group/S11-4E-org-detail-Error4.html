@@ -103,7 +103,12 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   autocomplete: "email",
   spellcheck: false,
   classes: "govuk-input--width-10",
-  label: { text: "Name or type (e.g., 'DUNS'):" },
+  label: {
+    text: "Name or type:"
+  },
+  hint: {
+    text: "For example, 'DUNS'"
+  },
   errorMessage: {text: "Provide the name or type"}
 }) }}
 
@@ -115,7 +120,12 @@ Add your 2022 modern slavery statement to the registry – {{ serviceName }} –
   spellcheck: false,
   value: "2345678",
   classes: "govuk-input--width-10",
-  label: {text: "Unique number or value (e.g., '987654321'):"}
+  label: {
+    text: "Unique number or value:"
+  },
+  hint: {
+    text: "For example, 987654321"
+  }
 }) }}
 {% endset -%}
 
